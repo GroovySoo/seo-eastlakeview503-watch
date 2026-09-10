@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "tracked_queries": [
+    "1550 Eastlake Ave E #503",
+    "Riva Condos #503 Seattle",
+    "Riva Condominium Seattle for sale",
+    "Eastlake condo for sale Lake Union view",
+    "eastlakeview503"
+  ],
+  "serp_position_only": [
+    {"domain": "redfin.com", "note": "unit-503 page /WA/Seattle/1550-Eastlake-Ave-E-98102/unit-503/home/2095078; bot-blocked", "first_seen": "2026-09-10"},
+    {"domain": "zillow.com", "note": "zpid 2091233085; bot-blocked", "first_seen": "2026-09-10"},
+    {"domain": "apartments.com", "note": "Riva Condos building page; bot-blocked", "first_seen": "2026-09-10"},
+    {"domain": "loopnet.com", "note": "ranks on building name 'Riva Condos'; bot-blocked", "first_seen": "2026-09-10"},
+    {"domain": "realtor.com", "note": "bot-blocked", "first_seen": "2026-09-10"},
+    {"domain": "homes.com", "note": "bot-blocked", "first_seen": "2026-09-10"}
+  ],
+  "deep_fetch": [
+    {"domain": "seattlecondosandlofts.com", "type": "agent blog (WordPress+Yoast)", "first_seen": "2026-09-10"},
+    {"domain": "houseboatsofseattle.com", "type": "Sotheby's affiliate", "first_seen": "2026-09-10"},
+    {"domain": "rsir.com", "type": "Realogics Sotheby's", "first_seen": "2026-09-10"},
+    {"domain": "windermere.com", "type": "brokerage", "first_seen": "2026-09-10"},
+    {"domain": "compass.com", "type": "brokerage", "first_seen": "2026-09-10"}
+  ]
+}
