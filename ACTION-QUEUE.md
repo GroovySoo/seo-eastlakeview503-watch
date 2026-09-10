@@ -17,6 +17,9 @@ Tier 2 rewrites this file each week. Top section = do now.
   numberOfFloors 5, address, geo, 4 amenityFeature). Valid, rendering. **LIVE** (2 JSON-LD
   blocks on page now).
 - GSC: URL is indexed (confirmed). "Request Indexing" clicked on the updated page.
+- GA4: property created (Measurement ID G-95JF0FLSZH). Rela's GA-ID field is Plus/Pro-locked,
+  so the gtag.js snippet was added to the Custom Script field instead. **LIVE** (gtag.js +
+  config loading; verify data in GA4 > Reports > Realtime).
 
 ## Do now
 
@@ -24,7 +27,7 @@ _(next browser session)_
 
 1. **Add GA4 to Rela** — Rela → Advanced → "Google Analytics or Google Tag Manager ID":
    paste the user's `G-XXXXXXX` Measurement ID. (Blocked: need the ID from the user.)
-2. **Extend the Custom-Script JSON-LD with a full `RealEstateAgent` node** once the user
+1. **Extend the Custom-Script JSON-LD with a full `RealEstateAgent` node** once the user
    supplies agent phone + brokerage name + headshot URL. Append to the existing
    `<script type="application/ld+json">` block in Rela → Advanced (make it an `@graph` with
    both the ApartmentComplex and the RealEstateAgent). (Blocked: need agent details.)
