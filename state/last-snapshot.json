@@ -1,1 +1,197 @@
-{"schema_version": 1, "first_run": null, "note": "Tier 1 populates this on first run."}
+{
+  "schema_version": 2,
+  "updated": "2026-09-11",
+  "note": "Baseline. Only Tier 2 writes this file. Field names mirror state/observations-<date>.json so the weekly diff is mechanical. First populated 2026-09-11 from Tier 1 evidence with status=complete.",
+  "source_evidence": "reports/EVIDENCE-2026-09-11.md",
+  "source_observations": "state/observations-2026-09-11.json",
+  "first_run": "2026-09-11",
+  "listing_status": "active",
+  "indexed": "no",
+  "listing": {
+    "url": "https://eastlakeview503.relahq.com/",
+    "http_status": 200,
+    "final_url": "https://eastlakeview503.relahq.com/",
+    "price": 649888,
+    "price_currency": "USD",
+    "availability": "https://schema.org/InStock",
+    "mls_number": "2556157",
+    "year_built": 1997
+  },
+  "indexation": {
+    "query": "site:eastlakeview503.relahq.com",
+    "pages_returned_from_domain": 0,
+    "x_robots_tag_header": null,
+    "robots_meta": null,
+    "note": "Zero pages returned for the site: query. Tier 2 verified live 2026-09-11 11:54 UTC that no X-Robots-Tag header and no robots meta tag are present, so nothing on the page blocks indexing. GSC reported 'indexed' on 2026-09-10 - contradiction unresolved, owner to re-check in GSC."
+  },
+  "meta": {
+    "title": "Riva Condos #503, 1550 Eastlake Ave E – Seattle Condo for Sale",
+    "description": "Top-floor 2 bed, 2 bath condo for sale at Riva Condominium, 1550 Eastlake Ave E #503, Seattle. 1,114 sq ft, Lake Union & skyline views, private balcony, 2 secured parking spaces + storage. $649,888 · MLS# 2556157.",
+    "canonical": "https://eastlakeview503.relahq.com",
+    "robots": null,
+    "google_site_verification": "T6_j8jTeByDHz6TZ-fo1x88Et-9sj4_CwAIZFHl_2yM"
+  },
+  "og_twitter_tags": {
+    "og:type": "place",
+    "og:title": "Riva Condos #503 – Top-Floor Eastlake Condo with Lake Union Views",
+    "og:description": "Move-in-ready 2 bed / 2 bath top-floor condo for sale at Riva Condominium in Seattle's Eastlake neighborhood, one block from Lake Union and South Lake Union. Private balcony with lake and skyline views, 2 secured parking spaces, dedicated storage. Offered at $649,888 (MLS# 2556157).",
+    "og:updated_time": "2026-09-10T08:07:16-07:00",
+    "og:image": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1789052836",
+    "og:image:type": "image/jpeg",
+    "og:image:width": 1600,
+    "og:image:height": 1069,
+    "og:url": null,
+    "og:locale": null,
+    "twitter:card": null,
+    "twitter:title": "Riva Condos #503 – Top-Floor Eastlake Condo, Lake Union Views",
+    "twitter:description": "2 bed / 2 bath top-floor condo for sale at Riva Condominium, 1550 Eastlake Ave E #503, Seattle. 1,114 sq ft, Lake Union & skyline views, balcony, 2 parking + storage. $649,888 · MLS# 2556157.",
+    "twitter:image": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1789052836",
+    "twitter:image:alt": "1550 Eastlake Ave E Apt 503, Seattle, WA | 2 Bed, 2 Bath"
+  },
+  "json_ld": {
+    "block_count": 2,
+    "block_1_static": {
+      "@type": "Apartment",
+      "name": "1550 Eastlake Ave E #503, Seattle, WA 98102",
+      "yearBuilt": 1997,
+      "numberOfRooms": 2,
+      "numberOfBedrooms": null,
+      "numberOfBathroomsTotal": 2,
+      "floorSize_sqft": 1114,
+      "offers_price": 649888,
+      "offers_availability": "https://schema.org/InStock",
+      "provider_name": "Omar Senghor",
+      "provider_email": "change-re@outlook.com",
+      "provider_phone": null,
+      "amenityFeature": null,
+      "petsAllowed": null,
+      "containedInPlace": null,
+      "image_count": 18
+    },
+    "block_2_client_injected": {
+      "@type": "ApartmentComplex",
+      "name": "Riva Condominium",
+      "alternateName": ["Riva Condos", "Riva at Lake Union"],
+      "yearBuilt": "1997",
+      "numberOfFloors": 5,
+      "amenityFeature_names": [
+        "Secured garage parking",
+        "Secured lobby entrance",
+        "Private storage units",
+        "In-unit washer and dryer"
+      ],
+      "containedInPlace_link_to_block_1": false
+    }
+  },
+  "h1": {
+    "text": "1550 Eastlake Ave E Apt 503, Seattle",
+    "matches_target_text": false,
+    "target_text": "1550 Eastlake Ave E #503, Seattle, WA 98102"
+  },
+  "images": {
+    "total_img_tags": 23,
+    "property_photo_img_tags": 19,
+    "logo_chrome_img_tags": 4,
+    "non_empty_alt_count": 3,
+    "non_empty_alt_all_on_logos": true,
+    "property_photo_with_alt_count": 0,
+    "loading_lazy_count": 0
+  },
+  "analytics": {
+    "gtag_token_occurrences": 10,
+    "ga_ids_found": ["G-1RVXDXERNN", "G-95JF0FLSZH"],
+    "rela_native_ga_id_present": true,
+    "custom_ga_id_present": true
+  },
+  "llms_txt": {
+    "http_status": 200,
+    "is_real_llms_content": false
+  },
+  "sitemap_xml": {
+    "http_status": 404
+  },
+  "robots_txt": {
+    "http_status": 200,
+    "has_crawl_delay_10": true,
+    "has_sitemap_line": false
+  },
+  "inbound_links": {
+    "external_links_known": 0,
+    "note": "No external links pointing to the page. Single biggest ranking lever. Restate every week until evidence shows links exist."
+  },
+  "tracked_queries": [
+    {
+      "query": "1550 Eastlake Ave E #503",
+      "top_5_domains": ["redfin.com", "redfin.com", "zillow.com", "redfin.com", "loopnet.com"],
+      "all_domains_returned": ["redfin.com", "redfin.com", "zillow.com", "redfin.com", "loopnet.com", "apartments.com", "apartments.com", "movoto.com", "westlakeassociates.com"],
+      "target_present": false
+    },
+    {
+      "query": "Riva Condos #503 Seattle",
+      "top_5_domains": ["apartments.com", "redfin.com", "apartmentfinder.com", "apartments.com", "wicklundre.com"],
+      "all_domains_returned": ["apartments.com", "redfin.com", "apartmentfinder.com", "apartments.com", "wicklundre.com", "facebook.com", "yelp.com", "southernresorts.com", "urbnlivn.com", "dwellresidential.com"],
+      "target_present": false
+    },
+    {
+      "query": "Riva Condominium Seattle for sale",
+      "top_5_domains": ["wicklundre.com", "wicklundre.com", "apartments.com", "redfin.com", "yelp.com"],
+      "all_domains_returned": ["wicklundre.com", "wicklundre.com", "apartments.com", "redfin.com", "yelp.com", "zillow.com", "estately.com", "coldwellbankerhomes.com", "homes.com", "livabl.com"],
+      "target_present": false
+    },
+    {
+      "query": "Eastlake condo for sale Lake Union view",
+      "top_5_domains": ["homes.com", "redfin.com", "redfin.com", "zillow.com", "redfin.com"],
+      "all_domains_returned": ["homes.com", "redfin.com", "redfin.com", "zillow.com", "redfin.com", "wicklundre.com", "seattlearearealestateteam.com", "homes77.com", "expedia.com"],
+      "target_present": false
+    },
+    {
+      "query": "eastlakeview503",
+      "top_5_domains": ["wikipedia.org", "wikipedia.org", "x.com", "eastlakeview.org", "eastlakeview.com"],
+      "all_domains_returned": ["wikipedia.org", "wikipedia.org", "x.com", "eastlakeview.org", "eastlakeview.com", "bjbproperties.com"],
+      "target_present": false
+    }
+  ],
+  "competitors": {
+    "rsir.com": {
+      "fetchable": false,
+      "http_status": 403,
+      "blocked_reason": "Cloudflare JS challenge (cf-mitigated: challenge)"
+    },
+    "windermere.com": {
+      "fetchable": true,
+      "http_status": 200,
+      "title": "MLS#2287238: 1550 Eastlake Avenue E 506, Seattle, WA 98102",
+      "json_ld_types": ["RealEstateListing", "House", "PostalAddress", "ImageObject", "QuantitativeValue", "Product", "Offer"],
+      "visible_price": 385000,
+      "unit": "#506",
+      "note": "1 bed / 1 bath - not a price comp for our 2/2"
+    },
+    "compass.com": {
+      "fetchable": true,
+      "http_status": 200,
+      "title": "1550 Eastlake Ave, Unit 203, Seattle, WA 98102 | MLS #2227901",
+      "json_ld_types": ["SingleFamilyResidence", "RealEstateListing", "Product", "Brand", "Place", "PostalAddress", "ImageObject", "Offer", "Organization", "ContactPoint", "FloorPlan", "BreadcrumbList", "ListItem", "Thing"],
+      "unit": "#203",
+      "note": "page reads as off-market yet still outranks us"
+    },
+    "seattlecondosandlofts.com": {
+      "fetchable": true,
+      "http_status": 200,
+      "title": "Condo Directory",
+      "json_ld_types": ["BreadcrumbList", "ListItem", "Organization", "ContactPoint", "WebPage", "WebSite"],
+      "riva_specific_content": false
+    },
+    "houseboatsofseattle.com": {
+      "fetchable": true,
+      "http_status": 200,
+      "title": "Eastlake - Houseboats of Seattle (And Floating Homes!)",
+      "json_ld_types": ["WebPage", "ReadAction", "ImageObject", "BreadcrumbList", "ListItem", "WebSite", "SearchAction", "EntryPoint", "PropertyValueSpecification"],
+      "riva_specific_content": false
+    }
+  },
+  "pagespeed": {
+    "status": "unavailable",
+    "http_status": 429,
+    "reason": "public daily quota exceeded - no LCP/INP/CLS captured, field never yet baselined"
+  }
+}
