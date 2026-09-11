@@ -1,5 +1,12 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "fetch_hints": {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+    "note": "Target site and several competitors return CloudFront/Cloudflare 403 to default curl/tool user-agents. Always send the browser UA above. A default-UA 403 is expected and is not a finding. WebFetch returns 405 against the target domain; use curl.",
+    "pagespeed_api": "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=<urlencoded>&strategy=mobile&category=performance",
+    "pagespeed_note": "pagespeed.web.dev is a JS shell and returns no data to a fetcher. Use the REST API above, one attempt only. 429 means public quota exhausted; record unavailable and move on."
+  },
+  "indexation_query": "site:eastlakeview503.relahq.com",
   "tracked_queries": [
     "1550 Eastlake Ave E #503",
     "Riva Condos #503 Seattle",
@@ -16,10 +23,47 @@
     {"domain": "homes.com", "note": "bot-blocked", "first_seen": "2026-09-10"}
   ],
   "deep_fetch": [
-    {"domain": "seattlecondosandlofts.com", "type": "agent blog (WordPress+Yoast)", "first_seen": "2026-09-10"},
-    {"domain": "houseboatsofseattle.com", "type": "Sotheby's affiliate", "first_seen": "2026-09-10"},
-    {"domain": "rsir.com", "type": "Realogics Sotheby's", "first_seen": "2026-09-10"},
-    {"domain": "windermere.com", "type": "brokerage", "first_seen": "2026-09-10"},
-    {"domain": "compass.com", "type": "brokerage", "first_seen": "2026-09-10"}
+    {
+      "domain": "windermere.com",
+      "type": "brokerage",
+      "url": "https://www.windermere.com/listing/WA/Seattle/1550-Eastlake-Avenue-E-506-98102/197478285",
+      "fetchable": true,
+      "note": "same building, unit 506",
+      "first_seen": "2026-09-10"
+    },
+    {
+      "domain": "compass.com",
+      "type": "brokerage",
+      "url": "https://www.compass.com/listing/1550-eastlake-avenue-east-unit-203-seattle-wa-98102/1561675205357517033/",
+      "fetchable": true,
+      "note": "same building, unit 203",
+      "first_seen": "2026-09-10"
+    },
+    {
+      "domain": "seattlecondosandlofts.com",
+      "type": "agent blog (WordPress+Yoast)",
+      "url": "https://seattlecondosandlofts.com/list-of-condoslofts",
+      "fetchable": true,
+      "note": "directory page; benchmark for how an agent site structures condo content",
+      "first_seen": "2026-09-10"
+    },
+    {
+      "domain": "houseboatsofseattle.com",
+      "type": "Sotheby's affiliate",
+      "url": "https://houseboatsofseattle.com/wa/seattle/eastlake/",
+      "fetchable": true,
+      "note": "Eastlake neighbourhood page",
+      "first_seen": "2026-09-10"
+    },
+    {
+      "domain": "rsir.com",
+      "type": "Realogics Sotheby's",
+      "url": "https://www.rsir.com/homes-for-sale/1550-eastlake-avenue-e-201-seattle-wa-98102-2402758-1785003/",
+      "fetchable": false,
+      "blocked_reason": "Cloudflare JS challenge (cf-mitigated: challenge) - not fetchable by curl with any UA",
+      "blocked_confirmed": "2026-09-11",
+      "note": "SKIP. Do not retry. Record as blocked.",
+      "first_seen": "2026-09-10"
+    }
   ]
 }
