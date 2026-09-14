@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "updated": "2026-09-11",
-  "note": "Baseline. Only Tier 2 writes this file. Field names mirror state/observations-<date>.json so the weekly diff is mechanical. First populated 2026-09-11 from Tier 1 evidence with status=complete.",
-  "source_evidence": "reports/EVIDENCE-2026-09-11.md",
-  "source_observations": "state/observations-2026-09-11.json",
+  "updated": "2026-09-14",
+  "note": "Baseline. Only Tier 2 writes this file. Field names mirror state/observations-<date>.json so the weekly diff is mechanical. First populated 2026-09-11; updated 2026-09-14 from Tier 1 evidence with status=complete. No live-site field changed between 2026-09-11 and 2026-09-14.",
+  "source_evidence": "reports/EVIDENCE-2026-09-14.md",
+  "source_observations": "state/observations-2026-09-14.json",
   "first_run": "2026-09-11",
   "listing_status": "active",
-  "indexed": "no",
+  "indexed": "inconclusive",
   "listing": {
     "url": "https://eastlakeview503.relahq.com/",
     "http_status": 200,
@@ -18,11 +18,14 @@
     "year_built": 1997
   },
   "indexation": {
-    "query": "site:eastlakeview503.relahq.com",
-    "pages_returned_from_domain": 0,
     "x_robots_tag_header": null,
     "robots_meta": null,
-    "note": "Zero pages returned for the site: query. Tier 2 verified live 2026-09-11 11:54 UTC that no X-Robots-Tag header and no robots meta tag are present, so nothing on the page blocks indexing. GSC reported 'indexed' on 2026-09-10 - contradiction unresolved, owner to re-check in GSC."
+    "canonical_self_referencing": true,
+    "http_status_clean": true,
+    "indexability_note": "Nothing on the page blocks indexing: HTTP 200, no X-Robots-Tag response header, no <meta name=robots>, canonical (both <link> tag and HTTP Link header) self-references https://eastlakeview503.relahq.com.",
+    "verbatim_phrase_query": "\"Top-floor 2 bed, 2 bath condo for sale at Riva Condominium\"",
+    "verbatim_phrase_result": "eastlakeview503.relahq.com did not appear; WebSearch returned unrelated 'Riva' condo results from Fort Lauderdale FL, Vancouver, and Pensacola FL",
+    "indexation_signal_note": "indexed:inconclusive. The prior 'no' (recorded 2026-09-11 from a site: query returning zero results) is RETIRED: Tier 1 demonstrated on 2026-09-14 that the available search tooling honours neither site: nor exact-phrase matching against this domain, so those queries are evidence about the tool, not the index. Nothing on the page blocks indexing, and the owner's own GSC reported 'indexed' on 2026-09-10. Only Google Search Console can settle this; no GSC access from either tier."
   },
   "meta": {
     "title": "Riva Condos #503, 1550 Eastlake Ave E – Seattle Condo for Sale",
@@ -71,7 +74,10 @@
     "block_2_client_injected": {
       "@type": "ApartmentComplex",
       "name": "Riva Condominium",
-      "alternateName": ["Riva Condos", "Riva at Lake Union"],
+      "alternateName": [
+        "Riva Condos",
+        "Riva at Lake Union"
+      ],
       "yearBuilt": "1997",
       "numberOfFloors": 5,
       "amenityFeature_names": [
@@ -98,14 +104,19 @@
     "loading_lazy_count": 0
   },
   "analytics": {
-    "gtag_token_occurrences": 10,
-    "ga_ids_found": ["G-1RVXDXERNN", "G-95JF0FLSZH"],
+    "gtag_token_occurrences": 6,
+    "ga_ids_found": [
+      "G-1RVXDXERNN",
+      "G-95JF0FLSZH"
+    ],
     "rela_native_ga_id_present": true,
-    "custom_ga_id_present": true
+    "custom_ga_id_present": true,
+    "gtag_token_occurrences_note": "Raw grep count only; the match pattern changed between the 2026-09-11 run (10) and the 2026-09-14 run (6) with no change to the page. Diff aid, not a metric — the load-bearing fields are ga_ids_found and the two *_present booleans."
   },
   "llms_txt": {
     "http_status": 200,
-    "is_real_llms_content": false
+    "is_real_llms_content": false,
+    "note": "SPA fallback, same page as /"
   },
   "sitemap_xml": {
     "http_status": 404
@@ -117,51 +128,137 @@
   },
   "inbound_links": {
     "external_links_known": 0,
-    "note": "No external links pointing to the page. Single biggest ranking lever. Restate every week until evidence shows links exist."
+    "note": "No external links pointing to the page. Single biggest ranking lever. Restate every week until evidence shows links exist. Unchanged 2026-09-10 through 2026-09-14."
   },
   "tracked_queries": [
     {
       "query": "1550 Eastlake Ave E #503",
-      "top_5_domains": ["redfin.com", "redfin.com", "zillow.com", "redfin.com", "loopnet.com"],
-      "all_domains_returned": ["redfin.com", "redfin.com", "zillow.com", "redfin.com", "loopnet.com", "apartments.com", "apartments.com", "movoto.com", "westlakeassociates.com"],
+      "top_5_domains": [
+        "redfin.com",
+        "redfin.com",
+        "zillow.com",
+        "redfin.com",
+        "loopnet.com"
+      ],
+      "all_domains_returned": [
+        "redfin.com",
+        "redfin.com",
+        "zillow.com",
+        "redfin.com",
+        "loopnet.com",
+        "apartments.com",
+        "apartments.com",
+        "movoto.com",
+        "westlakeassociates.com"
+      ],
       "target_present": false
     },
     {
       "query": "Riva Condos #503 Seattle",
-      "top_5_domains": ["apartments.com", "redfin.com", "apartmentfinder.com", "apartments.com", "wicklundre.com"],
-      "all_domains_returned": ["apartments.com", "redfin.com", "apartmentfinder.com", "apartments.com", "wicklundre.com", "facebook.com", "yelp.com", "southernresorts.com", "urbnlivn.com", "dwellresidential.com"],
+      "top_5_domains": [
+        "apartments.com",
+        "redfin.com",
+        "apartmentfinder.com",
+        "apartmentfinder.com",
+        "yelp.com"
+      ],
+      "all_domains_returned": [
+        "apartments.com",
+        "redfin.com",
+        "apartmentfinder.com",
+        "apartmentfinder.com",
+        "yelp.com",
+        "urbnlivn.com",
+        "wicklundre.com",
+        "richmond-condos.com",
+        "dwellresidential.com"
+      ],
       "target_present": false
     },
     {
       "query": "Riva Condominium Seattle for sale",
-      "top_5_domains": ["wicklundre.com", "wicklundre.com", "apartments.com", "redfin.com", "yelp.com"],
-      "all_domains_returned": ["wicklundre.com", "wicklundre.com", "apartments.com", "redfin.com", "yelp.com", "zillow.com", "estately.com", "coldwellbankerhomes.com", "homes.com", "livabl.com"],
+      "top_5_domains": [
+        "wicklundre.com",
+        "wicklundre.com",
+        "apartments.com",
+        "redfin.com",
+        "yelp.com"
+      ],
+      "all_domains_returned": [
+        "wicklundre.com",
+        "wicklundre.com",
+        "apartments.com",
+        "redfin.com",
+        "yelp.com",
+        "urbnlivn.com",
+        "zillow.com",
+        "estately.com",
+        "myseattlehomesearch.com"
+      ],
       "target_present": false
     },
     {
       "query": "Eastlake condo for sale Lake Union view",
-      "top_5_domains": ["homes.com", "redfin.com", "redfin.com", "zillow.com", "redfin.com"],
-      "all_domains_returned": ["homes.com", "redfin.com", "redfin.com", "zillow.com", "redfin.com", "wicklundre.com", "seattlearearealestateteam.com", "homes77.com", "expedia.com"],
+      "top_5_domains": [
+        "homes.com",
+        "redfin.com",
+        "redfin.com",
+        "zillow.com",
+        "wicklundre.com"
+      ],
+      "all_domains_returned": [
+        "homes.com",
+        "redfin.com",
+        "redfin.com",
+        "zillow.com",
+        "wicklundre.com",
+        "seattlearearealestateteam.com",
+        "homes77.com",
+        "expedia.com"
+      ],
       "target_present": false
     },
     {
       "query": "eastlakeview503",
-      "top_5_domains": ["wikipedia.org", "wikipedia.org", "x.com", "eastlakeview.org", "eastlakeview.com"],
-      "all_domains_returned": ["wikipedia.org", "wikipedia.org", "x.com", "eastlakeview.org", "eastlakeview.com", "bjbproperties.com"],
+      "top_5_domains": [
+        "wikipedia.org",
+        "wikipedia.org",
+        "x.com",
+        "eastlakeview.org",
+        "eastlakeview.com"
+      ],
+      "all_domains_returned": [
+        "wikipedia.org",
+        "wikipedia.org",
+        "x.com",
+        "eastlakeview.org",
+        "eastlakeview.com",
+        "bjbproperties.com"
+      ],
       "target_present": false
     }
   ],
   "competitors": {
     "rsir.com": {
       "fetchable": false,
-      "http_status": 403,
-      "blocked_reason": "Cloudflare JS challenge (cf-mitigated: challenge)"
+      "http_status": null,
+      "blocked_reason": "Cloudflare JS challenge (cf-mitigated: challenge)",
+      "retried": false
     },
     "windermere.com": {
       "fetchable": true,
       "http_status": 200,
       "title": "MLS#2287238: 1550 Eastlake Avenue E 506, Seattle, WA 98102",
-      "json_ld_types": ["RealEstateListing", "House", "PostalAddress", "ImageObject", "QuantitativeValue", "Product", "Offer"],
+      "meta_description_present": true,
+      "json_ld_types": [
+        "RealEstateListing",
+        "House",
+        "PostalAddress",
+        "ImageObject",
+        "QuantitativeValue",
+        "Product",
+        "Offer"
+      ],
       "visible_price": 385000,
       "unit": "#506",
       "note": "1 bed / 1 bath - not a price comp for our 2/2"
@@ -169,29 +266,71 @@
     "compass.com": {
       "fetchable": true,
       "http_status": 200,
+      "final_url": "https://www.compass.com/homedetails/1550-Eastlake-Ave-E-Unit-203-Seattle-WA-98102/1561675205357517033_lid/",
       "title": "1550 Eastlake Ave, Unit 203, Seattle, WA 98102 | MLS #2227901",
-      "json_ld_types": ["SingleFamilyResidence", "RealEstateListing", "Product", "Brand", "Place", "PostalAddress", "ImageObject", "Offer", "Organization", "ContactPoint", "FloorPlan", "BreadcrumbList", "ListItem", "Thing"],
+      "meta_description": "1550 Eastlake Ave, Unit 203, Seattle, WA 98102 is a property not currently listed. This is a 2-bed, 2-bath property.",
+      "json_ld_types": [
+        "Brand",
+        "BreadcrumbList",
+        "ContactPoint",
+        "FloorPlan",
+        "ImageObject",
+        "ListItem",
+        "Offer",
+        "Organization",
+        "Place",
+        "PostalAddress",
+        "Thing"
+      ],
       "unit": "#203",
-      "note": "page reads as off-market yet still outranks us"
+      "note": "Off-market page that still outranks us. 2026-09-14: URL now redirects /listing/ -> /homedetails/ and the listing schema (RealEstateListing, SingleFamilyResidence, Product) was dropped, leaving generic page types only."
     },
     "seattlecondosandlofts.com": {
       "fetchable": true,
       "http_status": 200,
       "title": "Condo Directory",
-      "json_ld_types": ["BreadcrumbList", "ListItem", "Organization", "ContactPoint", "WebPage", "WebSite"],
+      "meta_description_present": true,
+      "json_ld_types": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "ContactPoint",
+        "WebPage",
+        "WebSite"
+      ],
       "riva_specific_content": false
     },
     "houseboatsofseattle.com": {
       "fetchable": true,
       "http_status": 200,
       "title": "Eastlake - Houseboats of Seattle (And Floating Homes!)",
-      "json_ld_types": ["WebPage", "ReadAction", "ImageObject", "BreadcrumbList", "ListItem", "WebSite", "SearchAction", "EntryPoint", "PropertyValueSpecification"],
+      "meta_description_present": false,
+      "json_ld_types": [
+        "WebPage",
+        "ReadAction",
+        "ImageObject",
+        "BreadcrumbList",
+        "ListItem",
+        "WebSite",
+        "SearchAction",
+        "EntryPoint",
+        "PropertyValueSpecification"
+      ],
       "riva_specific_content": false
     }
   },
   "pagespeed": {
     "status": "unavailable",
     "http_status": 429,
-    "reason": "public daily quota exceeded - no LCP/INP/CLS captured, field never yet baselined"
+    "reason": "quota exceeded (pagespeedonline.googleapis.com daily quota)",
+    "retried": false,
+    "note": "Never baselined: 429 on both 2026-09-11 and 2026-09-14. No LCP/INP/CLS has ever been captured."
+  },
+  "indexable": "yes",
+  "action_queue_verification": {
+    "gsc_indexing_check": "CANNOT VERIFY FROM PAGE (no GSC access this run; see indexation notes)",
+    "place_first_inbound_links": "CANNOT VERIFY FROM PAGE (no external-link/backlink data source available to Tier 1)",
+    "chase_rela_on_sitemap_and_robots": "NOT DONE (/sitemap.xml still 404, robots.txt still has Crawl-delay: 10 with no Sitemap: line)",
+    "extend_custom_script_jsonld_with_full_realestateagent_node": "NOT DONE (provider node on Apartment still name+email only; no phone/brokerage/headshot; two JSON-LD nodes still unlinked)"
   }
 }
