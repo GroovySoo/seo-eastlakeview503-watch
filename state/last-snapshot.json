@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "updated": "2026-09-14",
-  "note": "Baseline. Only Tier 2 writes this file. Field names mirror state/observations-<date>.json so the weekly diff is mechanical. First populated 2026-09-11; updated 2026-09-14 from Tier 1 evidence with status=complete. No live-site field changed between 2026-09-11 and 2026-09-14.",
-  "source_evidence": "reports/EVIDENCE-2026-09-14.md",
-  "source_observations": "state/observations-2026-09-14.json",
+  "updated": "2026-09-16",
+  "note": "Baseline. Only Tier 2 writes this file. Field names mirror state/observations-<date>.json so the weekly diff is mechanical. First populated 2026-09-11; updated 2026-09-16 from Tier 1 evidence with status=complete. No live-site field changed between 2026-09-14 and 2026-09-16 — third consecutive stable week. The only movement was off-page: one duplicate apartmentfinder.com result collapsed on the 'Riva Condos #503 Seattle' query, shifting yelp.com and urbnlivn.com up one place each. No new domain entered the tracked set.",
+  "source_evidence": "reports/EVIDENCE-2026-09-16.md",
+  "source_observations": "state/observations-2026-09-16.json",
   "first_run": "2026-09-11",
   "listing_status": "active",
   "indexed": "inconclusive",
@@ -22,10 +22,10 @@
     "robots_meta": null,
     "canonical_self_referencing": true,
     "http_status_clean": true,
-    "indexability_note": "Nothing on the page blocks indexing: HTTP 200, no X-Robots-Tag response header, no <meta name=robots>, canonical (both <link> tag and HTTP Link header) self-references https://eastlakeview503.relahq.com.",
+    "indexability_note": "Nothing on the page blocks indexing: HTTP 200, no X-Robots-Tag response header (checked on both the page response and the /llms.txt response), no <meta name=robots>, canonical (both <link> tag and HTTP Link header) self-references https://eastlakeview503.relahq.com.",
     "verbatim_phrase_query": "\"Top-floor 2 bed, 2 bath condo for sale at Riva Condominium\"",
-    "verbatim_phrase_result": "eastlakeview503.relahq.com did not appear; WebSearch returned unrelated 'Riva' condo results from Fort Lauderdale FL, Vancouver, and Pensacola FL",
-    "indexation_signal_note": "indexed:inconclusive. The prior 'no' (recorded 2026-09-11 from a site: query returning zero results) is RETIRED: Tier 1 demonstrated on 2026-09-14 that the available search tooling honours neither site: nor exact-phrase matching against this domain, so those queries are evidence about the tool, not the index. Nothing on the page blocks indexing, and the owner's own GSC reported 'indexed' on 2026-09-10. Only Google Search Console can settle this; no GSC access from either tier."
+    "verbatim_phrase_result": "eastlakeview503.relahq.com did not appear; WebSearch returned unrelated 'Riva' condo results from Fort Lauderdale FL and Issaquah WA",
+    "indexation_signal_note": "indexed:inconclusive, not no. Same tool limitation documented 2026-09-11 and 2026-09-14: WebSearch does not reliably do phrase-matching or site-scoping for this domain. Since indexability shows nothing blocking indexing, the honest read is that the search tool cannot see Google's index, not that the page is absent from it. Only GSC can settle this; no GSC access this run."
   },
   "meta": {
     "title": "Riva Condos #503, 1550 Eastlake Ave E – Seattle Condo for Sale",
@@ -104,14 +104,14 @@
     "loading_lazy_count": 0
   },
   "analytics": {
-    "gtag_token_occurrences": 6,
+    "gtag_token_occurrences": 10,
     "ga_ids_found": [
       "G-1RVXDXERNN",
       "G-95JF0FLSZH"
     ],
     "rela_native_ga_id_present": true,
     "custom_ga_id_present": true,
-    "gtag_token_occurrences_note": "Raw grep count only; the match pattern changed between the 2026-09-11 run (10) and the 2026-09-14 run (6) with no change to the page. Diff aid, not a metric — the load-bearing fields are ga_ids_found and the two *_present booleans."
+    "gtag_token_occurrences_note": "Raw grep count only, confirmed noise: the same unchanged page measured 10 (2026-09-11), 6 (2026-09-14) and 10 (2026-09-16) as Tier 1's match pattern varied. Diff aid, not a metric — the load-bearing fields are ga_ids_found and the two *_present booleans."
   },
   "llms_txt": {
     "http_status": 200,
@@ -128,7 +128,7 @@
   },
   "inbound_links": {
     "external_links_known": 0,
-    "note": "No external links pointing to the page. Single biggest ranking lever. Restate every week until evidence shows links exist. Unchanged 2026-09-10 through 2026-09-14."
+    "note": "No external links pointing to the page. Single biggest ranking lever. Restate every week until evidence shows links exist. Unchanged 2026-09-10 through 2026-09-16."
   },
   "tracked_queries": [
     {
@@ -159,13 +159,12 @@
         "apartments.com",
         "redfin.com",
         "apartmentfinder.com",
-        "apartmentfinder.com",
-        "yelp.com"
+        "yelp.com",
+        "urbnlivn.com"
       ],
       "all_domains_returned": [
         "apartments.com",
         "redfin.com",
-        "apartmentfinder.com",
         "apartmentfinder.com",
         "yelp.com",
         "urbnlivn.com",
@@ -173,7 +172,8 @@
         "richmond-condos.com",
         "dwellresidential.com"
       ],
-      "target_present": false
+      "target_present": false,
+      "note": "Recorded from observations-2026-09-16.json. Tier 1's evidence MARKDOWN table for this row lists apartmentfinder.com twice (matching 2026-09-14) while its JSON lists it once; the JSON is used here because the weekly diff runs against it. Net effect of the discrepancy: yelp.com and urbnlivn.com each appear one place higher than last week. urbnlivn.com was already returned at position 6 on 2026-09-14, so this is NOT a new domain entering the set."
     },
     {
       "query": "Riva Condominium Seattle for sale",
@@ -283,7 +283,7 @@
         "Thing"
       ],
       "unit": "#203",
-      "note": "Off-market page that still outranks us. 2026-09-14: URL now redirects /listing/ -> /homedetails/ and the listing schema (RealEstateListing, SingleFamilyResidence, Product) was dropped, leaving generic page types only."
+      "note": "Off-market page that still outranks us. Unchanged from 2026-09-14 (already redirected /listing/ -> /homedetails/)."
     },
     "seattlecondosandlofts.com": {
       "fetchable": true,
@@ -324,13 +324,18 @@
     "http_status": 429,
     "reason": "quota exceeded (pagespeedonline.googleapis.com daily quota)",
     "retried": false,
-    "note": "Never baselined: 429 on both 2026-09-11 and 2026-09-14. No LCP/INP/CLS has ever been captured."
+    "note": "Never baselined: 429 on 2026-09-11, 2026-09-14 and 2026-09-16. No LCP/INP/CLS has ever been captured. CLOSED 2026-09-16 as unavailable by design per the pre-agreed third-429 rule; removed from ACTION-QUEUE.md. Revisiting would need a real PageSpeed API key."
   },
   "indexable": "yes",
   "action_queue_verification": {
     "gsc_indexing_check": "CANNOT VERIFY FROM PAGE (no GSC access this run; see indexation notes)",
     "place_first_inbound_links": "CANNOT VERIFY FROM PAGE (no external-link/backlink data source available to Tier 1)",
     "chase_rela_on_sitemap_and_robots": "NOT DONE (/sitemap.xml still 404, robots.txt still has Crawl-delay: 10 with no Sitemap: line)",
-    "extend_custom_script_jsonld_with_full_realestateagent_node": "NOT DONE (provider node on Apartment still name+email only; no phone/brokerage/headshot; two JSON-LD nodes still unlinked)"
+    "extend_custom_script_jsonld_with_full_realestateagent_node": "NOT DONE (provider node on Apartment still name+email only; no phone/brokerage/headshot; two JSON-LD nodes still unlinked)",
+    "link_the_two_json_ld_nodes": "NOT DONE (containedInPlace absent on block 1; block 2 has no back-reference)",
+    "baseline_page_speed": "NOT DONE (third consecutive 429; no data ever captured)"
+  },
+  "serp_anomaly_unverified": {
+    "note": "WebSearch's generated summary for query '1550 Eastlake Ave E #503' stated the Redfin listing is 'currently listed at $698,000', which does not match our own page price ($649,888 / state/last-snapshot.json). redfin.com is on the bot-blocked serp_position_only list, so this run did not independently fetch redfin.com to verify. Recorded as an unverified WebSearch-summary artifact, not a confirmed fact about a third-party site, and does not affect this run's listing_status (which is based only on our own page's offers data)."
   }
 }
