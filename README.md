@@ -1,21 +1,31 @@
 # SEO Watch — eastlakeview503.relahq.com
 
-Two-tier automated SEO monitoring for the **Riva Condominium #503** listing microsite
-(`https://eastlakeview503.relahq.com/`, Rela property ID 257763116, 1550 Eastlake Ave E,
+Three-tier automated SEO monitoring and implementation for the **Riva Condominium #503** listing
+microsite (`https://eastlakeview503.relahq.com/`, Rela property ID 257763116, 1550 Eastlake Ave E,
 Seattle WA 98102, $649,888, MLS# 2556157, built 1997).
 
 ## Agents
 
-| Tier | Model | When | Job |
+| Tier | Runs where | When | Job |
 |---|---|---|---|
-| **1 — Evidence gatherer** | Sonnet | Mon 08:00 UTC | Fetch the live page, check indexation, run tracked SERP queries, benchmark competitors, verify open action items. Writes `reports/EVIDENCE-<date>.md` + `state/observations-<date>.json`. Records facts only — never recommendations. |
-| **2 — Strategist** | Opus | Mon 10:00 UTC | Diff observations against the baseline, decide what matters, write `reports/STRATEGY-<date>.md`, rewrite `ACTION-QUEUE.md`, update the baseline, post the memo to Slack `#real-estate-seo`. |
+| **1 — Evidence gatherer** | Cloud routine (Sonnet) | Mon 08:00 UTC | Fetch the live page, check indexability, run tracked SERP queries, benchmark competitors, verify open action items. Writes `reports/EVIDENCE-<date>.md` + `state/observations-<date>.json`. Records facts only — never recommendations. |
+| **2 — Strategist** | Cloud routine (Opus) | Mon 10:00 UTC | Diff observations against the baseline, decide what matters, write `reports/STRATEGY-<date>.md`, rewrite `ACTION-QUEUE.md`, update the baseline, post the memo to Slack `#all-seo-eastlake`. |
+| **3 — Implementer** | Local scheduled task on the owner's PC, driving Chrome | Mon 11:05 local | Take `## Do now` from `ACTION-QUEUE.md`, carry the doable items out in the owner's logged-in Chrome (Rela editor, Search Console, Analytics), stop for **one batched approval** before anything is saved, verify each change live, write `reports/IMPLEMENTATION-<date>.md`, post a summary to Slack. |
 
-The two tiers are independent scheduled routines — Tier 1 does not trigger Tier 2. The 2-hour
-gap is the coupling. Tier 2 handles a missing or failed Tier 1 run explicitly (see the gate below).
+The tiers are independent scheduled jobs; the gaps between them are the coupling. Tier 2 handles a
+missing or failed Tier 1 run explicitly (see the gate below); Tier 3 stops if there is no recent
+STRATEGY file.
 
-Neither agent has credentials for Rela, Google Search Console, or Google Analytics. They observe,
-analyse, and write executable steps into `ACTION-QUEUE.md` for a human browser session to run.
+Tiers 1 and 2 run in the cloud with no browser and no logins. Tier 3 is the only tier that can change
+anything live, and only because it runs on the owner's own machine with their existing sessions. It
+never types passwords, creates accounts, or posts publicly as the owner — those go back to the owner
+as plain-language steps in the implementation report.
+
+### Why Tier 3 doesn't mark its own work done
+
+Tier 3 writes only `reports/IMPLEMENTATION-*.md`. It never edits `ACTION-QUEUE.md`. An item leaves the
+queue only when **Tier 1 observes the change on the live page** the following week and Tier 2 closes it.
+The agent that made a change is never the one that certifies it worked.
 
 ## The evidence contract
 
@@ -50,9 +60,10 @@ The gate Tier 2 applies:
 
 - Only **Tier 1** writes `reports/EVIDENCE-*.md` and `state/observations-*.json`.
 - Only **Tier 2** writes `reports/STRATEGY-*.md`, `ACTION-QUEUE.md`, and `state/last-snapshot.json`.
+- Only **Tier 3** writes `reports/IMPLEMENTATION-*.md`, and it writes nothing else.
 - Tier 1 must never touch `last-snapshot.json` — an agent that writes its own baseline can drift
   against itself without ever detecting a change.
-- Both push directly to `main`. Neither creates branches or pull requests.
+- All tiers push directly to `main`. None creates branches or pull requests.
 
 ## Layout
 
