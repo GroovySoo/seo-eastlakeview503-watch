@@ -47,3 +47,28 @@ this run even where the click itself would have been safe (see item 2).
 
 None. No web page, file, or search result content this run attempted to issue instructions outside
 this task's scope.
+
+## Addendum (same day, after initial report/Slack post)
+
+The owner replied in this session with the previously-missing information for the
+`RealEstateAgent` JSON-LD item:
+
+- Brokerage: Coldwell Banker Danforth (Everett)
+- Agent bio page: `https://omar-senghore.cbdanforth.com/`
+- Agent name as given by owner: "Omar Senghore" (site's current `provider.name` reads "Omar
+  Senghor" — spelling to reconcile before writing into structured data)
+- **Phone: 206-683-5030**
+
+This fully unblocks the "Extend Custom-Script JSON-LD with a full `RealEstateAgent` node" backlog
+item — nothing further is needed from the owner. It was **not implemented this run**: a second
+attempt to reach the Rela editor (`eastlakeview503.relahq.com` and `rela.com`) after receiving this
+info was refused with the same "Navigation to this domain is not allowed" error as item 3 above.
+This is a Claude-in-Chrome extension site-permission restriction, not a login or Rela-platform issue,
+and it blocks both this item and item 3 (photo alt text). It needs to be resolved on the owner's
+machine (allow relahq.com/rela.com in the extension's site permissions) before either can be done by
+a browser-driving run — Tier 1/2 evidence gathering (via curl, not a browser session) is unaffected.
+
+Once Rela access is available, the ready-to-use data for the `RealEstateAgent` node is: name
+("Omar Senghore" — pending spelling confirmation against the live "Omar Senghor"), phone
+206-683-5030, brokerage "Coldwell Banker Danforth (Everett)", email `change-re@outlook.com`
+(already on the page), and bio/profile URL `https://omar-senghore.cbdanforth.com/`.
