@@ -2,28 +2,28 @@
 
 Executable to-do. Tier 2 rewrites this file each week. Top section = do now.
 
-> **Out-of-band rewrite, 2026-09-18.** This file is normally written only by Tier 2. It was rewritten
-> here by a human-directed senior-SEO audit pass (see `reports/AUDIT-2026-09-18.md`) because three of
-> its items were **factually stale** — they had been answered or closed by Tier 3 runs on 2026-09-16
-> and 2026-09-18 whose findings never reached the queue (Tier 1 cannot observe them on the page, so
-> Tier 2 never learned them). Tier 2 should adopt this state on its next run, not revert it.
+> **Rewritten by Tier 2, 2026-09-18** (regular weekly pass), adopting the out-of-band audit state from
+> earlier the same day (`reports/AUDIT-2026-09-18.md`) rather than reverting it, and folding in the
+> Tier 3 findings from `reports/IMPLEMENTATION-2026-09-18.md` — the Search Console indexation
+> reading, the confirmed absence of any alt-text field in the Rela editor, and the now-live
+> `RealEstateAgent` block. Those are now also recorded in `state/last-snapshot.json`.
 
 ## Do now
 
 _(week of 2026-09-18 — the on-page work is finished. Everything below is off-page.)_
 
-**The honest position:** the page is in good shape and has been byte-for-byte stable for three weeks.
-It ranks for nothing because **nothing on the internet links to it** — verified again 2026-09-18: a
-literal search for `"eastlakeview503.relahq.com"` returns exactly one result on the entire web, and
-that result is this monitoring repo. More on-page polish will not change that. The three items below
-are the whole job now.
+**The honest position, measured again this week:** a literal web search for
+`"eastlakeview503.relahq.com"` returns exactly one result on the entire internet, and that result is
+this monitoring repository. Third-party mentions: **0**. The page itself is in good shape and has
+been stable for four weeks. It ranks for nothing because nothing links to it. More on-page polish
+will not change that.
 
-### 1. Put the listing on your own Coldwell Banker Danforth page (5 minutes) — **highest value item on this list**
+### 1. Put the listing on your own Coldwell Banker Danforth page (5 minutes) — **highest value item on this list** *(carried 1 week)*
 
 `https://omar-senghore.cbdanforth.com/` is live, it is yours, it already has a **"Featured Listing"**
-section, and it mentions this property **zero times**. It is a real-estate-brand domain, it is
-topically perfect, it is free, and it is almost certainly a followed link. This is the single best
-inbound link available to this listing and it has never been asked for before today.
+section, and re-checked on 2026-09-18 it mentions this property **zero times**. It is a real-estate
+brand domain, topically perfect, free, and almost certainly a followed link. This is the single best
+inbound link available to this listing.
 
 Log into whatever back-end manages that bio page (Coldwell Banker Danforth agent portal / Moxi) and
 either set 1550 Eastlake Ave E #503 as the featured listing, or add this to the page body:
@@ -40,7 +40,7 @@ Top-floor 2 bed, 2 bath condo for sale at Riva Condominium in Seattle's Eastlake
 
 Reply in Slack with "bio page done" so Tier 1 can confirm it next run.
 
-### 2. Send two emails — both fully drafted, nothing to write (10 minutes)
+### 2. Send two emails — both fully drafted, nothing to write (10 minutes) *(carried 1 week)*
 
 **(a) To Coldwell Banker Danforth marketing / your managing broker.** Brokerage sites routinely link
 an agent's single-property site. Copy-paste:
@@ -57,10 +57,10 @@ an agent's single-property site. Copy-paste:
 > Thanks,
 > Omar
 
-**(b) To urbnlivn.com** (Seattle condo blog — it already ranks on page 1 for "Riva Condos #503
-Seattle" and "Riva Condominium Seattle for sale", which makes an editorial mention from them the
-most valuable non-owned link realistically obtainable here). Use their site contact form or tips
-address:
+**(b) To urbnlivn.com** (Seattle condo blog). Still our best non-owned target: it ranks on page 1 for
+"Riva Condominium Seattle for sale". Note it dropped out of the results for "Riva Condos #503
+Seattle" this week — slightly less valuable than last week, still the best available. Use their site
+contact form or tips address:
 
 > Subject: Riva Condominium (1550 Eastlake) — top-floor unit just listed
 >
@@ -78,66 +78,87 @@ address:
 
 Reply in Slack with "brokerage emailed" / "urbnlivn emailed".
 
-### 3. Settle the name spelling (30 seconds) — **new, and it is a live inconsistency**
+### 3. Settle the name spelling (30 seconds) *(carried 1 week)*
 
-Verified on the live page 2026-09-18: it now carries **both** spellings at once — `Omar Senghor`
-(×2, Rela's native `Apartment.provider.name` and the "Presented By" widget) and `Omar Senghore` (×1,
-in the `RealEstateAgent` JSON-LD block added on 2026-09-18). Your Coldwell Banker bio page says
-**Senghore**. Two spellings of the agent's name in the structured data of one page is a genuine
-entity-consistency problem — it splits the signal that ties you, the brokerage and the listing
-together.
+Re-verified on the live page 2026-09-18: it carries **both** spellings at once — `Omar Senghor` (×2,
+Rela's native listing data and the "Presented By" widget) and `Omar Senghore` (×1, in the
+`RealEstateAgent` block added 2026-09-18). Your Coldwell Banker bio page says **Senghore**. Two
+spellings of the agent's name in one page's structured data splits the signal that ties you, the
+brokerage and the listing together.
 
-Just reply in Slack: **"Senghor"** or **"Senghore"**. Whichever you say becomes the one spelling
-everywhere, and fixing the other two places is a five-minute Tier 3 / Rela edit.
+Reply in Slack with one word: **"Senghor"** or **"Senghore"**. Whichever you say becomes the one
+spelling everywhere; fixing the other two places is a five-minute Tier 3 / Rela edit.
+
+### 4. Small verification task — report the Search Console links number (under a minute)
+
+Search Console → **Links** → **"Top linking sites"** → paste the total external-link count (and any
+domains listed) into Slack. This is the only authoritative measurement of the one number this whole
+system is built around; right now it is *asserted* as zero every week and has never been *verified*.
+Monthly ask — first time it has been raised.
 
 ## Next up (not this week)
 
-- **Link the JSON-LD nodes (`containedInPlace`)** *(carried 3 weeks)*. Confirmed still absent on the
-  live page 2026-09-18 (`containedInPlace` appears 0 times). The unit node (`Apartment`) and the
-  building node (`ApartmentComplex`) still are not connected, so Google is not told #503 sits inside
-  Riva Condominium. **This is the only remaining item inside Tier 3's auto-save allowlist** — it is
-  an additive Custom-Script JSON-LD edit using facts already in this repo. Worth doing precisely
-  because it is free; it is not worth another week of memo space if it does not happen.
-  *Caveat for whoever implements it:* Rela's native `Apartment` block carries no `@id`, so the link
-  cannot be made by reference to it. The workable additive form is to give the injected
-  `ApartmentComplex` node an `@id` and emit a small `Apartment` node carrying `containedInPlace`
-  pointing at that `@id`. If that would duplicate the native `Apartment` node in a way that looks
-  like conflicting markup, **draft it, do not auto-save it** — say so in the implementation report.
+- **Chase Rela support** *(carried 4 weeks — broken down, last chance as a live item)*. This kept
+  getting carried because it was written as "chase Rela about twelve things", which nobody does on a
+  Tuesday. There is now nothing to compose — send this as one message via Rela support/chat:
 
-- **Chase Rela support** *(carried 3 weeks)*. One consolidated message, now including the alt-text
-  item (below). Still outstanding: `twitter:card`, `og:url`, `og:locale`, H1 =
-  "1550 Eastlake Ave E #503, Seattle, WA 98102" (currently "Apt 503, Seattle"), JSON-LD
-  `numberOfBedrooms` (currently `numberOfRooms`), `amenityFeature` / `petsAllowed` /
-  `containedInPlace` on the native node, `<img loading="lazy">`, `/sitemap.xml` = 200, `robots.txt`
-  without `Crawl-delay: 10` and with a `Sitemap:` line, `/llms.txt` populated, **and per-photo alt
-  text**. All confirmed still outstanding 2026-09-18.
+  > Hi — I run a single-property site on Rela (eastlakeview503.relahq.com) and there are a few
+  > SEO items I can't reach from the editor. Could you get these in front of the product team?
+  >
+  > 1. `/sitemap.xml` returns 404 — there is no sitemap for the site.
+  > 2. `robots.txt` has `Crawl-delay: 10` and no `Sitemap:` line.
+  > 3. `/llms.txt` returns the normal page HTML instead of llms.txt content.
+  > 4. No per-photo alt text: the Photo Gallery editor only has a Description field, and it doesn't
+  >    become an `alt` attribute — all 19 listing photos render `alt=""`.
+  > 5. Missing social tags: `og:url`, `og:locale`, `twitter:card`.
+  > 6. The H1 reads "1550 Eastlake Ave E Apt 503, Seattle" — I'd like "1550 Eastlake Ave E #503,
+  >    Seattle, WA 98102".
+  > 7. Listing structured data uses `numberOfRooms` rather than `numberOfBedrooms`, and has no
+  >    `amenityFeature`, `petsAllowed` or `containedInPlace`.
+  > 8. Listing photos have no `loading="lazy"`.
+  >
+  > Thanks — happy to give any detail you need.
 
-- **Report the GSC Links number, once a month** *(new)*. Search Console → **Links** → "Top linking
-  sites" → paste the external link count into Slack. Under a minute. This is the only authoritative
-  measurement of the one number this whole system is built around; right now that number is
-  *asserted* as zero every week, never *verified*.
+  If this is not sent by 2026-09-25 it moves to Backlog / blocked and stops being listed.
+
+- **Report the GSC Links number, monthly.** Promoted to "Do now" item 4 this week because it has
+  never actually been done once. Returns here as a monthly item after the first report.
+
+## Backlog / blocked
+
+- **Link the structured-data blocks (`containedInPlace`) — BLOCKED as of 2026-09-18** *(was carried
+  4 weeks)*. Confirmed absent again this week (0 occurrences site-wide): the unit node (`Apartment`)
+  and the building node (`ApartmentComplex`) are still unconnected. It is blocked for a real
+  technical reason, not neglect: Rela's native `Apartment` block carries no `@id`, so the link cannot
+  be made by reference to it. The only additive workaround is to emit a second `Apartment` node
+  carrying `containedInPlace`, which risks reading as duplicate/conflicting markup. On a page with
+  zero inbound links the upside is close to zero either way. **Do not re-list it weekly.** It
+  reopens if Rela adds `@id` to the native block, or if it can be drafted (not auto-saved) and
+  reviewed as a one-off.
+
+## Done
+
+- **✅ `RealEstateAgent` structured-data block — DONE 2026-09-18.** Applied by Tier 3 and
+  independently confirmed live on the page by Tier 1 the same day: `RealEstateAgent` present,
+  `telephone "+1-206-683-5030"`, the `cbdanforth.com` bio URL, `worksFor` → Coldwell Banker Danforth
+  (Everett, WA). The page now serves three structured-data payloads. Carried three weeks as
+  "blocked"; finished.
 
 ## Closed / cut
 
 - **✅ Search Console indexation — ANSWERED, stop asking.** Settled 2026-09-16 (recorded in
   `reports/IMPLEMENTATION-2026-09-16.md`): GSC showed **"URL is on Google"**, Page indexing **"Page
   is indexed"**, Indexing → Pages **Indexed = 1, Not indexed = 0**. The page is in Google's index.
-  It was carried for two extra weeks only because Tier 3's answer had no route back into the
-  baseline. **Do not re-open this on the strength of a WebSearch miss** — that tool has been
-  demonstrated three times over not to phrase-match or site-scope this domain.
-
-- **✅ `RealEstateAgent` JSON-LD node — DONE and live.** Applied 2026-09-18, independently
-  re-verified on the live page 2026-09-18: `RealEstateAgent` present, `telephone
-  "+1-206-683-5030"` present, `cbdanforth.com` URL present, `worksFor` → Coldwell Banker Danforth.
-  The page now serves three JSON-LD payloads. Was carried three weeks as "blocked"; it is finished.
+  Now also recorded in `state/last-snapshot.json` (`indexed: "yes (GSC 2026-09-16)"`), so it can
+  stop being rediscovered. **Do not re-open this on the strength of a WebSearch miss** — that tool
+  has been demonstrated four times over not to phrase-match or site-scope this domain.
 
 - **✂️ Photo alt text — CUT, platform-blocked, confirmed.** Settled 2026-09-18 inside the Rela Photo
   Gallery editor: the only per-photo field is **Description** (already filled for all 19 photos on
   2026-09-10) and it does not emit an `alt` attribute. All 19 gallery images still render `alt=""`.
   **There is no alt-text field to find.** Stop listing this as an owner task; it lives on the Rela
-  support chase and nowhere else. (Scale check for whoever is tempted to re-escalate it: alt text on
-  19 listing photos is a small image-search and accessibility win on a page that has zero inbound
-  links. It was never going to move rankings.)
+  support chase and nowhere else. (Scale check: alt text on 19 listing photos is a small image-search
+  and accessibility win on a page that has zero inbound links. It was never going to move rankings.)
 
 - **✅ Baseline page speed — CLOSED, and the check is now disabled.** Three consecutive 429s from a
   public quota of 0/day. As of 2026-09-18 the PageSpeed call is switched off in
@@ -145,8 +166,7 @@ everywhere, and fixing the other two places is a five-minute Tier 3 / Rela edit.
   week. Not worth asking the owner for an API key either: Core Web Vitals on this page are entirely
   Rela-controlled, so the number would be unactionable even if we had it.
 
-- **✅ README Slack channel name — already fixed.** `README.md` says `#all-seo-eastlake`. This
-  backlog item was itself stale.
+- **✅ README Slack channel name — already fixed.** `README.md` says `#all-seo-eastlake`.
 
 - **✂️ Tracked query "Eastlake condo for sale Lake Union view" — RETIRED.** Unwinnable head term for
   a zero-authority orphan page; three runs of identical results, zero decisions. Removed from
@@ -157,13 +177,16 @@ everywhere, and fixing the other two places is a five-minute Tier 3 / Rela edit.
 
 - **ℹ️ Redfin $698,000 discrepancy — not ours to chase.** It came from a search-tool summary that has
   proven unreliable on this domain, about a third-party page we cannot fetch. Our own price is
-  confirmed live at $649,888. If the owner wants certainty it is a 30-second look in a normal
-  browser. Do not re-raise it as a finding.
+  confirmed live at $649,888. Do not re-raise it as a finding.
+
+- **ℹ️ Email signature and LinkedIn "Featured" links — NOT link targets.** No crawler sees an email
+  signature; LinkedIn Featured links are nofollow and client-rendered. Fine for human traffic, never
+  counted toward the link goal. See `state/competitors.json` →
+  `link_targets.explicitly_not_link_targets`.
 
 ## Historical "Done" log
 
 See `reports/STRATEGY-*.md` and `reports/IMPLEMENTATION-*.md` for the dated record of the
 2026-09-10 through 2026-09-18 work (SEO & Social fields, property description rewrite, year built
 1997, amenities 7→12, `ApartmentComplex` JSON-LD, GA4, `twitter:image:alt`, `RealEstateAgent`
-JSON-LD). It was moved out of this file on 2026-09-18 — a queue that is two-thirds changelog stops
-being read.
+JSON-LD).
