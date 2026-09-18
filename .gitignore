@@ -1,0 +1,2 @@
+# Playwright session storage state (contains live auth cookies — never commit)
+.auth/

@@ -10,16 +10,39 @@ Seattle WA 98102, $649,888, MLS# 2556157, built 1997).
 |---|---|---|---|
 | **1 — Evidence gatherer** | Cloud routine (Sonnet) | Mon 08:00 UTC | Fetch the live page, check indexability, run tracked SERP queries, benchmark competitors, verify open action items. Writes `reports/EVIDENCE-<date>.md` + `state/observations-<date>.json`. Records facts only — never recommendations. |
 | **2 — Strategist** | Cloud routine (Opus) | Mon 10:00 UTC | Diff observations against the baseline, decide what matters, write `reports/STRATEGY-<date>.md`, rewrite `ACTION-QUEUE.md`, update the baseline, post the memo to Slack `#all-seo-eastlake`. |
-| **3 — Implementer** | Local scheduled task on the owner's PC, driving Chrome | Mon 11:05 local | Take `## Do now` from `ACTION-QUEUE.md`, carry the doable items out in the owner's logged-in Chrome (Rela editor, Search Console, Analytics), stop for **one batched approval** before anything is saved, verify each change live, write `reports/IMPLEMENTATION-<date>.md`, post a summary to Slack. |
+| **3 — Implementer** | Local scheduled task on the owner's PC, driving the `playwright` MCP browser | Mon 11:05 local | Take `## Do now` from `ACTION-QUEUE.md`, carry the doable items out in Rela/GSC/Analytics via a Playwright-controlled Chrome, stop for **one batched approval** before anything is saved, verify each change live, write `reports/IMPLEMENTATION-<date>.md`, post a summary to Slack. |
 
 The tiers are independent scheduled jobs; the gaps between them are the coupling. Tier 2 handles a
 missing or failed Tier 1 run explicitly (see the gate below); Tier 3 stops if there is no recent
 STRATEGY file.
 
 Tiers 1 and 2 run in the cloud with no browser and no logins. Tier 3 is the only tier that can change
-anything live, and only because it runs on the owner's own machine with their existing sessions. It
-never types passwords, creates accounts, or posts publicly as the owner — those go back to the owner
-as plain-language steps in the implementation report.
+anything live, and only because it runs against a logged-in browser session on the owner's own
+machine. It never types passwords, creates accounts, or posts publicly as the owner — those go back
+to the owner as plain-language steps in the implementation report.
+
+### How Tier 3 gets a logged-in browser (changed 2026-09-18)
+
+Tier 3 used to drive the owner's real Chrome via the Claude-in-Chrome extension, which reused
+whatever the owner was already logged into. That broke on 2026-09-16: the extension refused
+navigation to relahq.com/rela.com ("Navigation to this domain is not allowed") for reasons unrelated
+to login — a site-permission setting in the extension itself.
+
+Tier 3 now drives the `playwright` MCP browser instead. That server is configured
+(`~/.claude.json` → `mcpServers.playwright`) with a **persistent Chrome profile**
+(`--user-data-dir C:\Users\<owner>\.playwright-mcp-profile`), not a throwaway browser — so once the
+owner logs into Rela in it one time, the session cookies live in that profile directory and carry
+over to every later Playwright launch automatically, including unattended scheduled runs. No agent
+ever sees or types the password; the owner types it once, interactively, in that same
+Playwright-controlled window.
+
+**First login done 2026-09-18.** The Rela auth cookie (`SESS…`/`SSESS…`, Drupal session) expires
+**2026-10-11**. As a belt-and-suspenders backup (the persistent profile is the primary mechanism), a
+copy of the session was also exported to `.auth/rela-storage-state.json` — **gitignored, never
+committed**, since it's equivalent to the account password. When the Rela cookie expires (or if a
+Tier 3 run lands on the Rela login page instead of the editor), someone needs to open an interactive
+session, navigate the `playwright` browser to `https://www.relahq.com/user/login`, and log in again by
+hand — same one-time step, roughly monthly.
 
 ### Why Tier 3 doesn't mark its own work done
 
