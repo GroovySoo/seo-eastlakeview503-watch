@@ -10,7 +10,7 @@ Seattle WA 98102, $649,888, MLS# 2556157, built 1997).
 |---|---|---|---|
 | **1 — Evidence gatherer** | Cloud routine (Sonnet) | Mon 08:00 UTC | Fetch the live page, check indexability, run tracked SERP queries, benchmark competitors, verify open action items. Writes `reports/EVIDENCE-<date>.md` + `state/observations-<date>.json`. Records facts only — never recommendations. |
 | **2 — Strategist** | Cloud routine (Opus) | Mon 10:00 UTC | Diff observations against the baseline, decide what matters, write `reports/STRATEGY-<date>.md`, rewrite `ACTION-QUEUE.md`, update the baseline, post the memo to Slack `#all-seo-eastlake`. |
-| **3 — Implementer** | Local scheduled task on the owner's PC, driving the `playwright` MCP browser | Mon 11:05 local | Take `## Do now` from `ACTION-QUEUE.md`, carry the doable items out in Rela/GSC/Analytics via a Playwright-controlled Chrome, stop for **one batched approval** before anything is saved, verify each change live, write `reports/IMPLEMENTATION-<date>.md`, post a summary to Slack. |
+| **3 — Implementer** | Cloud routine (Opus), headless Playwright inside the sandbox | Mon 11:05 UTC | Take `## Do now` from `ACTION-QUEUE.md`; **auto-apply** only allowlisted additive Custom-Script JSON-LD edits (verified before/after), **draft everything else** (Property Description, SEO & Social, Details, Theme & Contacts, Photo Gallery, ...) into the report for the owner to apply by hand; write `reports/IMPLEMENTATION-<date>.md`, post a summary to Slack. Can also still be run interactively/locally (via the `playwright` MCP browser) for anything outside the allowlist. |
 
 The tiers are independent scheduled jobs; the gaps between them are the coupling. Tier 2 handles a
 missing or failed Tier 1 run explicitly (see the gate below); Tier 3 stops if there is no recent
@@ -21,28 +21,65 @@ anything live, and only because it runs against a logged-in browser session on t
 machine. It never types passwords, creates accounts, or posts publicly as the owner — those go back
 to the owner as plain-language steps in the implementation report.
 
-### How Tier 3 gets a logged-in browser (changed 2026-09-18)
+### How Tier 3 gets a logged-in browser (changed 2026-09-18, twice)
 
 Tier 3 used to drive the owner's real Chrome via the Claude-in-Chrome extension, which reused
 whatever the owner was already logged into. That broke on 2026-09-16: the extension refused
 navigation to relahq.com/rela.com ("Navigation to this domain is not allowed") for reasons unrelated
-to login — a site-permission setting in the extension itself.
+to login — a site-permission setting in the extension itself. The first fix (same day) was to switch
+the *local* Tier 3 to the `playwright` MCP browser, which runs with a persistent Chrome profile
+(`~/.claude.json` → `mcpServers.playwright`, `--user-data-dir C:\Users\<owner>\.playwright-mcp-profile`)
+that keeps a login across runs on that one machine.
 
-Tier 3 now drives the `playwright` MCP browser instead. That server is configured
-(`~/.claude.json` → `mcpServers.playwright`) with a **persistent Chrome profile**
-(`--user-data-dir C:\Users\<owner>\.playwright-mcp-profile`), not a throwaway browser — so once the
-owner logs into Rela in it one time, the session cookies live in that profile directory and carry
-over to every later Playwright launch automatically, including unattended scheduled runs. No agent
-ever sees or types the password; the owner types it once, interactively, in that same
-Playwright-controlled window.
+**The owner then asked for Tier 3 to run fully in the cloud, like Tier 1/2 — not local.** That's a
+different mechanism, documented here.
 
-**First login done 2026-09-18.** The Rela auth cookie (`SESS…`/`SSESS…`, Drupal session) expires
-**2026-10-11**. As a belt-and-suspenders backup (the persistent profile is the primary mechanism), a
-copy of the session was also exported to `.auth/rela-storage-state.json` — **gitignored, never
-committed**, since it's equivalent to the account password. When the Rela cookie expires (or if a
-Tier 3 run lands on the Rela login page instead of the editor), someone needs to open an interactive
-session, navigate the `playwright` browser to `https://www.relahq.com/user/login`, and log in again by
-hand — same one-time step, roughly monthly.
+Tier 3 is now also a cloud routine: **`SEO Watch — Tier 3 implementer (eastlakeview503)`**
+(trigger id `trig_01CBSS7zrhSfhEq4L6mCbHCF`, model Opus, cron `5 11 * * 1` UTC — an hour after Tier 2,
+same shared environment `env_014LSLvRuau5UepuZeL1vEkt`). It runs a headless Chromium
+(Playwright, installed at the start of each run) inside that cloud sandbox, not a browser on the
+owner's PC.
+
+**Two hard constraints shaped this design:**
+
+1. **No agent can extract or relay the Rela session cookie itself.** Claude Code's own permission
+   system blocks "credential materialization" — reading a live session's cookies into an agent's
+   context — even when the owner explicitly approves it. So the owner must paste the session into the
+   cloud routine's config themselves; no agent (local or cloud) ever sees the value in transit.
+2. **Rela's save flow is a token-gated Drupal 7 AJAX form**, not a simple API: every save needs a
+   fresh `form_build_id`/`form_token` scraped from the edit page's own HTML, plus ~80 supporting
+   fields a real browser generates automatically. A hand-written `curl` replay would be brittle and
+   silently break on any Rela front-end change. So Tier 3 runs an actual (headless) browser inside
+   the cloud sandbox rather than replaying raw HTTP requests.
+
+**Because a scheduled cloud run has no one present to approve anything mid-run**, Tier 3's prompt
+carries a hard-coded allowlist instead of the old "one batched approval" pause: it may only
+**auto-save** additive edits to the Advanced → Custom Script JSON-LD (the `ApartmentComplex` /
+`RealEstateAgent` pattern already live, using facts already recorded in this repo), always
+JSON-validated before and after. Everything else it drafts into `reports/IMPLEMENTATION-<date>.md`
+as a proposed change for the owner to apply by hand — it never touches Property Description, SEO &
+Social, Details, Theme & Contacts, Photo Gallery, or anything else live. See the routine's own prompt
+(`https://claude.ai/code/routines` → that routine → its prompt) for the exact rules; they're
+authoritative over this summary if the two ever disagree.
+
+**Outstanding — the owner still needs to do this once:** the routine reads its Rela session from the
+environment variable `RELA_STORAGE_STATE_JSON`. The `RemoteTrigger` API explicitly refused to accept
+`environment_variables` on a trigger ("not supported on triggers — trigger configs are persisted and
+replayed on every fire"), so this can't be set via the API/agent at all — it has to be set through the
+claude.ai UI for this routine (`https://claude.ai/code/routines` → **SEO Watch — Tier 3 implementer
+(eastlakeview503)** → look for an environment variables / secrets section). Paste the **entire
+contents** of the local file `.auth/rela-storage-state.json` (produced by the one-time interactive
+login below) as the value. Until that's done, Tier 3's cloud runs will detect the missing credential,
+skip all Rela edits, and say so in the report and Slack message — a safe no-op, not a silent failure.
+
+**Local one-time login (still needed, to produce/refresh the file above):** open an interactive
+Claude Code session, navigate the `playwright` browser to `https://www.relahq.com/user/login`, log in
+by hand, then export the session with Playwright's `context.storageState()` to
+`.auth/rela-storage-state.json` (**gitignored, never committed** — it's equivalent to the account
+password). First done 2026-09-18; the Rela auth cookie (`SESS…`/`SSESS…`, Drupal session) expires
+**2026-10-11**. When it expires, repeat this login, re-export the file, and re-paste it into the cloud
+routine's `RELA_STORAGE_STATE_JSON` — roughly monthly. The local `playwright` MCP profile also still
+carries the login for anyone running Tier 3 interactively instead of via the cloud routine.
 
 ### Why Tier 3 doesn't mark its own work done
 
