@@ -1,34 +1,161 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
+  "revised": "2026-09-18",
+  "revision_note": "Audit pass (senior-SEO review, human-directed, out-of-band). Changes: (1) dropped the unwinnable head term from tracked_queries; (2) added mention_query so the #1 KPI (inbound links) is measured rather than asserted; (3) added link_targets so the link ask is named and verified instead of generic; (4) moved three never-informative competitor fetches to deep_fetch_dormant; (5) disabled the PageSpeed check. See reports/AUDIT-2026-09-18.md.",
+
   "fetch_hints": {
     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
     "note": "Target site and several competitors return CloudFront/Cloudflare 403 to default curl/tool user-agents. Always send the browser UA above. A default-UA 403 is expected and is not a finding. WebFetch returns 405 against the target domain; use curl.",
-    "pagespeed_api": "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=<urlencoded>&strategy=mobile&category=performance",
-    "pagespeed_note": "pagespeed.web.dev is a JS shell and returns no data to a fetcher. Use the REST API above, one attempt only. 429 means public quota exhausted; record unavailable and move on."
+    "json_ld_note": "The page serves THREE JSON-LD payloads as of 2026-09-18: Rela's native static Apartment block, plus an IIFE-injected ApartmentComplex block and an IIFE-injected RealEstateAgent block (both from Advanced -> Custom Script). The injected ones are assigned via `l.text = '{...}'` and are missed by parsing <script> tags alone -- extract them by regex on `l.text`.",
+    "pagespeed_api": null,
+    "pagespeed_skip": true,
+    "pagespeed_note": "DISABLED 2026-09-18. Do not call the PageSpeed API and do not report it as a gap. Three consecutive runs (09-11, 09-14, 09-16) returned HTTP 429 -- the public quota for this project is 0/day, so no data will ever come back without a keyed/billed project. Even with data, Core Web Vitals on this page are entirely controlled by the Rela platform and are not something the owner can act on. Cost without a lever. Removed rather than retried."
   },
+
   "indexation_query": "site:eastlakeview503.relahq.com",
+  "indexation_note": "Demoted to a low-confidence signal. GSC settled this on 2026-09-16: 'URL is on Google', Indexing -> Pages showed Indexed = 1 / Not indexed = 0 (recorded in reports/IMPLEMENTATION-2026-09-16.md). Do not reopen 'is it indexed?' as a question or an action item on the basis of a WebSearch miss. Only a fresh GSC reading, or a listing-status change, justifies revisiting it.",
+
+  "mention_query": {
+    "query": "\"eastlakeview503.relahq.com\"",
+    "purpose": "Inbound-link / mention detector. This is the ONLY automated measurement the system has for its #1 lever. Run it every Tier 1 run. Record every returned domain in observations as `mentions.domains_found`, EXCLUDING eastlakeview503.relahq.com itself, relahq.com, and github.com/GroovySoo (the monitoring repo -- see known_self_mentions). Any other domain appearing here is a genuine new inbound mention and is the single most important thing Tier 2 can report that week.",
+    "known_self_mentions": [
+      "github.com/GroovySoo/seo-eastlakeview503-watch"
+    ],
+    "baseline_2026_09_18": "Zero third-party mentions. The only result for the literal domain string anywhere on the web is this monitoring repo itself.",
+    "caveat": "A search-tool mention is a weak proxy for a crawled, followed backlink. It detects new links; it does not prove link equity. The authoritative source is GSC -> Links -> External links -> Top linking sites, which only the owner can read. See owner_monthly_ask."
+  },
+
+  "owner_monthly_ask": {
+    "what": "Open Search Console -> Links -> 'Top linking sites' and report the total external link count and any listed domains in Slack.",
+    "frequency": "monthly (first Tier 2 run of each month)",
+    "why": "Closes the measurement gap on the #1 lever. Takes under a minute. Without it the system can only assert 'zero inbound links', never verify it."
+  },
+
   "tracked_queries": [
     "1550 Eastlake Ave E #503",
     "Riva Condos #503 Seattle",
     "Riva Condominium Seattle for sale",
-    "Eastlake condo for sale Lake Union view",
     "eastlakeview503"
   ],
+
+  "tracked_queries_notes": {
+    "_shape": "Kept as a flat string array on purpose so an existing Tier 1 prompt that iterates it keeps working. Classification lives here, keyed by the same string.",
+    "1550 Eastlake Ave E #503": {
+      "class": "branded-exact",
+      "winnable": "eventually",
+      "note": "Exact address. Currently owned by Redfin/Zillow/LoopNet. The realistic ceiling for this page without links is a page-2 appearance; with 2-3 real links it is a plausible page-1 entry."
+    },
+    "Riva Condos #503 Seattle": {
+      "class": "branded-building+unit",
+      "winnable": "yes",
+      "note": "Best winnable query in the set -- unit-specific, low competition, and our page is the only one on the web actually about unit #503 as a live listing. Treat a first appearance here as the leading indicator that links are working."
+    },
+    "Riva Condominium Seattle for sale": {
+      "class": "building-name",
+      "winnable": "marginal",
+      "note": "Contested by agent-comp sites (wicklundre.com, urbnlivn.com) with real domain authority. Keep as a competitor-movement sensor rather than a target."
+    },
+    "eastlakeview503": {
+      "class": "domain-token",
+      "winnable": "yes",
+      "note": "Pure brand token. If the page cannot rank here it cannot rank anywhere. As of 2026-09-18 the top result for this token is the monitoring repo on github.com, not the listing -- see reports/AUDIT-2026-09-18.md."
+    }
+  },
+
+  "retired_queries": [
+    {
+      "query": "Eastlake condo for sale Lake Union view",
+      "retired": "2026-09-18",
+      "reason": "Unwinnable head term. A zero-authority single-page orphan microsite will not enter the top 5 for a generic neighbourhood + feature query held by homes.com, redfin.com and zillow.com. Three runs returned an identical domain set and produced no decision. Pure cost."
+    }
+  ],
+
+  "link_targets": {
+    "purpose": "The #1 lever is inbound links. Generic advice ('email signature + LinkedIn') produced zero links in three weeks AND would not have helped if done. These are named, verified-live targets ranked by realistic value. Tier 2 must pick from this list rather than reinventing the ask.",
+    "verified": "2026-09-18 (all URLs returned HTTP 200 to a browser UA on this date)",
+    "targets": [
+      {
+        "rank": 1,
+        "name": "Agent's own Coldwell Banker Danforth bio site",
+        "url": "https://omar-senghore.cbdanforth.com/",
+        "owner_controlled": true,
+        "effort": "5 min",
+        "value": "high",
+        "status": "not done as of 2026-09-18",
+        "evidence": "Page is live (HTTP 200, title 'Omar Senghore - Coldwell Banker Danforth (Everett)') and contains a 'Featured Listing' section. It mentions '1550 Eastlake' zero times and 'eastlakeview503' zero times.",
+        "why": "A real-estate brand domain, topically perfect, owner-controlled, free, and almost certainly a followed link. This is the single best inbound link available and it has never been asked for."
+      },
+      {
+        "rank": 2,
+        "name": "Coldwell Banker Danforth brokerage site listing/agent page",
+        "url": "https://www.cbdanforth.com/",
+        "owner_controlled": false,
+        "effort": "one email to the brokerage's marketing contact",
+        "value": "high",
+        "status": "not asked",
+        "why": "Brokerage sites routinely link an agent's single-property site from the agent or listing page. Costs one email; the domain is stronger than the agent subdomain."
+      },
+      {
+        "rank": 3,
+        "name": "urbnlivn.com (Seattle condo blog)",
+        "url": "https://www.urbnlivn.com/",
+        "owner_controlled": false,
+        "effort": "one outreach email",
+        "value": "medium-high",
+        "status": "not asked",
+        "why": "Already ranks in the tracked set for 'Riva Condos #503 Seattle' and 'Riva Condominium Seattle for sale'. An editorial mention from a site that already ranks for the exact building name is the highest-quality non-owned link realistically obtainable."
+      },
+      {
+        "rank": 4,
+        "name": "Eastlake Community Council",
+        "url": "https://www.eastlakeseattle.org/",
+        "owner_controlled": false,
+        "effort": "one email / possible small sponsorship",
+        "value": "medium",
+        "status": "not asked",
+        "why": "Hyper-local, topically relevant neighbourhood domain. Local-community links are exactly the kind a listing microsite can actually earn."
+      },
+      {
+        "rank": 5,
+        "name": "Zillow / Realtor.com agent profile 'website' field",
+        "url": null,
+        "owner_controlled": true,
+        "effort": "5 min per profile",
+        "value": "low-medium (nofollow, but real referral traffic)",
+        "status": "not asked",
+        "why": "Nofollow, so little or no ranking equity -- but it is discovery traffic from exactly the right audience, and it is free. Frame it as traffic, never as an SEO link."
+      }
+    ],
+    "explicitly_not_link_targets": [
+      {
+        "name": "Email signature",
+        "reason": "An email signature is not a page on the web. No crawler ever sees it. It has exactly zero SEO value and must never again be listed as one of 'two links on the internet'. It is a fine referral-traffic habit; it is not a link."
+      },
+      {
+        "name": "LinkedIn 'Featured' section",
+        "reason": "rel=nofollow, rendered client-side, and routinely not crawled. Near-zero ranking value. Worth doing for human traffic, but it must not be counted toward the link goal."
+      }
+    ]
+  },
+
   "serp_position_only": [
     {"domain": "redfin.com", "note": "unit-503 page /WA/Seattle/1550-Eastlake-Ave-E-98102/unit-503/home/2095078; bot-blocked", "first_seen": "2026-09-10"},
     {"domain": "zillow.com", "note": "zpid 2091233085; bot-blocked", "first_seen": "2026-09-10"},
     {"domain": "apartments.com", "note": "Riva Condos building page; bot-blocked", "first_seen": "2026-09-10"},
     {"domain": "loopnet.com", "note": "ranks on building name 'Riva Condos'; bot-blocked", "first_seen": "2026-09-10"},
     {"domain": "realtor.com", "note": "bot-blocked", "first_seen": "2026-09-10"},
-    {"domain": "homes.com", "note": "bot-blocked", "first_seen": "2026-09-10"}
+    {"domain": "homes.com", "note": "bot-blocked", "first_seen": "2026-09-10"},
+    {"domain": "wicklundre.com", "note": "agent-comp site; ranks #1-#2 on 'Riva Condominium Seattle for sale'", "first_seen": "2026-09-11"},
+    {"domain": "urbnlivn.com", "note": "Seattle condo blog; ranks on the building name. Also an outreach target -- see link_targets rank 3.", "first_seen": "2026-09-14"}
   ],
+
   "deep_fetch": [
     {
       "domain": "windermere.com",
       "type": "brokerage",
       "url": "https://www.windermere.com/listing/WA/Seattle/1550-Eastlake-Avenue-E-506-98102/197478285",
       "fetchable": true,
-      "note": "same building, unit 506",
+      "note": "Same building, unit 506 (1bd/1ba, $385,000 -- not a price comp). Kept because it is the only same-building page that is both fetchable and carries RealEstateListing structured data, so it is the live benchmark for what a well-marked-up listing looks like.",
       "first_seen": "2026-09-10"
     },
     {
@@ -36,34 +163,41 @@
       "type": "brokerage",
       "url": "https://www.compass.com/listing/1550-eastlake-avenue-east-unit-203-seattle-wa-98102/1561675205357517033/",
       "fetchable": true,
-      "note": "same building, unit 203",
-      "first_seen": "2026-09-10"
-    },
-    {
-      "domain": "seattlecondosandlofts.com",
-      "type": "agent blog (WordPress+Yoast)",
-      "url": "https://seattlecondosandlofts.com/list-of-condoslofts",
-      "fetchable": true,
-      "note": "directory page; benchmark for how an agent site structures condo content",
-      "first_seen": "2026-09-10"
-    },
-    {
-      "domain": "houseboatsofseattle.com",
-      "type": "Sotheby's affiliate",
-      "url": "https://houseboatsofseattle.com/wa/seattle/eastlake/",
-      "fetchable": true,
-      "note": "Eastlake neighbourhood page",
-      "first_seen": "2026-09-10"
-    },
-    {
-      "domain": "rsir.com",
-      "type": "Realogics Sotheby's",
-      "url": "https://www.rsir.com/homes-for-sale/1550-eastlake-avenue-e-201-seattle-wa-98102-2402758-1785003/",
-      "fetchable": false,
-      "blocked_reason": "Cloudflare JS challenge (cf-mitigated: challenge) - not fetchable by curl with any UA",
-      "blocked_confirmed": "2026-09-11",
-      "note": "SKIP. Do not retry. Record as blocked.",
+      "note": "Same building, unit 203. Redirects /listing/ -> /homedetails/. An OFF-MARKET page that still outranks our live listing while carrying no listing structured data -- the cleanest available proof that this race is decided by domain authority, not on-page work. Keep.",
       "first_seen": "2026-09-10"
     }
-  ]
+  ],
+
+  "deep_fetch_dormant": {
+    "note": "Fetched on 2026-09-11, 09-14 and 09-16. Every run returned the same title, the same JSON-LD type set, and riva_specific_content=false (or, for rsir.com, the same Cloudflare challenge). They have never once produced a finding or influenced a decision. Do NOT fetch these weekly. Re-check at most quarterly, or on demand if a Riva-specific page appears on one of them.",
+    "entries": [
+      {
+        "domain": "seattlecondosandlofts.com",
+        "type": "agent blog (WordPress+Yoast)",
+        "url": "https://seattlecondosandlofts.com/list-of-condoslofts",
+        "fetchable": true,
+        "dormant_since": "2026-09-18",
+        "first_seen": "2026-09-10"
+      },
+      {
+        "domain": "houseboatsofseattle.com",
+        "type": "Sotheby's affiliate",
+        "url": "https://houseboatsofseattle.com/wa/seattle/eastlake/",
+        "fetchable": true,
+        "dormant_since": "2026-09-18",
+        "first_seen": "2026-09-10"
+      },
+      {
+        "domain": "rsir.com",
+        "type": "Realogics Sotheby's",
+        "url": "https://www.rsir.com/homes-for-sale/1550-eastlake-avenue-e-201-seattle-wa-98102-2402758-1785003/",
+        "fetchable": false,
+        "blocked_reason": "Cloudflare JS challenge (cf-mitigated: challenge) - not fetchable by curl with any UA",
+        "blocked_confirmed": "2026-09-11",
+        "dormant_since": "2026-09-18",
+        "note": "SKIP permanently. Do not retry and do not report as a gap.",
+        "first_seen": "2026-09-10"
+      }
+    ]
+  }
 }

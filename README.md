@@ -16,6 +16,15 @@ The tiers are independent scheduled jobs; the gaps between them are the coupling
 missing or failed Tier 1 run explicitly (see the gate below); Tier 3 stops if there is no recent
 STRATEGY file.
 
+> **Audit pass, 2026-09-18.** A senior-SEO review of the loop itself is in
+> [`reports/AUDIT-2026-09-18.md`](reports/AUDIT-2026-09-18.md). Verdict: the machinery is sound, the
+> strategy had a hole — the #1 lever (inbound links) was asserted every week and never measured, and
+> the two link placements being prescribed (email signature, LinkedIn Featured) carry no SEO value
+> at all. `state/competitors.json` and `ACTION-QUEUE.md` were corrected in that pass. **Three prompt
+> patches in §3 of that report still need applying by hand** at https://claude.ai/code/routines —
+> `RemoteTrigger` was unavailable to the audit session, so the trigger prompts could not be updated
+> programmatically.
+
 Tiers 1 and 2 run in the cloud with no browser and no logins. Tier 3 is the only tier that can change
 anything live, and only because it runs against a logged-in browser session on the owner's own
 machine. It never types passwords, creates accounts, or posts publicly as the owner — those go back
@@ -87,6 +96,42 @@ Tier 3 writes only `reports/IMPLEMENTATION-*.md`. It never edits `ACTION-QUEUE.m
 queue only when **Tier 1 observes the change on the live page** the following week and Tier 2 closes it.
 The agent that made a change is never the one that certifies it worked.
 
+#### …and the exception that rule needs (added 2026-09-18)
+
+Some facts Tier 3 learns can **never** appear on the live page, so under the rule as originally
+written they were simply lost. Three of them sat in `ACTION-QUEUE.md` as open items for up to two
+weeks after they had been settled:
+
+| Fact | Learned | Still shown as open until |
+|---|---|---|
+| Search Console: "URL is on Google", Indexed = 1, Not indexed = 0 | 2026-09-16 | 2026-09-18 |
+| Rela's photo editor has **no alt-text field at all** | 2026-09-18 | 2026-09-18 |
+| Owner supplied phone / brokerage / bio URL | 2026-09-16 | 2026-09-18 |
+
+So: **Tier 2 reads every `reports/IMPLEMENTATION-*.md` newer than its own last run** and folds those
+findings into the queue and, where they are settled state, into the baseline. Tier 3 ends each report
+with a `## Facts for Tier 2` section listing exactly those unobservable facts. Tier 3 still never
+writes `ACTION-QUEUE.md`, and a change to the live page is still certified only by Tier 1 — what
+crosses the gap is out-of-band knowledge, not self-certified work. (Prompt patches: see
+`reports/AUDIT-2026-09-18.md` §3.)
+
+### Measuring the #1 lever
+
+The system's whole thesis is that inbound links are the only thing that will move this page. Until
+2026-09-18 that number was hard-coded at scaffold time and copied forward every week — asserted,
+never measured. Two mechanisms now measure it:
+
+1. **Automated, weekly (Tier 1):** `state/competitors.json → mention_query` — a literal search for
+   `"eastlakeview503.relahq.com"`, with this repo excluded as a known self-mention. Any other domain
+   that appears is a real new inbound mention and is the headline of that week's memo.
+2. **Authoritative, monthly (owner):** Search Console → **Links** → "Top linking sites". Under a
+   minute, and the only source that reflects what Google actually counts.
+
+`state/competitors.json → link_targets` carries five **named, verified-live** targets ranked by
+realistic value, so the weekly ask is specific rather than generic. It also records what does **not**
+count: an email signature is not a page on the web and is never crawled, and LinkedIn "Featured"
+links are nofollow and client-rendered. Neither may be counted toward the link goal.
+
 ## The evidence contract
 
 Tier 1 writes a header block at the top of every evidence report. Tier 2 reads it **first** and
@@ -144,10 +189,17 @@ never rediscovered at runtime:
 - `WebFetch` returns **405** against the target domain. Use curl.
 - `www.rsir.com` is behind a **Cloudflare JS challenge** and is not fetchable by curl with any UA.
   Marked `fetchable: false`. Do not retry it.
-- `pagespeed.web.dev` is a JS shell that returns no data to a fetcher. Use the PageSpeed REST API,
-  one attempt; a 429 means the public quota is exhausted.
-- The page has **two JSON-LD blocks**. The second is injected client-side by an IIFE and must be
-  extracted by regex on `l.text` — parsing `<script>` tags alone misses it.
+- **PageSpeed is switched off** (`competitors.json → fetch_hints.pagespeed_skip: true`, 2026-09-18).
+  Three consecutive runs returned 429 against a public quota of 0/day, so no data will ever come
+  back without a keyed project — and Core Web Vitals on this page are entirely Rela-controlled, so
+  the number would be unactionable even if we had it. Do not call it; do not report it as a gap.
+- The page has **three JSON-LD payloads** (since 2026-09-18): Rela's native static `Apartment`
+  block, plus an injected `ApartmentComplex` block and an injected `RealEstateAgent` block, both
+  from Advanced → Custom Script. The injected ones are assigned via `l.text = '{...}'` and must be
+  extracted by regex on `l.text` — parsing `<script>` tags alone misses them.
+- **Indexation is settled.** Search Console confirmed 2026-09-16: "URL is on Google", Indexed = 1,
+  Not indexed = 0. Do not reopen it on the strength of a WebSearch miss — that tool has been shown
+  three times over not to phrase-match or site-scope this domain.
 
 ## Baseline (set 2026-09-10, via Chrome, in the Rela editor)
 
@@ -164,7 +216,14 @@ never rediscovered at runtime:
 `1550 Eastlake Ave E #503, Seattle, WA 98102`, JSON-LD `numberOfBedrooms` /
 `amenityFeature` / `petsAllowed` / `containedInPlace`, `<img loading="lazy">`,
 `/sitemap.xml` = 200, `robots.txt` without `Crawl-delay: 10` + with a `Sitemap:` line,
-`/llms.txt` populated.
+`/llms.txt` populated, **and per-photo alt text** (added to this list 2026-09-18 — the Rela Photo
+Gallery editor has no alt-text field at all; the only per-photo field is Description, which does not
+emit an `alt` attribute, so all 19 gallery images render `alt=""`. It is platform-side, not an owner
+task, and must not be re-listed as one).
+
+**Scale check on the whole list above:** every item on it is a second-order on-page detail on a page
+with zero inbound links. Shipping all of them would not change a ranking. Keep chasing Rela in one
+consolidated message; do not let it consume Do-now slots that belong to link acquisition.
 
 ## Lifecycle
 
