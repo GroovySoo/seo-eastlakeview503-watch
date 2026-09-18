@@ -20,10 +20,15 @@ STRATEGY file.
 > [`reports/AUDIT-2026-09-18.md`](reports/AUDIT-2026-09-18.md). Verdict: the machinery is sound, the
 > strategy had a hole — the #1 lever (inbound links) was asserted every week and never measured, and
 > the two link placements being prescribed (email signature, LinkedIn Featured) carry no SEO value
-> at all. `state/competitors.json` and `ACTION-QUEUE.md` were corrected in that pass. **Three prompt
-> patches in §3 of that report still need applying by hand** at https://claude.ai/code/routines —
-> `RemoteTrigger` was unavailable to the audit session, so the trigger prompts could not be updated
-> programmatically.
+> at all. `state/competitors.json` and `ACTION-QUEUE.md` were corrected in that pass, and the three
+> prompt patches in §3 of that report have since been **applied to all three trigger prompts**
+> (Tier 1 `trig_01QMErY82dD2WJk2D3TBK1MZ`, Tier 2 `trig_01NZnayoAnxJub2cxbbbncPz`, Tier 3
+> `trig_01CBSS7zrhSfhEq4L6mCbHCF`) via `RemoteTrigger`, in effect starting the next fire of each.
+> Still open, and still the owner's call (§5 of the audit): make the repo private (§1.5 — it
+> currently outranks the listing for its own brand token and carries the owner's phone/email in
+> plaintext), settle the `Senghor`/`Senghore` spelling (§1.6), paste `RELA_STORAGE_STATE_JSON` into
+> the Tier 3 routine (or decide to retire that routine per §4.1 once `containedInPlace` ships), and
+> the monthly GSC → Links reading.
 
 Tiers 1 and 2 run in the cloud with no browser and no logins. Tier 3 is the only tier that can change
 anything live, and only because it runs against a logged-in browser session on the owner's own
