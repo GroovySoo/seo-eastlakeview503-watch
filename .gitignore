@@ -1,2 +1,5 @@
 # Playwright session storage state (contains live auth cookies — never commit)
 .auth/
+
+# Playwright MCP run artifacts (traces, downloads, profile scratch)
+.playwright-mcp/
