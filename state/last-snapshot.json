@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
-  "updated": "2026-09-18",
-  "note": "Baseline. Only Tier 2 writes this file. Field names mirror state/observations-<date>.json so the weekly diff is mechanical. First populated 2026-09-11; updated 2026-09-18 from Tier 1 evidence with status=complete (25/25 fields, no fetch failures). No platform-side regression: every owner-set field is byte-for-byte identical to 2026-09-16. The only on-page change is the intentional third JSON-LD payload (RealEstateAgent) applied by Tier 3 on 2026-09-18, plus its two side-effects (og:updated_time, image cache-buster). Schema bumped to 3 to match observations: adds mentions.* (the headline KPI, now measured), json_ld.block_3_client_injected, json_ld.agent_name_spelling_check and json_ld.contained_in_place_sitewide_occurrences. Out-of-band Tier 3 knowledge imported this run: indexed settled to 'yes (GSC 2026-09-16)' and photo alt text confirmed platform-blocked (no alt field exists in the Rela editor). Dropped from the schema: analytics.gtag_token_occurrences (documented noise, no longer captured), pagespeed detail fields (check now disabled by policy), and serp_anomaly_unverified (the Redfin $698,000 item, closed in ACTION-QUEUE.md).",
-  "source_evidence": "reports/EVIDENCE-2026-09-18.md",
-  "source_observations": "state/observations-2026-09-18.json",
+  "updated": "2026-09-26",
+  "note": "Baseline. Only Tier 2 writes this file. Field names mirror state/observations-<date>.json so the weekly diff is mechanical. First populated 2026-09-11; updated 2026-09-26 from Tier 1 evidence with status=complete (27/27 fields, no fetch failures). NOT a platform-side regression this week: the agent-name, agent-email and RealEstateAgent-enrichment changes Tier 1 flagged as 'unscheduled' are all deliberate Tier 3 edits made 2026-09-26 with the owner present (reports/IMPLEMENTATION-2026-09-26.md). The old agent email change-re@outlook.com was the Rela ACCOUNT LOGIN address leaking into the agent field; it was replaced with the address on the owner's brokerage record, so the listing and omar-senghore.cbdanforth.com now describe one person rather than two. Two changes genuinely were platform-side and both are benign: Rela added @id to its own native Apartment block (json_ld.block_1_static.@id), and og:image:url / og:image:secure_url appeared as duplicates of og:image. Listing status unchanged and still active. Third-party mentions still 0.",
+  "source_evidence": "reports/EVIDENCE-2026-09-26.md",
+  "source_observations": "state/observations-2026-09-26.json",
   "first_run": "2026-09-11",
   "listing_status": "active",
   "indexable": "yes",
@@ -16,7 +16,8 @@
     "price_currency": "USD",
     "availability": "https://schema.org/InStock",
     "mls_number": "2556157",
-    "year_built": 1997
+    "year_built": 1997,
+    "note": "Unchanged from state/last-snapshot.json (price, availability, MLS#). No listing status change."
   },
   "indexation": {
     "x_robots_tag_header": null,
@@ -24,24 +25,26 @@
     "canonical_self_referencing": true,
     "http_status_clean": true,
     "indexability_note": "Nothing on the page blocks indexing: HTTP 200, no X-Robots-Tag response header, no <meta name=robots>, canonical (both <link> tag and HTTP Link header) self-references https://eastlakeview503.relahq.com.",
-    "gsc_reading": "yes (GSC 2026-09-16: Indexed = 1, Not indexed = 0)",
-    "verbatim_phrase_query": "\"Top-floor 2 bed, 2 bath condo for sale at Riva Condominium\"",
-    "verbatim_phrase_result": "eastlakeview503.relahq.com did not appear; WebSearch returned unrelated 'Riva' condo results from Fort Lauderdale FL and Richmond BC",
-    "indexation_signal_note": "indexed set to 'yes (GSC 2026-09-16)' per policy: GSC has already settled this question and a WebSearch miss on this domain is a known tool limitation, not evidence of de-indexing. Not downgraded."
+    "gsc_reading": "yes (GSC 2026-09-16: Indexed = 1, Not indexed = 0). No newer GSC reading available this run.",
+    "verbatim_phrase_query": null,
+    "verbatim_phrase_result": "Not run this run. Per state/competitors.json indexation_note and the 2026-09-18 scope change, GSC has already settled indexation and a WebSearch phrase-miss on this domain is a known tool limitation, not new evidence. Skipped to avoid re-litigating a settled question.",
+    "indexation_signal_note": "indexed retained at 'yes (GSC 2026-09-16)' per policy.",
+    "out_of_band_note": "Indexation is CLOSED, do not reopen on a WebSearch miss (GSC 2026-09-16: Indexed = 1, Not indexed = 0). Tier 1 no longer runs the verbatim-phrase check at all per the 2026-09-18 scope change, which is why verbatim_phrase_query is null here - that is a deliberate scope decision, not a missing measurement."
   },
   "meta": {
     "title": "Riva Condos #503, 1550 Eastlake Ave E – Seattle Condo for Sale",
     "description": "Top-floor 2 bed, 2 bath condo for sale at Riva Condominium, 1550 Eastlake Ave E #503, Seattle. 1,114 sq ft, Lake Union & skyline views, private balcony, 2 secured parking spaces + storage. $649,888 · MLS# 2556157.",
     "canonical": "https://eastlakeview503.relahq.com",
     "robots": null,
-    "google_site_verification": "T6_j8jTeByDHz6TZ-fo1x88Et-9sj4_CwAIZFHl_2yM"
+    "google_site_verification": "T6_j8jTeByDHz6TZ-fo1x88Et-9sj4_CwAIZFHl_2yM",
+    "note": "All unchanged from baseline."
   },
   "og_twitter_tags": {
     "og:type": "place",
     "og:title": "Riva Condos #503 – Top-Floor Eastlake Condo with Lake Union Views",
     "og:description": "Move-in-ready 2 bed / 2 bath top-floor condo for sale at Riva Condominium in Seattle's Eastlake neighborhood, one block from Lake Union and South Lake Union. Private balcony with lake and skyline views, 2 secured parking spaces, dedicated storage. Offered at $649,888 (MLS# 2556157).",
-    "og:updated_time": "2026-09-18T06:22:40-07:00",
-    "og:image": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1789737760",
+    "og:updated_time": "2026-09-26T03:44:05-07:00",
+    "og:image": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
     "og:image:type": "image/jpeg",
     "og:image:width": 1600,
     "og:image:height": 1069,
@@ -50,8 +53,11 @@
     "twitter:card": null,
     "twitter:title": "Riva Condos #503 – Top-Floor Eastlake Condo, Lake Union Views",
     "twitter:description": "2 bed / 2 bath top-floor condo for sale at Riva Condominium, 1550 Eastlake Ave E #503, Seattle. 1,114 sq ft, Lake Union & skyline views, balcony, 2 parking + storage. $649,888 · MLS# 2556157.",
-    "twitter:image": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1789737760",
-    "twitter:image:alt": "1550 Eastlake Ave E Apt 503, Seattle, WA | 2 Bed, 2 Bath"
+    "twitter:image": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
+    "twitter:image:alt": "1550 Eastlake Ave E Apt 503, Seattle, WA | 2 Bed, 2 Bath",
+    "og:image:url": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
+    "og:image:secure_url": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
+    "diff_note": "og:image:url and og:image:secure_url are new fields on the page this run (not present in the 2026-09-18 baseline); both duplicate og:image, same URL. og:updated_time bumped to today (2026-09-26), consistent with the agent-name/email edit found in json_ld below. og:url, og:locale and twitter:card remain absent, unchanged."
   },
   "json_ld": {
     "block_count": 3,
@@ -65,13 +71,15 @@
       "floorSize_sqft": 1114,
       "offers_price": 649888,
       "offers_availability": "https://schema.org/InStock",
-      "provider_name": "Omar Senghor",
-      "provider_email": "change-re@outlook.com",
-      "provider_phone": null,
+      "provider_name": "Omar Senghore",
+      "provider_email": "i_give@hotmail.com",
+      "provider_phone": "206-683-5030",
       "amenityFeature": null,
       "petsAllowed": null,
       "containedInPlace": null,
-      "image_count": 18
+      "image_count": 18,
+      "@id": "https://eastlakeview503.relahq.com#listing",
+      "diff_note": "TWO changes vs. 2026-09-18 baseline: (1) this block now carries an @id (\"https://eastlakeview503.relahq.com#listing\") where it previously had none -- this was the specific technical blocker named in ACTION-QUEUE.md for the containedInPlace backlog item ('Rela's native Apartment block carries no @id'). (2) provider.name changed from 'Omar Senghor' to 'Omar Senghore', and provider.email changed from 'change-re@outlook.com' to 'i_give@hotmail.com'. provider.telephone format also changed from unset/absent to '206-683-5030' (no country code, differs in format from block_3's '+1-206-683-5030')."
     },
     "block_2_client_injected": {
       "@type": "ApartmentComplex",
@@ -88,13 +96,15 @@
         "Private storage units",
         "In-unit washer and dryer"
       ],
-      "containedInPlace_link_to_block_1": false
+      "containedInPlace_link_to_block_1": false,
+      "has_id": false,
+      "diff_note": "Unchanged from baseline. Still no @id on this block."
     },
     "block_3_client_injected": {
       "@type": "RealEstateAgent",
       "first_seen_live": "2026-09-18",
       "name": "Omar Senghore",
-      "email": "change-re@outlook.com",
+      "email": "i_give@hotmail.com",
       "telephone": "+1-206-683-5030",
       "url": "https://omar-senghore.cbdanforth.com/",
       "worksFor": {
@@ -103,26 +113,58 @@
         "addressLocality": "Everett",
         "addressRegion": "WA",
         "addressCountry": "US"
-      }
+      },
+      "@id": "https://omar-senghore.cbdanforth.com",
+      "jobTitle": "Broker - Value-Add Real Estate Investment Specialist",
+      "image": "https://upload.terabitz.com/u/cbdanforth/agents/agt_212_Omar_Senghore.jpg",
+      "identifier": {
+        "propertyID": "NWMLS",
+        "value": "NWM62208"
+      },
+      "areaServed": [
+        "Seattle",
+        "Eastlake",
+        "South Lake Union",
+        "Everett",
+        "Edmonds",
+        "Bothell"
+      ],
+      "sameAs": [
+        "https://omar-senghore.cbdanforth.com/"
+      ],
+      "diff_note": "Substantially enriched vs. baseline, which recorded only name/email/telephone/url/worksFor. New fields present this run: @id, jobTitle, image, identifier (NWMLS/NWM62208), areaServed, sameAs. email changed from 'change-re@outlook.com' to 'i_give@hotmail.com' (same change as block_1)."
     },
     "contained_in_place_sitewide_occurrences": 0,
     "agent_name_spelling_check": {
-      "Omar Senghor_count": 2,
-      "Omar Senghor_locations": [
-        "block_1_static.provider.name",
-        "visible Presented By agent-card widget"
-      ],
-      "Omar Senghore_count": 1,
+      "Omar Senghor_count": 0,
+      "Omar Senghor_locations": [],
+      "Omar Senghore_count": 4,
       "Omar Senghore_locations": [
-        "block_3_client_injected.name"
+        "block_1_static.provider.name",
+        "block_3_client_injected.name",
+        "block_3_client_injected.@id / url (domain string)",
+        "visible 'Presented By' agent-card widget (.agent-name div)"
       ],
-      "consistent": false
+      "consistent": true,
+      "diff_note": "CHANGED since baseline: 2026-09-18 snapshot showed 'Omar Senghor' x2 (native block + visible widget) and 'Omar Senghore' x1 (RealEstateAgent block), consistent:false. This run every occurrence reads 'Omar Senghore' (0 'Senghor' hits sitewide) and the visible widget matches. Spelling now consistent across structured data and visible content, and matches the Coldwell Banker bio page spelling."
+    },
+    "agent_identity_settled": {
+      "surname_spelling": "Senghore",
+      "settled_on": "2026-09-26",
+      "settled_how": "Owner's own brokerage record, not a guess: Coldwell Banker Danforth broker admin (My Website -> Contact Info) reads First 'Omar' / Last 'Senghore', matching the public bio site omar-senghore.cbdanforth.com and that site's own RealEstateAgent JSON-LD. 'Senghor' on the listing was a typo in one Rela field, not a variant spelling. Confirmed live on the page by Tier 1 the same day: 4/4 occurrences 'Senghore', 0 'Senghor'.",
+      "entity_binding": "json_ld.block_3_client_injected.@id is https://omar-senghore.cbdanforth.com - the exact @id the bio site publishes for itself - plus NWMLS identifier NWM62208. That pair is what binds the listing and the brokerage site to one agent entity.",
+      "known_gaps": [
+        "WA real-estate licence number empty in BOTH the CB Danforth broker admin (Lic #) and Rela (field_agent_bre); owner chose 'skip for now' on 2026-09-26. Public record; strongest remaining agent trust signal.",
+        "Every social-profile URL field in the CB Danforth broker admin is blank, which is why the bio site's own sameAs array publishes five empty strings.",
+        "Phone format inconsistent between blocks: block_1_static '206-683-5030' vs block_3_client_injected '+1-206-683-5030'. Minor; queued under Next up."
+      ]
     }
   },
   "h1": {
     "text": "1550 Eastlake Ave E Apt 503, Seattle",
     "matches_target_text": false,
-    "target_text": "1550 Eastlake Ave E #503, Seattle, WA 98102"
+    "target_text": "1550 Eastlake Ave E #503, Seattle, WA 98102",
+    "note": "Unchanged from baseline."
   },
   "images": {
     "total_img_tags": 23,
@@ -132,7 +174,8 @@
     "non_empty_alt_all_on_logos": true,
     "property_photo_with_alt_count": 0,
     "loading_lazy_count": 0,
-    "alt_text_platform_status": "platform-blocked, confirmed 2026-09-18 in the Rela Photo Gallery editor (reports/IMPLEMENTATION-2026-09-18.md): the only per-photo field is Description, already filled for all 19 photos, and it does not emit an alt attribute. There is no alt-text field to find. Not an owner task; lives on the Rela support chase only."
+    "alt_text_platform_status": "platform-blocked, unchanged from baseline: no alt field exists in the Rela Photo Gallery editor.",
+    "note": "All counts unchanged from baseline."
   },
   "analytics": {
     "ga_ids_found": [
@@ -141,20 +184,22 @@
     ],
     "rela_native_ga_id_present": true,
     "custom_ga_id_present": true,
-    "note": "Load-bearing fields are ga_ids_found and the two *_present booleans. The old gtag_token_occurrences raw grep count was confirmed noise (10/6/10 on an unchanged page) and is no longer captured."
+    "note": "Unchanged from baseline."
   },
   "llms_txt": {
     "http_status": 200,
     "is_real_llms_content": false,
-    "note": "SPA fallback, same page as /"
+    "note": "SPA fallback, same page as /. Unchanged, known-pending Rela platform issue."
   },
   "sitemap_xml": {
-    "http_status": 404
+    "http_status": 404,
+    "note": "Unchanged, known-pending Rela platform issue."
   },
   "robots_txt": {
     "http_status": 200,
     "has_crawl_delay_10": true,
-    "has_sitemap_line": false
+    "has_sitemap_line": false,
+    "note": "Unchanged, known-pending Rela platform issue."
   },
   "mentions": {
     "query": "\"eastlakeview503.relahq.com\"",
@@ -163,18 +208,20 @@
     "raw_domains_returned": [
       "github.com",
       "en.wikipedia.org",
+      "www.zoominfo.com",
       "www.linkedin.com",
       "www.facebook.com",
       "www.instagram.com",
-      "www.zoominfo.com",
       "100146thstreet.relahq.com",
       "www.relahq.com"
     ],
-    "note": "Literal domain string appeared only in the title text of the github.com/GroovySoo/seo-eastlakeview503-watch repo result (a known self-mention). No third-party domain contained the target domain string this run."
+    "note": "No third-party domain contained the literal target domain string this run. The only occurrence of the literal string anywhere in results is in the title text of the github.com/GroovySoo monitoring-repo result (known self-mention, excluded). 100146thstreet.relahq.com is a different Rela customer's unrelated single-property microsite returned by fuzzy keyword matching, not an actual mention of our domain -- consistent with how it was treated in the 2026-09-18 baseline (present in raw_domains_returned there too, with third_party_count still 0)."
   },
   "inbound_links": {
     "external_links_known": 0,
-    "note": "No external links pointing to the page. Measured 2026-09-18 via the literal mention query, not carried forward: mentions.third_party_count = 0. Single biggest ranking lever. Restate every week until evidence shows links exist. Unchanged 2026-09-10 through 2026-09-18. Email signatures and LinkedIn Featured links do not count (see state/competitors.json -> link_targets.explicitly_not_link_targets)."
+    "note": "Measured this run via the literal mention query (mentions.third_party_count = 0), not carried forward from baseline. Unchanged from 2026-09-10 through 2026-09-26: zero measured third-party mentions/links every run to date.",
+    "gsc_top_linking_sites": null,
+    "gsc_top_linking_sites_status": "NOT YET READABLE ON GOOGLE'S SIDE, not withheld and not guessed. Tier 3 opened Search Console -> Links for this property on 2026-09-21 (reports/IMPLEMENTATION-2026-09-21.md) and Google rendered 'Processing data, please check again in a day or so.' Re-asked as a Do-now item on 2026-09-26. This remains the only authoritative measurement of the external-link count; external_links_known: 0 is inferred from the mention query, never verified."
   },
   "tracked_queries": [
     {
@@ -182,14 +229,14 @@
       "top_5_domains": [
         "redfin.com",
         "zillow.com",
-        "redfin.com",
+        "homes.com",
         "redfin.com",
         "apartments.com"
       ],
       "all_domains_returned": [
         "redfin.com",
         "zillow.com",
-        "redfin.com",
+        "homes.com",
         "redfin.com",
         "apartments.com",
         "apartments.com",
@@ -220,7 +267,7 @@
         "dwellresidential.com"
       ],
       "target_present": false,
-      "note": "github.com result is the monitoring repo (known self-mention, title text only), not the listing domain itself."
+      "note": "github.com result is the monitoring repo (known self-mention, title text only), not the listing domain itself. Identical domain set to 2026-09-18."
     },
     {
       "query": "Riva Condominium Seattle for sale",
@@ -237,12 +284,13 @@
         "apartments.com",
         "redfin.com",
         "yelp.com",
-        "urbnlivn.com",
         "zillow.com",
         "estately.com",
+        "coldwellbankerhomes.com",
         "myseattlehomesearch.com"
       ],
-      "target_present": false
+      "target_present": false,
+      "note": "urbnlivn.com fell out of the returned set this run (present 2026-09-18); coldwellbankerhomes.com entered."
     },
     {
       "query": "eastlakeview503",
@@ -259,15 +307,15 @@
         "x.com",
         "en.wikipedia.org",
         "eastlakeview.org",
+        "eastlakeview.org",
         "eastlakeview.com",
-        "bjbproperties.com",
-        "redfin.com"
+        "eastlakeviewnbr(x.com handle)"
       ],
       "target_present": false,
-      "note": "github.com result is the monitoring repo (known self-mention, title text only), not the listing domain itself."
+      "note": "github.com result is the monitoring repo (known self-mention, title text only), not the listing domain itself. Same top result as 2026-09-18: monitoring repo still outranks the listing for its own brand token."
     }
   ],
-  "tracked_queries_note": "Retired query 'Eastlake condo for sale Lake Union view' removed 2026-09-18 and dropped from this baseline. Movement 2026-09-16 -> 2026-09-18 was reordering only, no new third-party domain in any top 5: apartments.com entered / loopnet.com left the top 5 on '1550 Eastlake Ave E #503'; wicklundre.com entered and urbnlivn.com fell out of the results entirely on 'Riva Condos #503 Seattle' (urbnlivn still ranks on 'Riva Condominium Seattle for sale'); 'Riva Condominium Seattle for sale' identical. github.com now appears on two queries and is a known self-mention (this monitoring repo), not the listing.",
+  "tracked_queries_note": "No new third-party domain entered any top 5 this run relative to 2026-09-18. Movement: '1550 Eastlake Ave E #503' swapped apartments.com/loopnet.com ordering for homes.com entering position 3 (reordering, same domain pool as before plus homes.com); 'Riva Condominium Seattle for sale' lost urbnlivn.com from the returned set and gained coldwellbankerhomes.com. eastlakeview503.relahq.com itself appeared in zero results across all four queries, same as every prior run.",
   "competitors": {
     "windermere.com": {
       "fetchable": true,
@@ -285,7 +333,7 @@
       ],
       "visible_price": 385000,
       "unit": "#506",
-      "note": "1 bed / 1 bath - not a price comp for our 2/2. Unchanged from 2026-09-16."
+      "note": "1 bed / 1 bath - not a price comp for our 2/2. Unchanged from baseline."
     },
     "compass.com": {
       "fetchable": true,
@@ -307,7 +355,7 @@
         "Thing"
       ],
       "unit": "#203",
-      "note": "Off-market page that still outranks us. Unchanged from 2026-09-16."
+      "note": "Off-market page that still outranks us. Unchanged from baseline."
     },
     "seattlecondosandlofts.com": {
       "fetchable": true,
@@ -325,7 +373,7 @@
       "riva_specific_content": false,
       "deep_fetch_dormant": true,
       "last_verified": "2026-09-16",
-      "dormant_note": "Not fetched since 2026-09-18 per state/competitors.json deep_fetch_dormant policy. Values are last known, not this run's. Not a gap."
+      "dormant_note": "Not fetched per state/competitors.json deep_fetch_dormant policy. Values are last known, not this run's. Not a gap."
     },
     "houseboatsofseattle.com": {
       "fetchable": true,
@@ -346,7 +394,7 @@
       "riva_specific_content": false,
       "deep_fetch_dormant": true,
       "last_verified": "2026-09-16",
-      "dormant_note": "Not fetched since 2026-09-18 per state/competitors.json deep_fetch_dormant policy. Values are last known, not this run's. Not a gap."
+      "dormant_note": "Not fetched per state/competitors.json deep_fetch_dormant policy. Values are last known, not this run's. Not a gap."
     },
     "rsir.com": {
       "fetchable": false,
@@ -355,23 +403,23 @@
       "retried": false,
       "deep_fetch_dormant": true,
       "last_verified": "2026-09-16",
-      "dormant_note": "Not fetched since 2026-09-18 per state/competitors.json deep_fetch_dormant policy. Values are last known, not this run's. Not a gap."
+      "dormant_note": "Not fetched (permanently skipped per policy). Not a gap."
     }
   },
   "pagespeed": {
     "status": "disabled_by_policy",
-    "note": "Closed 2026-09-16 after three consecutive 429s from a 0/day public quota; call switched off 2026-09-18 via state/competitors.json pagespeed_skip. No LCP/INP/CLS was ever captured and none is expected. Not a gap."
+    "note": "pagespeed_skip:true in state/competitors.json. Not called, not reported as a gap."
   },
   "action_queue_verification": {
-    "cb_danforth_bio_page_updated": "NOT DONE (fetched omar-senghore.cbdanforth.com/ this run: 0 mentions of '1550 Eastlake', 0 mentions of 'eastlakeview503'; Featured Listing section exists but does not reference this property)",
+    "cb_danforth_bio_page_updated": "NOT DONE (fetched omar-senghore.cbdanforth.com/ this run, HTTP 200: 0 mentions of '1550 Eastlake', 0 mentions of 'eastlakeview503'; Featured Listing section still exists but does not reference this property)",
     "brokerage_and_urbnlivn_emails_sent": "CANNOT VERIFY FROM PAGE (no page-observable signal of outreach; no urbnlivn.com or brokerage mention/link detected this run)",
-    "agent_name_spelling_settled": "NOT DONE (both 'Omar Senghor' and 'Omar Senghore' still live on the page)",
-    "contained_in_place_link": "NOT DONE (0 occurrences sitewide)",
-    "chase_rela_support_bundle": "NOT DONE (og:url, og:locale, twitter:card, H1 text, numberOfBedrooms, amenityFeature/petsAllowed/containedInPlace on native node, loading=lazy, sitemap.xml, robots.txt Sitemap: line, llms.txt, photo alt text all confirmed still outstanding)",
+    "agent_name_spelling_settled": "DONE (observed this run): the page now reads 'Omar Senghore' in all four sitewide occurrences (block_1_static.provider.name, block_3_client_injected.name, block_3's @id/url, and the visible 'Presented By' widget). Zero 'Omar Senghor' occurrences remain. Matches the spelling already used on the Coldwell Banker bio page.",
+    "contained_in_place_link": "NOT DONE (0 occurrences sitewide, unchanged) -- but note the technical blocker named in ACTION-QUEUE.md ('Rela's native Apartment block carries no @id') no longer holds: block_1_static now carries @id \"https://eastlakeview503.relahq.com#listing\". block_2 (ApartmentComplex) still has no @id of its own to link against.",
+    "chase_rela_support_bundle": "NOT DONE (og:url, og:locale, twitter:card, H1 text, numberOfBedrooms, amenityFeature/petsAllowed/containedInPlace on native node, loading=lazy, sitemap.xml, robots.txt Sitemap: line, llms.txt, photo alt text all confirmed still outstanding, all unchanged from baseline)",
     "gsc_links_monthly_report": "CANNOT VERIFY FROM PAGE (owner/Tier2 action, no GSC access)",
-    "gsc_indexation_reopen_check": "NOT REOPENED (re-verified indexed: yes (GSC 2026-09-16) per policy; WebSearch miss not used to downgrade)",
-    "realestateagent_jsonld_node": "DONE and confirmed live this run (block_3_client_injected present with name, email, telephone, url, worksFor)",
-    "photo_alt_text": "CONFIRMED PLATFORM-BLOCKED, observed state only, not re-escalated as owner task",
+    "gsc_indexation_reopen_check": "NOT REOPENED (retained indexed: yes (GSC 2026-09-16) per policy; no WebSearch verbatim-phrase check run this week, see indexation block)",
+    "realestateagent_jsonld_node": "DONE, confirmed live and further enriched this run (see json_ld.block_3_client_injected diff_note)",
+    "photo_alt_text": "CONFIRMED PLATFORM-BLOCKED, observed state only, unchanged",
     "pagespeed_baseline": "DISABLED BY POLICY, not attempted"
   }
 }
