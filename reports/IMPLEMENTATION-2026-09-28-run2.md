@@ -50,3 +50,11 @@ would only be noise.
 **Caveat:** it links to CB's own listing page, **not** to eastlakeview503.relahq.com (0 links to relahq on either page). So the inbound-link count for the Rela site is still 0. Possible next step: put the Rela URL in the CB listing's **Virtual Tour** link, or paste the linked text block into **About Me**.
 
 **Tool notes:** in CB broker admin, clicking "My Website" by mouse coordinates signed the owner out (twice across runs); calling the element's own click via JS worked. Claude in Chrome then disconnected mid-session. Emails (items 2–3) still owner-only.
+
+## Addendum 2 — first inbound link (2026-09-28)
+
+| Item | Status | What changed (old → new) | Notes |
+|---|---|---|---|
+| Link from CB bio page to the Rela site | applied+verified | About Me: no mention → new paragraph "Now offered: [1550 Eastlake Ave E #503 — Riva Condominium, Seattle](https://eastlakeview503.relahq.com/) …" | Path: CB broker admin → My Website → About Me → Edit. Owner pasted + saved (Tier 3's in-editor insert was blocked by a permission check). Verified by cache-busted HTTP fetch of https://omar-senghore.cbdanforth.com/: 1 `<a href="https://eastlakeview503.relahq.com/">` in server-rendered HTML, no `nofollow`. The text also shows up in a second, plain-text copy (likely a page summary/meta). |
+
+This is the **first external link** to eastlakeview503.relahq.com. Tier 1/Tier 2 should expect Search Console → Links to move off 0 once Google recrawls the bio page.
