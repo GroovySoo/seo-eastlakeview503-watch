@@ -2,54 +2,64 @@
 
 Executable to-do. Tier 2 rewrites this file each week. Top section = do now.
 
-> **Rewritten by Tier 2, 2026-09-26.** Status changes below come from Tier 1's ACTION VERIFICATION
-> section in `reports/EVIDENCE-2026-09-26.md` (live-page observation), not from assumption. Also folds
-> in out-of-band knowledge from `reports/IMPLEMENTATION-2026-09-26.md` and
-> `reports/IMPLEMENTATION-2026-09-21.md` that can never appear on the page: the surname decision, the
-> Search Console Links report still processing on Google's side, the empty WA licence number, and the
-> blank social-profile fields. Those are now recorded in `state/last-snapshot.json` too.
+> **Rewritten by Tier 2, 2026-09-28.** Status changes below come from Tier 1's ACTION VERIFICATION
+> section in `reports/EVIDENCE-2026-09-28.md` (live-page observation), not from assumption. Also folds
+> in out-of-band knowledge from `reports/IMPLEMENTATION-2026-09-26-run2.md` that can never appear on
+> the page: the Search Console **Links** report has finished processing and reads **External links: 0,
+> Top linking sites: No data**. That is the first authoritative measurement of the inbound-link count
+> and it is now recorded in `state/last-snapshot.json`.
 
 ## Do now
 
-_(week of 2026-09-26 — the on-page work is finished. Everything below is off-page.)_
+_(week of 2026-09-28 — the on-page work is finished. Everything below is off-page and owner-only.)_
 
-**The honest position, measured again this week:** third-party mentions of the domain = **0**,
-unchanged on every run since 2026-09-10. The page is in good shape and has been stable for five
-weeks. It ranks for nothing because nothing links to it. More on-page polish will not change that.
+**The honest position, now confirmed by Google:** external links to this listing = **0**
+(Search Console → Links, read 2026-09-26). Third-party mentions = **0**, unchanged on every run since
+2026-09-10. The page is technically sound, indexed, and has been stable for six weeks. It ranks for
+nothing because nothing on the web points at it. No further on-page polish will change that.
 
-**What did change this week:** the listing's agent identity now matches the owner's real brokerage
-identity (name, email, `@id`, NWMLS number). Before this, a link from the Coldwell Banker bio page
-would have joined two apparent strangers. It no longer would. That makes item 1 more valuable than it
-was last week, not less.
+**Both items below have now carried three weeks.** They are not hard — the click path and both emails
+are already written, and the whole list is about 15 minutes. They are owner-only, because each one
+publishes or sends as the owner. So the list has been **cut down rather than repeated**: the single
+highest-value item goes first and alone, and item 1 now has an explicit "I'm blocked" reply so a
+silent stall becomes a solvable problem instead of a fourth carried week.
 
-### 1. Put the listing on your own Coldwell Banker Danforth page (5 minutes) — **highest value item on this list** *(carried 2 weeks)*
+### 1. Put the listing on your own Coldwell Banker Danforth page (5 minutes) — **highest value item on this list** *(carried 3 weeks)*
 
 `https://omar-senghore.cbdanforth.com/` is live, it is yours, it already has a **"Featured Listing"**
-section, and re-checked on 2026-09-26 it mentions this property **zero times**. It is a real-estate
-brand domain, topically perfect, free, and almost certainly a followed link. This is the single best
-inbound link available to this listing (`state/competitors.json` → `link_targets`, rank 1).
+section, and re-checked on 2026-09-28 it mentions this property **zero times**. Real-estate brand
+domain, topically perfect, free, almost certainly a followed link. Best inbound link available
+(`state/competitors.json` → `link_targets`, rank 1).
 
-Log into the Coldwell Banker Danforth agent portal (Moxi) that manages that bio page and either set
-1550 Eastlake Ave E #503 as the featured listing, or add this to the page body:
+Click path:
+
+1. Sign in to the Coldwell Banker Danforth agent portal (the Moxi admin behind the bio page).
+2. **My Website → Featured Listing** (may read "Featured Property").
+3. Set it to **1550 Eastlake Ave E #503** and save.
+
+If the listing cannot be picked from a menu, paste this into the page body instead, with the first
+line linked to `https://eastlakeview503.relahq.com/`:
 
 ```
 Now offered: 1550 Eastlake Ave E #503 — Riva Condominium
 ```
 
-linked to `https://eastlakeview503.relahq.com/`, with this beneath it:
-
 ```
 Top-floor 2 bed, 2 bath condo for sale at Riva Condominium in Seattle's Eastlake neighborhood, one block from Lake Union. 1,114 sq ft, Lake Union and skyline views, private balcony, 2 secured parking spaces plus storage. $649,888. MLS# 2556157.
 ```
 
-Reply in Slack with "bio page done" so Tier 1 can confirm it next run.
+Reply in Slack with **"bio page done"** so Tier 1 can confirm it live next run.
 
-### 2. Send two emails — both fully drafted, nothing to write (10 minutes) *(carried 2 weeks)*
+**New this week — the escape hatch.** If the portal login or that screen cannot be found, reply
+**"bio page blocked — can't get in"**. That is a useful answer: it converts this from a carrying task
+into one we route around by asking the brokerage to make the change instead.
 
-**(a) To Coldwell Banker Danforth marketing / your managing broker.** Brokerage sites routinely link
-an agent's single-property site. New this week: `coldwellbankerhomes.com` — Coldwell Banker's own
-national site — appeared in the results for "Riva Condominium Seattle for sale" for the first time.
-Your own brand family already ranks for this building. Copy-paste:
+### 2. Email Coldwell Banker Danforth marketing / the managing broker — fully drafted (3 minutes) *(carried 3 weeks)*
+
+Brokerage sites routinely link an agent's single-property site. Supporting argument, unchanged since
+2026-09-26: `coldwellbankerhomes.com` — Coldwell Banker's own national site — ranks for
+"Riva Condominium Seattle for sale" while this listing does not. The brand family already ranks for
+this building. Copy-paste:
 
 > Subject: Link for my 1550 Eastlake listing on the CB Danforth site
 >
@@ -63,7 +73,16 @@ Your own brand family already ranks for this building. Copy-paste:
 > Thanks,
 > Omar
 
-**(b) To urbnlivn.com** (Seattle condo blog). Use their site contact form or tips address:
+Reply in Slack with **"brokerage emailed"**.
+
+### 3. Email urbnlivn.com — fully drafted (3 minutes) *(carried 3 weeks)* — **target upgraded back to rank 3 this week**
+
+Use their site contact form or tips address.
+
+**Correction to last week's note:** 2026-09-26 downgraded this target because urbnlivn had dropped out
+of all four tracked queries. It is **back** in the returned set for "Riva Condos #503 Seattle" as of
+2026-09-28, so that downgrade was premature. It is again a site that ranks for the exact building name,
+which is the whole reason it sits at rank 3 in `link_targets`.
 
 > Subject: Riva Condominium (1550 Eastlake) — top-floor unit just listed
 >
@@ -79,26 +98,12 @@ Your own brand family already ranks for this building. Copy-paste:
 >
 > Omar Senghore, Coldwell Banker Danforth (Everett) — 206-683-5030
 
-**Target-quality note on (b):** urbnlivn.com has now dropped out of the returned results for **all
-four** tracked queries (it was on two of them on 2026-09-18). It is weaker than when it was ranked #3
-in `link_targets`. Send it anyway — the text is already written, so it costs nothing. If it goes
-nowhere, the next target is the **Eastlake Community Council** (`https://www.eastlakeseattle.org/`,
-`link_targets` rank 4); that ask gets drafted next week rather than piled on this week.
+Reply in Slack with **"urbnlivn emailed"**. If it goes nowhere, the next target is the **Eastlake
+Community Council** (`https://www.eastlakeseattle.org/`, `link_targets` rank 4); that ask gets drafted
+when this one is spent, not piled on alongside it.
 
-Reply in Slack with "brokerage emailed" / "urbnlivn emailed".
-
-### 3. Read the Search Console links number (under a minute) — **monthly ask, now unblocked**
-
-Search Console → **Links** → **"Top linking sites"** → paste the total external-link count (and any
-domains listed) into Slack.
-
-**Why this is live again rather than carried:** on 2026-09-21 Tier 3 opened this exact report and
-Google itself displayed *"Processing data, please check again in a day or so."* No number was withheld
-or guessed — Google had not finished computing link data for this property. Five days have passed, so
-it should now render.
-
-This is the only authoritative measurement of the one number this whole system is built around. Right
-now it is *asserted* as zero every week from a web search and has never once been *verified*.
+**Not asked this week: the Search Console links number.** It was read on 2026-09-26 and the answer is
+**0** — see "Done". Next monthly ask falls on the first run of October.
 
 ## Next up (not this week)
 
@@ -142,10 +147,10 @@ now it is *asserted* as zero every week from a web search and has never once bee
   >
   > Thanks — happy to give any detail you need.
 
-  All 8 items re-confirmed still outstanding on the live page 2026-09-26, unchanged.
+  All 8 items re-confirmed still outstanding on the live page 2026-09-28, unchanged.
 
 - **Link the structured-data blocks (`containedInPlace`) — STILL BACKLOG, blocker partially lifted
-  2026-09-26** *(was carried 4 weeks)*. Confirmed absent again this week (0 occurrences site-wide).
+  2026-09-26** *(was carried 4 weeks)*. Confirmed absent again 2026-09-28 (0 occurrences site-wide).
   **Update:** the specific technical blocker recorded here no longer holds — Rela's native `Apartment`
   block now carries `@id: "https://eastlakeview503.relahq.com#listing"`, which appeared on its own
   this week without being asked for. However the building node (`ApartmentComplex`) still has **no
@@ -156,6 +161,18 @@ now it is *asserted* as zero every week from a web search and has never once bee
   encouraging for the support-chase items above.
 
 ## Done
+
+- **✅ Search Console "Links" number read — DONE 2026-09-26, the first verified inbound-link count.**
+  Out-of-band knowledge from `reports/IMPLEMENTATION-2026-09-26-run2.md`; it can never be observed on
+  the live page, so the certification rule does not apply — this was a **read**, not a change to the
+  site. Tier 3 opened Search Console → Links for `https://eastlakeview503.relahq.com/` (URL-prefix
+  property) and the report had finished processing: **External links total 0. Top linking sites:
+  No data. Top linking text: No data. Internal links: 0.** The 2026-09-21 "Processing data, please
+  check again in a day or so" banner is gone. This agrees exactly with Tier 1's search-based figure and
+  retires the standing caveat that zero was asserted weekly but never verified. **It is a real zero.**
+  Carried as an ask since 2026-09-21; finished. Recorded in `state/last-snapshot.json`
+  (`inbound_links.gsc_top_linking_sites_status`, `external_links_verified`). The monthly re-ask resumes
+  on the first run of October.
 
 - **✅ Agent name spelling settled — DONE 2026-09-26.** Decided from the owner's own brokerage record
   rather than guessed: Coldwell Banker Danforth broker admin (My Website → Contact Info) reads
