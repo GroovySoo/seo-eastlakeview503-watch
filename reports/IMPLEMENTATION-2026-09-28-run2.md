@@ -40,3 +40,13 @@ would only be noise.
 ## Suspicious content
 
 - None found.
+
+## Addendum — owner-assisted, later on 2026-09-28
+
+| Item | Status | What changed (old → new) | Notes |
+|---|---|---|---|
+| 1. Feature the listing on omar-senghore.cbdanforth.com | applied+verified | Featured Listings: Eastlake not shown → **1550 Eastlake Avenue E #503 shown first** | Owner signed in to CB broker admin; path is **My Website → Listings → "Mark as Featured"** on the MLS #2556157 card (owner clicked it). Verified in a separate browser: bio home page Featured Listings slider now leads with "1550 Eastlake..." and links to its CB detail page (/homes/Condominium/1550-Eastlake-Avenue-E-Seattle/WA/98102/AGT-1582556157-991320/index.html). Slider is JS-rendered, so a plain HTTP fetch still shows 0 matches. |
+
+**Caveat:** it links to CB's own listing page, **not** to eastlakeview503.relahq.com (0 links to relahq on either page). So the inbound-link count for the Rela site is still 0. Possible next step: put the Rela URL in the CB listing's **Virtual Tour** link, or paste the linked text block into **About Me**.
+
+**Tool notes:** in CB broker admin, clicking "My Website" by mouse coordinates signed the owner out (twice across runs); calling the element's own click via JS worked. Claude in Chrome then disconnected mid-session. Emails (items 2–3) still owner-only.
