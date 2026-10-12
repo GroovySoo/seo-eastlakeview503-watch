@@ -1,0 +1,269 @@
+{
+  "schema_version": 3,
+  "run_date": "2026-10-12",
+  "status": "complete",
+  "fields_captured": "27/27",
+  "fetch_failures": "none",
+  "listing_status": "active",
+  "indexable": "yes",
+  "indexed": "yes (GSC 2026-09-16)",
+  "source_report": "reports/EVIDENCE-2026-10-12.md",
+  "inbound_link_reverification": {
+    "what": "The first inbound link (omar-senghore.cbdanforth.com -> eastlakeview503.relahq.com), confirmed live 2026-10-05, is still live and unchanged this run.",
+    "evidence": "Direct curl fetch (browser UA, HTTP 200) of https://omar-senghore.cbdanforth.com/ this run found: <a href=\"https://eastlakeview503.relahq.com/\">1550 Eastlake Ave E #503&mdash;Riva Condominium, Seattle.</a> with no rel attribute (no nofollow). Byte-identical anchor to the 2026-10-05 finding.",
+    "found_via": "direct targeted re-fetch, NOT the automated mention_query WebSearch (which again returned 0 third-party domains this run)"
+  },
+  "listing": {
+    "url": "https://eastlakeview503.relahq.com/",
+    "http_status": 200,
+    "final_url": "https://eastlakeview503.relahq.com/",
+    "price": 649888,
+    "price_currency": "USD",
+    "availability": "https://schema.org/InStock",
+    "mls_number": "2556157",
+    "year_built": 1997,
+    "note": "Unchanged from state/last-snapshot.json."
+  },
+  "indexation": {
+    "x_robots_tag_header": null,
+    "robots_meta": null,
+    "canonical_self_referencing": true,
+    "http_status_clean": true,
+    "indexability_note": "Nothing on the page blocks indexing: HTTP 200, no X-Robots-Tag response header, no <meta name=robots>, canonical (both <link> tag and HTTP link header) self-references https://eastlakeview503.relahq.com.",
+    "gsc_reading": "yes (GSC 2026-09-16: Indexed = 1, Not indexed = 0). No newer GSC reading available this run.",
+    "verbatim_phrase_query": null,
+    "verbatim_phrase_result": "Not run this run, per 2026-09-18 scope change: Tier 1 no longer runs the verbatim-phrase check.",
+    "indexation_signal_note": "indexed retained at 'yes (GSC 2026-09-16)' per policy."
+  },
+  "meta": {
+    "title": "Riva Condos #503, 1550 Eastlake Ave E – Seattle Condo for Sale",
+    "description": "Top-floor 2 bed, 2 bath condo for sale at Riva Condominium, 1550 Eastlake Ave E #503, Seattle. 1,114 sq ft, Lake Union & skyline views, private balcony, 2 secured parking spaces + storage. $649,888 · MLS# 2556157.",
+    "canonical": "https://eastlakeview503.relahq.com",
+    "robots": null,
+    "google_site_verification": "T6_j8jTeByDHz6TZ-fo1x88Et-9sj4_CwAIZFHl_2yM",
+    "note": "All unchanged from baseline."
+  },
+  "og_twitter_tags": {
+    "og:type": "place",
+    "og:title": "Riva Condos #503 – Top-Floor Eastlake Condo with Lake Union Views",
+    "og:description": "Move-in-ready 2 bed / 2 bath top-floor condo for sale at Riva Condominium in Seattle's Eastlake neighborhood, one block from Lake Union and South Lake Union. Private balcony with lake and skyline views, 2 secured parking spaces, dedicated storage. Offered at $649,888 (MLS# 2556157).",
+    "og:updated_time": "2026-09-26T03:44:05-07:00",
+    "og:image": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
+    "og:image:type": "image/jpeg",
+    "og:image:width": 1600,
+    "og:image:height": 1069,
+    "og:url": null,
+    "og:locale": null,
+    "twitter:card": null,
+    "twitter:title": "Riva Condos #503 – Top-Floor Eastlake Condo, Lake Union Views",
+    "twitter:description": "2 bed / 2 bath top-floor condo for sale at Riva Condominium, 1550 Eastlake Ave E #503, Seattle. 1,114 sq ft, Lake Union & skyline views, balcony, 2 parking + storage. $649,888 · MLS# 2556157.",
+    "twitter:image": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
+    "twitter:image:alt": "1550 Eastlake Ave E Apt 503, Seattle, WA | 2 Bed, 2 Bath",
+    "og:image:url": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
+    "og:image:secure_url": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
+    "diff_note": "No change vs. 2026-10-05 run."
+  },
+  "json_ld": {
+    "block_count": 3,
+    "block_1_static": {
+      "@type": "Apartment",
+      "name": "1550 Eastlake Ave E #503, Seattle, WA 98102",
+      "yearBuilt": 1997,
+      "numberOfRooms": 2,
+      "numberOfBedrooms": null,
+      "numberOfBathroomsTotal": 2,
+      "floorSize_sqft": 1114,
+      "offers_price": 649888,
+      "offers_availability": "https://schema.org/InStock",
+      "provider_name": "Omar Senghore",
+      "provider_email": "i_give@hotmail.com",
+      "provider_phone": "206-683-5030",
+      "amenityFeature": null,
+      "petsAllowed": null,
+      "containedInPlace": null,
+      "image_count": 18,
+      "@id": "https://eastlakeview503.relahq.com#listing",
+      "diff_note": "No change vs. 2026-10-05 baseline."
+    },
+    "block_2_client_injected": {
+      "@type": "ApartmentComplex",
+      "name": "Riva Condominium",
+      "alternateName": ["Riva Condos", "Riva at Lake Union"],
+      "yearBuilt": "1997",
+      "numberOfFloors": 5,
+      "amenityFeature_names": [
+        "Secured garage parking",
+        "Secured lobby entrance",
+        "Private storage units",
+        "In-unit washer and dryer"
+      ],
+      "containedInPlace_link_to_block_1": false,
+      "has_id": false,
+      "diff_note": "Unchanged from baseline. Still no @id on this block."
+    },
+    "block_3_client_injected": {
+      "@type": "RealEstateAgent",
+      "name": "Omar Senghore",
+      "email": "i_give@hotmail.com",
+      "telephone": "+1-206-683-5030",
+      "url": "https://omar-senghore.cbdanforth.com/",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Coldwell Banker Danforth",
+        "addressLocality": "Everett",
+        "addressRegion": "WA",
+        "addressCountry": "US"
+      },
+      "@id": "https://omar-senghore.cbdanforth.com",
+      "jobTitle": "Broker - Value-Add Real Estate Investment Specialist",
+      "image": "https://upload.terabitz.com/u/cbdanforth/agents/agt_212_Omar_Senghore.jpg",
+      "identifier": {"propertyID": "NWMLS", "value": "NWM62208"},
+      "areaServed": ["Seattle", "Eastlake", "South Lake Union", "Everett", "Edmonds", "Bothell"],
+      "sameAs": ["https://omar-senghore.cbdanforth.com/"],
+      "diff_note": "Unchanged from baseline."
+    },
+    "contained_in_place_sitewide_occurrences": 0,
+    "agent_name_spelling_check": {
+      "Omar Senghore_exact_phrase_count": 3,
+      "Omar Senghor_typo_count": 0,
+      "substring_Senghore_count": 4,
+      "diff_note": "Unchanged vs. 2026-10-05: the 4th substring hit is the lowercase/hyphenated domain string in block 3's @id/url, not a second phrase occurrence."
+    }
+  },
+  "h1": {
+    "text": "1550 Eastlake Ave E Apt 503, Seattle",
+    "matches_target_text": false,
+    "target_text": "1550 Eastlake Ave E #503, Seattle, WA 98102",
+    "note": "Unchanged from baseline."
+  },
+  "images": {
+    "total_img_tags": 23,
+    "property_photo_img_tags": 19,
+    "logo_chrome_img_tags": 4,
+    "non_empty_alt_count": 3,
+    "non_empty_alt_all_on_logos": true,
+    "property_photo_with_alt_count": 0,
+    "loading_lazy_count": 0,
+    "alt_text_platform_status": "platform-blocked, unchanged from baseline: no alt field exists in the Rela Photo Gallery editor.",
+    "note": "All counts unchanged from baseline."
+  },
+  "analytics": {
+    "ga_ids_found": ["G-1RVXDXERNN", "G-95JF0FLSZH"],
+    "rela_native_ga_id_present": true,
+    "custom_ga_id_present": true,
+    "note": "Unchanged from baseline."
+  },
+  "llms_txt": {
+    "http_status": 200,
+    "is_real_llms_content": false,
+    "note": "SPA fallback, same page as /. Unchanged, known-pending Rela platform issue."
+  },
+  "sitemap_xml": {
+    "http_status": 404,
+    "note": "Unchanged, known-pending Rela platform issue."
+  },
+  "robots_txt": {
+    "http_status": 200,
+    "has_crawl_delay_10": true,
+    "has_sitemap_line": false,
+    "note": "Unchanged, known-pending Rela platform issue."
+  },
+  "mentions": {
+    "query": "\"eastlakeview503.relahq.com\"",
+    "domains_found": [],
+    "third_party_count": 0,
+    "raw_domains_returned": [
+      "bestinwest.roveridx.com",
+      "furnishedfinder.com",
+      "rentler.com",
+      "luxuryportfolio.com",
+      "expedia.nl",
+      "airbnb.gy",
+      "daybreakutah.com",
+      "commercialsearch.com"
+    ],
+    "note": "No third-party domain in this run's WebSearch results contained the literal target domain string -- fuzzy keyword matches on 'Eastlake'/'Lakeview' + unrelated addresses, same known pattern as prior runs. No known self-mention (github.com/GroovySoo) appeared in this run's results. This automated search again did NOT surface omar-senghore.cbdanforth.com, which a direct re-fetch (see inbound_link_reverification) confirms still links to the target domain. Treat this automated number as a floor, never as the count."
+  },
+  "inbound_links": {
+    "external_links_observed": 1,
+    "external_links_observed_detail": "RE-VERIFIED BY TIER 1 DIRECT FETCH, 2026-10-12. https://omar-senghore.cbdanforth.com/ returns HTTP 200 and its server-rendered HTML still contains <a href=\"https://eastlakeview503.relahq.com/\">1550 Eastlake Ave E #503&mdash;Riva Condominium, Seattle.</a> in the About Me / Featured Listing content block, with NO rel attribute (followed). Unchanged since first confirmed 2026-10-05.",
+    "external_links_known": 0,
+    "external_links_measurement_basis": "automated mention_query WebSearch only (third_party_count = 0 this run, measured fresh -- not carried forward from any prior baseline). This measure is KNOWN TO BE WRONG BY ONE, same as every run since the link went live: it did not surface the verified cbdanforth.com link. Read it as a FLOOR, never as the count. external_links_observed is the real number.",
+    "note": "Inbound links remain the single biggest lever on this listing. The one confirmed link continues to hold; no second link detected this run."
+  },
+  "tracked_queries": [
+    {
+      "query": "1550 Eastlake Ave E #503",
+      "top_5_domains": ["exprealty.com", "redfin.com", "redfin.com", "officespace.com", "canorealestate.com"],
+      "all_domains_returned": ["exprealty.com", "redfin.com", "redfin.com", "officespace.com", "canorealestate.com", "commercialmls.com", "seattle.gov", "seattle.gov", "greystar.com"],
+      "target_present": false,
+      "note": "exprealty.com again shows $698,000 for this address/unit (third-party; our own price confirmed $649,888). Domain set essentially unchanged from 2026-10-05."
+    },
+    {
+      "query": "Riva Condos #503 Seattle",
+      "top_5_domains": ["echofineproperties.com", "condoblackbook.com", "bestinwest.roveridx.com", "travelocity.com", "bogatovrealty.com"],
+      "all_domains_returned": ["echofineproperties.com", "condoblackbook.com", "condoblackbook.com", "bestinwest.roveridx.com", "travelocity.com", "travelocity.com", "bogatovrealty.com", "sunnyislesmiamirealestate.com", "houzeo.com"],
+      "target_present": false,
+      "note": "Result set still dominated by Florida/Miami 'Riva' buildings, essentially unchanged from 2026-10-05. wicklundre.com, urbnlivn.com, github.com remain absent."
+    },
+    {
+      "query": "Riva Condominium Seattle for sale",
+      "top_5_domains": ["bestinwest.roveridx.com", "dupontregistry.com", "pnwresidences.com", "showcaseidx.com", "sunnyislesmiamirealestate.com"],
+      "all_domains_returned": ["bestinwest.roveridx.com", "dupontregistry.com", "pnwresidences.com", "showcaseidx.com", "sunnyislesmiamirealestate.com", "bexrealty.com", "bexrealty.com", "bexrealty.com", "bexrealty.com"],
+      "target_present": false,
+      "note": "Domain set identical to 2026-10-05. wicklundre.com still absent."
+    },
+    {
+      "query": "eastlakeview503",
+      "top_5_domains": ["cityofgenevany.gov", "en.wikipedia.org", "exprealty.com", "redfin.com", "bestinwest.roveridx.com"],
+      "all_domains_returned": ["cityofgenevany.gov", "en.wikipedia.org", "exprealty.com", "redfin.com", "redfin.com", "bestinwest.roveridx.com", "bestinwest.roveridx.com", "airbnb.gy", "parkmobile.io"],
+      "target_present": false,
+      "note": "github.com (monitoring repo) absent for a second consecutive run. Two new unrelated geographic matches (Geneva NY, Saskatoon) entered the set this run."
+    }
+  ],
+  "tracked_queries_note": "Three of four tracked queries returned domain sets essentially unchanged from 2026-10-05; 'eastlakeview503' shifted further toward unrelated geographic matches. No change to target_present (false) on any of the 4 queries.",
+  "competitors": {
+    "windermere.com": {
+      "fetchable": true,
+      "http_status": 200,
+      "title": "MLS#2287238: 1550 Eastlake Avenue E 506, Seattle, WA 98102",
+      "meta_description_present": true,
+      "json_ld_types": ["House", "ImageObject", "Offer", "PostalAddress", "Product", "QuantitativeValue", "RealEstateListing"],
+      "visible_price": 385000,
+      "unit": "#506",
+      "note": "1 bed / 1 bath - not a price comp. Unchanged from baseline."
+    },
+    "compass.com": {
+      "fetchable": true,
+      "http_status": 200,
+      "final_url": "https://www.compass.com/homedetails/1550-Eastlake-Ave-E-Unit-203-Seattle-WA-98102/1561675205357517033_lid/",
+      "title": "1550 Eastlake Ave, Unit 203, Seattle, WA 98102 | MLS #2227901",
+      "meta_description": "1550 Eastlake Ave, Unit 203, Seattle, WA 98102 is a property not currently listed. This is a 2-bed, 2-bath property.",
+      "json_ld_types": ["Brand", "BreadcrumbList", "ContactPoint", "FloorPlan", "ImageObject", "ListItem", "Offer", "Organization", "Place", "PostalAddress", "Product", "RealEstateListing", "SingleFamilyResidence", "Thing"],
+      "unit": "#203",
+      "note": "DIFFERENCE FROM BASELINE: 14 types this run vs. 11 recorded 2026-10-05 -- added Product, RealEstateListing, SingleFamilyResidence. Title, MLS#, unit, and off-market status unchanged. Cause not determined; flagged for Tier 2."
+    },
+    "seattlecondosandlofts.com": {
+      "deep_fetch_dormant": true,
+      "dormant_note": "Not fetched per policy this run."
+    },
+    "houseboatsofseattle.com": {
+      "deep_fetch_dormant": true,
+      "dormant_note": "Not fetched per policy this run."
+    },
+    "rsir.com": {
+      "deep_fetch_dormant": true,
+      "dormant_note": "Not fetched (permanently skipped per policy). Not a gap."
+    }
+  },
+  "pagespeed": {
+    "status": "disabled_by_policy",
+    "note": "pagespeed_skip:true in state/competitors.json. Not called, not reported as a gap."
+  },
+  "action_queue_verification": {
+    "cb_listing_virtual_tour_link": "CANNOT VERIFY FROM PAGE. No URL for the Coldwell Banker listing-detail page for MLS #2556157 is recorded in state/ or prior reports. The bio page omar-senghore.cbdanforth.com (re-fetched this run, HTTP 200) contains no 'Virtual Tour' text and no link to any cbdanforth.com listing-detail page. Must be answered by owner Slack reply per ACTION-QUEUE.md's own instructions.",
+    "gsc_links_monthly_report": "CANNOT VERIFY FROM PAGE (owner-only; this system has no GSC credentials).",
+    "brokerage_email_sent": "CANNOT VERIFY FROM PAGE (no page-observable signal of outreach; cbdanforth.com main brokerage site not fetched this run).",
+    "first_inbound_link_milestone": "RE-CONFIRMED STILL LIVE. See inbound_link_reverification above. Not a 'Do now' item, but the system's #1 KPI."
+  }
+}
