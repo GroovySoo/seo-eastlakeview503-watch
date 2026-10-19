@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
-  "updated": "2026-10-12",
-  "note": "Baseline as of 2026-10-12. Tier 1 status: complete (27/27 fields, no fetch failures), so every field below was captured this run and the full snapshot was updated. The live page is byte-for-byte unchanged for the second consecutive week -- no regressions, no platform-side drift. Also folds in out-of-band knowledge from reports/IMPLEMENTATION-2026-10-05.md that can never appear on the live page: the October Search Console links reading (External links 0, Top linking sites \"No data\", taken 2026-10-05) and the fact that the Coldwell Banker broker admin is signed out, so whether the MLS #2556157 listing card has a \"Virtual Tour\" field remains unknown.",
-  "source_evidence": "reports/EVIDENCE-2026-10-12.md",
-  "source_observations": "state/observations-2026-10-12.json",
+  "updated": "2026-10-19",
+  "note": "Baseline as of 2026-10-19. Tier 1 status: complete (27/27 fields, no fetch failures), so every field below was captured this run and the full snapshot was updated. The live page is byte-for-byte unchanged for the THIRD consecutive week -- no regressions, no platform-side drift. No new reports/IMPLEMENTATION-*.md since the 2026-10-12 baseline (newest is 2026-10-05, already folded in), so there is no new out-of-band knowledge to import this run. Two fields were DELIBERATELY NOT overwritten from the observations JSON, both recorded in reports/STRATEGY-2026-10-19.md: (a) json_ld.agent_name_spelling_check keeps the baseline's 3-exact-phrase / 4-substring decomposition rather than Tier 1's conflated \"Omar Senghore_count\": 4, which is a key-labelling change in Tier 1, not a page change; and (b) json_ld.agent_identity_settled, the three dormant competitor entries and the four closed action_queue_verification items are preserved -- Tier 1 dropped them from its JSON because they are settled/out-of-scope records, not because this run failed to capture them.",
+  "source_evidence": "reports/EVIDENCE-2026-10-19.md",
+  "source_observations": "state/observations-2026-10-19.json",
   "first_run": "2026-09-11",
   "listing_status": "active",
   "indexable": "yes",
@@ -29,7 +29,7 @@
     "verbatim_phrase_query": null,
     "verbatim_phrase_result": "Not run this run, per 2026-09-18 scope change: Tier 1 no longer runs the verbatim-phrase check.",
     "indexation_signal_note": "indexed retained at 'yes (GSC 2026-09-16)' per policy.",
-    "out_of_band_note": "Indexation is CLOSED, do not reopen on a WebSearch miss (GSC 2026-09-16: Indexed = 1, Not indexed = 0). Tier 1 no longer runs the verbatim-phrase check at all per the 2026-09-18 scope change, which is why verbatim_phrase_query is null here - that is a deliberate scope decision, not a missing measurement."
+    "out_of_band_note": "Indexation is CLOSED, do not reopen on a WebSearch miss (GSC 2026-09-16: Indexed = 1, Not indexed = 0). Tier 1 no longer runs the verbatim-phrase check at all per the 2026-09-18 scope change, which is why verbatim_phrase_query is null here -- a deliberate scope decision, not a missing measurement."
   },
   "meta": {
     "title": "Riva Condos #503, 1550 Eastlake Ave E – Seattle Condo for Sale",
@@ -57,7 +57,7 @@
     "twitter:image:alt": "1550 Eastlake Ave E Apt 503, Seattle, WA | 2 Bed, 2 Bath",
     "og:image:url": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
     "og:image:secure_url": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
-    "diff_note": "No change vs. 2026-10-05 run."
+    "diff_note": "No change vs. 2026-10-12 run."
   },
   "json_ld": {
     "block_count": 3,
@@ -79,7 +79,7 @@
       "containedInPlace": null,
       "image_count": 18,
       "@id": "https://eastlakeview503.relahq.com#listing",
-      "diff_note": "No change vs. 2026-10-05 baseline."
+      "diff_note": "No change vs. 2026-10-12 baseline."
     },
     "block_2_client_injected": {
       "@type": "ApartmentComplex",
@@ -98,7 +98,7 @@
       ],
       "containedInPlace_link_to_block_1": false,
       "has_id": false,
-      "diff_note": "Unchanged from baseline. Still no @id on this block."
+      "diff_note": "Unchanged. Still no @id on this block."
     },
     "block_3_client_injected": {
       "@type": "RealEstateAgent",
@@ -132,7 +132,7 @@
       "sameAs": [
         "https://omar-senghore.cbdanforth.com/"
       ],
-      "diff_note": "Unchanged from baseline."
+      "diff_note": "Unchanged."
     },
     "contained_in_place_sitewide_occurrences": 0,
     "agent_name_spelling_check": {
@@ -145,7 +145,7 @@
       "Omar Senghor_count": 0,
       "Omar Senghor_locations": [],
       "substring_Senghore_count": 4,
-      "diff_note": "Unchanged vs. 2026-10-05: the 4th substring hit is the lowercase/hyphenated domain string in block 3's @id/url, not a second phrase occurrence."
+      "diff_note": "Unchanged vs. 2026-10-12: 3 exact 'Omar Senghore' phrase occurrences (visible agent card + 2 JSON-LD name fields), plus a 4th 'Senghore' SUBSTRING hit in an image filename / the lowercase-hyphenated bio domain in block 3's @id-url -- not a second phrase occurrence. state/observations-2026-10-19.json reports \"Omar Senghore_count\": 4 and omits substring_Senghore_count, conflating the two measures; the evidence prose itemises the same four hits. BASELINE DECOMPOSITION KEPT ON PURPOSE -- this is a Tier 1 key-labelling change, NOT a page change. Typo count ('Senghor' not followed by 'e') still 0."
     },
     "agent_identity_settled": {
       "surname_spelling": "Senghore",
@@ -209,23 +209,23 @@
       "furnishedfinder.com",
       "rentler.com",
       "luxuryportfolio.com",
+      "howardhanna.com",
       "expedia.nl",
       "airbnb.gy",
-      "daybreakutah.com",
-      "commercialsearch.com"
+      "daybreakutah.com"
     ],
-    "note": "No third-party domain in this run's WebSearch results contained the literal target domain string -- fuzzy keyword matches on 'Eastlake'/'Lakeview' + unrelated addresses, same known pattern as prior runs. No known self-mention (github.com/GroovySoo) appeared in this run's results. This automated search again did NOT surface omar-senghore.cbdanforth.com, which a direct re-fetch (see inbound_link_reverification) confirms still links to the target domain. Treat this automated number as a floor, never as the count."
+    "note": "No third-party domain in this run's WebSearch results contained the literal target domain string -- same known fuzzy-match pattern as every prior run. No known self-mention (github.com/GroovySoo) appeared in this run's results. Automated search again did NOT surface omar-senghore.cbdanforth.com, which a direct re-fetch (see inbound_link_reverification) confirms still links to the target domain. Treat this automated number as a floor, never as the count."
   },
   "inbound_links": {
     "external_links_observed": 1,
-    "external_links_observed_detail": "RE-VERIFIED BY TIER 1 DIRECT FETCH, 2026-10-12. https://omar-senghore.cbdanforth.com/ returns HTTP 200 and its server-rendered HTML still contains <a href=\"https://eastlakeview503.relahq.com/\">1550 Eastlake Ave E #503&mdash;Riva Condominium, Seattle.</a> in the About Me / Featured Listing content block, with NO rel attribute (followed). Unchanged since first confirmed 2026-10-05.",
+    "external_links_observed_detail": "RE-VERIFIED BY TIER 1 DIRECT FETCH, 2026-10-19. https://omar-senghore.cbdanforth.com/ returns HTTP 200 and its server-rendered HTML still contains <a href=\"https://eastlakeview503.relahq.com/\">1550 Eastlake Ave E #503&mdash;Riva Condominium, Seattle.</a> in the About Me / Featured Listing content block, with NO rel attribute (followed). Byte-identical to the 2026-10-12 re-verification.",
     "external_links_known": 0,
     "external_links_measurement_basis": "automated mention_query WebSearch only (third_party_count = 0 this run, measured fresh -- not carried forward from any prior baseline). This measure is KNOWN TO BE WRONG BY ONE, same as every run since the link went live: it did not surface the verified cbdanforth.com link. Read it as a FLOOR, never as the count. external_links_observed is the real number.",
     "external_links_verified": 0,
-    "external_links_verification": "OUT-OF-BAND, Tier 3, reading taken 2026-10-05 (reports/IMPLEMENTATION-2026-10-05.md): Search Console -> Links for the URL-prefix property https://eastlakeview503.relahq.com/ read External links Total 0, Internal links Total 0, all three \"Top ...\" panels \"No data\". Confirmed on screen. This supersedes the stale 2026-09-26 reading. A 0 here is EXPECTED and needs no action: the inbound link went live 2026-09-28 and Google has not re-crawled omar-senghore.cbdanforth.com since. Direct fetch (re-confirmed 2026-10-12) proves the link is live, so the real count is 1 and Search Console is simply behind.",
+    "external_links_verification": "OUT-OF-BAND, Tier 3, reading taken 2026-10-05 (reports/IMPLEMENTATION-2026-10-05.md): Search Console -> Links for the URL-prefix property https://eastlakeview503.relahq.com/ read External links Total 0, Internal links Total 0, all three \"Top ...\" panels \"No data\". NOT RE-ASKED on 2026-10-19 -- monthly cadence, next ask is the first Tier 2 run of November 2026. A 0 here is EXPECTED and needs no action: the inbound link went live 2026-09-28 and Google had not re-crawled omar-senghore.cbdanforth.com as of that reading. Direct fetch (re-confirmed byte-identical 2026-10-19, third consecutive week) proves the link is live, so the real count is 1 and Search Console is simply behind.",
     "gsc_top_linking_sites": [],
-    "gsc_top_linking_sites_status": "OCTOBER ASK CLOSED 2026-10-12 (reading taken 2026-10-05: 0 / \"No data\"). Monthly cadence: next ask is the first Tier 2 run of November 2026. Do not re-ask the owner for a GSC links number before then. A reading of 0 in November would be the first genuinely informative one, since Google will have had over a month to re-crawl the bio page.",
-    "note": "Inbound links remain the single biggest lever on this listing. The one confirmed link continues to hold; no second link detected this run."
+    "gsc_top_linking_sites_status": "OCTOBER ASK CLOSED 2026-10-12 (reading taken 2026-10-05: 0 / \"No data\"). NOT re-asked on 2026-10-19. Monthly cadence: next ask is the first Tier 2 run of November 2026. Do not re-ask the owner for a GSC links number before then. A reading of 0 in November would be the first genuinely informative one, since Google will have had over a month to re-crawl the bio page.",
+    "note": "Inbound links remain the single biggest lever on this listing. The one confirmed link held for a third consecutive week (byte-identical direct fetch); no second link detected this run. Email signatures and LinkedIn 'Featured' links are NOT links for SEO purposes and must never be counted toward the goal (state/competitors.json -> link_targets.explicitly_not_link_targets)."
   },
   "tracked_queries": [
     {
@@ -249,7 +249,7 @@
         "greystar.com"
       ],
       "target_present": false,
-      "note": "exprealty.com again shows $698,000 for this address/unit (third-party; our own price confirmed $649,888). Domain set essentially unchanged from 2026-10-05."
+      "note": "exprealty.com again shows $698,000 for this address/unit (third-party; our own price confirmed $649,888). Domain set essentially unchanged from 2026-10-12."
     },
     {
       "query": "Riva Condos #503 Seattle",
@@ -263,16 +263,16 @@
       "all_domains_returned": [
         "echofineproperties.com",
         "condoblackbook.com",
-        "condoblackbook.com",
         "bestinwest.roveridx.com",
         "travelocity.com",
-        "travelocity.com",
         "bogatovrealty.com",
+        "travelocity.com",
+        "condoblackbook.com",
         "sunnyislesmiamirealestate.com",
         "houzeo.com"
       ],
       "target_present": false,
-      "note": "Result set still dominated by Florida/Miami 'Riva' buildings, essentially unchanged from 2026-10-05. wicklundre.com, urbnlivn.com, github.com remain absent."
+      "note": "Result set still dominated by Florida/Miami 'Riva' buildings, unchanged from 2026-10-12."
     },
     {
       "query": "Riva Condominium Seattle for sale",
@@ -292,10 +292,10 @@
         "bexrealty.com",
         "bexrealty.com",
         "bexrealty.com",
-        "bexrealty.com"
+        "bestinwest.roveridx.com"
       ],
       "target_present": false,
-      "note": "Domain set identical to 2026-10-05. wicklundre.com still absent."
+      "note": "Domain set essentially identical to 2026-10-12."
     },
     {
       "query": "eastlakeview503",
@@ -311,17 +311,17 @@
         "en.wikipedia.org",
         "exprealty.com",
         "redfin.com",
-        "redfin.com",
         "bestinwest.roveridx.com",
+        "redfin.com",
         "bestinwest.roveridx.com",
         "airbnb.gy",
         "parkmobile.io"
       ],
       "target_present": false,
-      "note": "github.com (monitoring repo) absent for a second consecutive run. Two new unrelated geographic matches (Geneva NY, Saskatoon) entered the set this run."
+      "note": "github.com (monitoring repo) absent again this run. Same unrelated geographic matches (Geneva NY, Saskatoon) as 2026-10-12."
     }
   ],
-  "tracked_queries_note": "Three of four tracked queries returned domain sets essentially unchanged from 2026-10-05; 'eastlakeview503' shifted further toward unrelated geographic matches. No change to target_present (false) on any of the 4 queries.",
+  "tracked_queries_note": "All four tracked queries returned IDENTICAL top-5 domain sets to 2026-10-12 -- no domain entered or left any top 5. No change to target_present (false) on any of the 4 queries. exprealty.com again shows a third-party $698,000 for this address/unit vs. our confirmed $649,888: known, unactionable aggregator discrepancy, not re-raised.",
   "competitors": {
     "windermere.com": {
       "fetchable": true,
@@ -335,12 +335,13 @@
         "PostalAddress",
         "Product",
         "QuantitativeValue",
+        "RealEstateAgent",
         "RealEstateListing"
       ],
       "visible_price": 385000,
       "unit": "#506",
-      "note": "1 bed / 1 bath - not a price comp. Unchanged from baseline.",
-      "last_verified": "2026-10-12"
+      "note": "1 bed / 1 bath - not a price comp. JSON-LD gained a RealEstateAgent type this run (8 types vs 7 previously recorded) -- platform-side change, not Riva-specific, no action.",
+      "last_verified": "2026-10-19"
     },
     "compass.com": {
       "fetchable": true,
@@ -365,8 +366,8 @@
         "Thing"
       ],
       "unit": "#203",
-      "note": "Off-market page that still outranks us. 2026-10-12: JSON-LD type count went 11 -> 14 (added Product, RealEstateListing, SingleFamilyResidence); title, MLS#, unit #203 and off-market status all unchanged. Judged a platform-wide schema change at Compass, not a move aimed at this building -- our own structured data is already richer and more specific. NO ACTION; recorded so it does not resurface as a diff. See ACTION-QUEUE.md \"Closed / cut\".",
-      "last_verified": "2026-10-12"
+      "note": "Off-market page that still outranks us. Unchanged from 2026-10-12 (14 JSON-LD types, same title, same MLS#, still off-market).",
+      "last_verified": "2026-10-19"
     },
     "seattlecondosandlofts.com": {
       "fetchable": true,
@@ -384,7 +385,7 @@
       "riva_specific_content": false,
       "deep_fetch_dormant": true,
       "last_verified": "2026-09-16",
-      "dormant_note": "Not fetched per policy this run."
+      "dormant_note": "deep_fetch_dormant per the 2026-09-18 scope change -- NOT fetched on 2026-10-19 and not a gap. Values above are the last reading; do not treat their absence from state/observations-2026-10-19.json as a change."
     },
     "houseboatsofseattle.com": {
       "fetchable": true,
@@ -405,7 +406,7 @@
       "riva_specific_content": false,
       "deep_fetch_dormant": true,
       "last_verified": "2026-09-16",
-      "dormant_note": "Not fetched per policy this run."
+      "dormant_note": "deep_fetch_dormant per the 2026-09-18 scope change -- NOT fetched on 2026-10-19 and not a gap. Values above are the last reading; do not treat their absence from state/observations-2026-10-19.json as a change."
     },
     "rsir.com": {
       "fetchable": false,
@@ -414,7 +415,7 @@
       "retried": false,
       "deep_fetch_dormant": true,
       "last_verified": "2026-09-16",
-      "dormant_note": "Not fetched (permanently skipped per policy). Not a gap."
+      "dormant_note": "deep_fetch_dormant per the 2026-09-18 scope change -- NOT fetched on 2026-10-19 and not a gap. Values above are the last reading; do not treat their absence from state/observations-2026-10-19.json as a change."
     }
   },
   "pagespeed": {
@@ -422,12 +423,13 @@
     "note": "pagespeed_skip:true in state/competitors.json. Not called, not reported as a gap."
   },
   "action_queue_verification": {
-    "cb_listing_virtual_tour_link": "NOT DONE, carried 1 week (stays \"Do now\" item 1 -- highest-value item on the list). CANNOT VERIFY FROM PAGE: no URL for the Coldwell Banker listing-detail page for MLS #2556157 is recorded anywhere in state/ or prior reports, and the bio page omar-senghore.cbdanforth.com (re-fetched 2026-10-12, HTTP 200) contains no \"Virtual Tour\" text and no link to any cbdanforth.com listing-detail page. BLOCKER, out-of-band from reports/IMPLEMENTATION-2026-10-05.md: the CB broker admin is SIGNED OUT and Tier 3 never submits a login form, so the listing card was never reached and WHETHER A \"VIRTUAL TOUR\" FIELD EXISTS ON IT IS STILL UNKNOWN. Closes on any of three owner Slack replies: \"virtual tour done\", \"CB signed in\" (Tier 3 then does the edit), or \"no virtual tour field\".",
+    "cb_listing_virtual_tour_link": "NOT DONE, carried 2 weeks (stays \"Do now\" item 1 -- highest-value item on the list). CANNOT VERIFY FROM PAGE: no URL for the Coldwell Banker listing-detail page for MLS #2556157 is recorded anywhere Tier 1 can read, and the bio page omar-senghore.cbdanforth.com (re-fetched 2026-10-19, HTTP 200) contains no \"Virtual Tour\" text and no link to any cbdanforth.com listing-detail page -- not conclusive either way, that page is not the listing card. STANDING BLOCKER, out-of-band from reports/IMPLEMENTATION-2026-10-05.md: the CB broker admin is SIGNED OUT and neither Tier 1 nor Tier 3 submits a login form, so the listing card was never reached and WHETHER A \"VIRTUAL TOUR\" FIELD EXISTS ON IT IS STILL UNKNOWN. Cannot move without one owner action: Option A (do it), Option B (\"CB signed in\"), or the escape hatch (\"no virtual tour field\") which closes it for good.",
     "gsc_links_monthly_report": "DONE and CLOSED 2026-10-12. Reading taken 2026-10-05 by Tier 3: External links 0, Top linking sites \"No data\". A read, not a change to the site, so the Tier-1-certification rule does not apply. Moved to ACTION-QUEUE \"## Done\". Next ask: first run of November.",
-    "urbnlivn_email_sent": "NOT DONE, carried 5 weeks, but PROMOTED to \"Do now\" item 2 on 2026-10-12 (it was in \"Next up\"), per last week's own rule to promote it once another \"Do now\" item was spent -- the brokerage email was retired to Backlog this week. Rank 3 in state/competitors.json -> link_targets, on the merits. CANNOT VERIFY FROM PAGE; closes on the owner Slack reply \"urbnlivn emailed\".",
-    "wa_licence_number": "NOT DONE. Owner said \"skip for now\" on 2026-09-26; PROMOTED to \"Do now\" item 3 on 2026-10-12 as a cheap 2-minute trust signal (two labelled fields: CB broker admin \"Lic #\", Rela \"field_agent_bre\"). Re-raised once only -- an owner reply of \"skip licence\" drops it for good rather than re-listing it. Partially verifiable: the Rela side would show up in the live page's agent data if filled.",
-    "brokerage_email_sent": "NOT DONE, carried 5 weeks -> MOVED TO \"## Backlog / blocked\" on 2026-10-12. Cut down twice (full draft, then \"just name a recipient\") without moving, which reads as a real blocker outside the owner's control: no known marketing contact at the brokerage. It also targets the same prize as \"Do now\" item 1 (a link on a Coldwell Banker domain) but via a third party, where item 1 depends on nobody. Draft preserved in the queue; reopens immediately on the owner reply \"brokerage contact: <name or email>\".",
-    "first_inbound_link_milestone": "DONE 2026-09-28, confirmed by Tier 1 2026-10-05, RE-CONFIRMED BYTE-IDENTICAL 2026-10-12. The system's #1 KPI. Stays in ACTION-QUEUE \"## Done\"; re-checked by direct fetch every run.",
-    "cb_danforth_bio_page_updated": "DONE and CLOSED 2026-10-05, re-confirmed live 2026-10-12. Tier 1 fetched omar-senghore.cbdanforth.com/ (HTTP 200) and found a live followed link <a href=\"https://eastlakeview503.relahq.com/\">1550 Eastlake Ave E #503&mdash;Riva Condominium, Seattle.</a> with no rel=nofollow. Carried 3 weeks; lives in ACTION-QUEUE \"## Done\". Kept here for continuity -- this is the same event as first_inbound_link_milestone above."
+    "urbnlivn_email_sent": "NOT DONE, carried 6 weeks -- the oldest open item, flagged in reports/STRATEGY-2026-10-19.md per the 3-week rule. Kept in \"Do now\" item 2 rather than retired, because it is rank 3 in state/competitors.json -> link_targets on the merits and the draft is already minimal. BROKEN INTO A SMALLER STEP 2026-10-19 instead of re-listing unchanged: recipient looked up and verified live -- matt@urban-living.com (urbnlivn.com publishes matt@/alicia@/land@urban-living.com on its homepage; the blog is published by Urban Living, a Seattle condo brokerage), plus the form at https://www.urbnlivn.com/contact-us (HTTP 200). Their homepage mentions 'Riva' 3 times, re-verified 2026-10-19, so the building is genuinely on their beat. CANNOT VERIFY FROM PAGE; closes on the owner Slack reply \"urbnlivn emailed\" or \"urbnlivn declined\".",
+    "wa_licence_number": "NOT DONE -- RETIRED TO \"## Backlog / blocked\" 2026-10-19 after 2 weeks in \"Do now\". Owner said \"skip for now\" 2026-09-26; re-raised once on 2026-10-12 under an explicit once-only rule and no reply came, so it is retired on the owner's original answer rather than listed a third time. Tier 1 confirmed 2026-10-19 that the only 'licen[cs]e' strings on the live page are New Relic monitoring licenseKey values (unrelated JS telemetry) -- no real-estate licence number anywhere in the agent/JSON-LD data, so field_agent_bre is still empty. Do NOT re-list in \"Do now\". Reopens on the owner reply \"licence added\", which Tier 1 can then confirm on the live page (the Rela side is page-visible).",
+    "brokerage_email_sent": "NOT DONE, carried 5 weeks -> MOVED TO \"## Backlog / blocked\" on 2026-10-12, still there 2026-10-19. Do NOT re-list in \"Do now\". Cut down twice (full draft, then \"just name a recipient\") without moving, which reads as a real blocker outside the owner's control: no known marketing contact at the brokerage. Draft preserved in ACTION-QUEUE.md; reopens on the owner reply \"brokerage contact: <name or email>\".",
+    "first_inbound_link_milestone": "DONE 2026-09-28, confirmed by Tier 1 2026-10-05, RE-CONFIRMED BYTE-IDENTICAL 2026-10-12 and again 2026-10-19 -- three consecutive weeks holding. The system's #1 KPI. Stays in ACTION-QUEUE \"## Done\"; re-checked by direct fetch every run.",
+    "cb_danforth_bio_page_updated": "DONE and CLOSED 2026-10-05, re-confirmed live 2026-10-12 and 2026-10-19. Tier 1 fetched omar-senghore.cbdanforth.com/ (HTTP 200) and found a live followed link <a href=\"https://eastlakeview503.relahq.com/\">1550 Eastlake Ave E #503&mdash;Riva Condominium, Seattle.</a> with no rel=nofollow. Lives in ACTION-QUEUE \"## Done\". Kept here for continuity -- this is the same event as first_inbound_link_milestone above.",
+    "eastlake_community_council_email": "NEW \"Do now\" item 3, promoted 2026-10-19 into the slot freed by retiring wa_licence_number. Rank 4 in state/competitors.json -> link_targets. Address looked up and verified 2026-10-19: info@eastlakeseattle.org, published on https://www.eastlakeseattle.org/ (HTTP 200). Full paste-ready draft is in ACTION-QUEUE.md. CANNOT VERIFY FROM PAGE -- off-page outreach; closes on the owner Slack reply \"ECC emailed\" or \"ECC declined\"."
   }
 }
