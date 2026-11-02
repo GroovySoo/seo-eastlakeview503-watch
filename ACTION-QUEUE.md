@@ -2,75 +2,60 @@
 
 Executable to-do. Tier 2 rewrites this file each week. Top section = do now.
 
-> **Rewritten by Tier 2, 2026-10-26.** Live-page status changes come from Tier 1's ACTION VERIFICATION
-> section in `reports/EVIDENCE-2026-10-26.md`, not from assumption. **No new Tier 3 implementation report
+> **Rewritten by Tier 2, 2026-11-02.** Live-page status changes come from Tier 1's ACTION VERIFICATION
+> section in `reports/EVIDENCE-2026-11-02.md`, not from assumption. **No new Tier 3 implementation report
 > since the last rewrite** (newest is still `reports/IMPLEMENTATION-2026-10-05.md`, folded in on
-> 2026-10-12), so there is no new out-of-band knowledge to import. Three changes on Tier 2's own
-> judgement, all argued in `reports/STRATEGY-2026-10-26.md`: the **urbnlivn.com email is retired to
-> Backlog** at 7 weeks under the same rule that parked the brokerage email at 5; the **Zillow /
-> Realtor.com profile item is promoted** into the freed slot; and **item 5 of the Rela support chase is
-> narrowed from three missing social tags to two**, because `og:url` appeared on the live page this run.
-> Standing blocker unchanged: the Coldwell Banker broker admin is signed out. **New settled fact:** the
-> CB listing-detail page for MLS #2556157 is not publicly discoverable, so Tier 1 can never certify
-> "Do now" item 1 from the page — it closes on the owner's word or not at all.
+> 2026-10-12), so there is no new out-of-band knowledge to import. **The page is unchanged for a fifth
+> consecutive week** — a mechanical field-by-field diff found zero substantive changes, so no on-page
+> work is added. Two changes on Tier 2's own judgement, argued in `reports/STRATEGY-2026-11-02.md`: the
+> **November Search Console links reading is due today** and takes "Do now" slot 1 as the month's
+> authoritative measurement of the #1 lever; and the **Zillow / Realtor.com profile item moves to
+> "Next up"** *(carried 1 week)* — both those fields are nofollow and traffic-only, so it yields the slot
+> to a measurement task that is actually due. Standing blocker unchanged: the Coldwell Banker broker
+> admin is signed out. Settled fact carried forward: the CB listing-detail page for MLS #2556157 is not
+> publicly discoverable, so Tier 1 can never certify "Do now" item 3 from the page — it closes on the
+> owner's word or not at all.
 
-## ⭐ Milestone: the first inbound link is live and holding — four weeks
+## ⭐ Milestone: the first inbound link is live and holding — five weeks
 
 `https://omar-senghore.cbdanforth.com/` carries
 `<a href="https://eastlakeview503.relahq.com/">1550 Eastlake Ave E #503 — Riva Condominium, Seattle.</a>`
 in its About Me section — **followed**, no `rel="nofollow"`, server-rendered. Verified by Tier 1 on
-2026-10-05 and **re-verified byte-identical on 2026-10-12, 2026-10-19 and 2026-10-26** — four consecutive
-weeks holding, and independently re-confirmed by Tier 2 this run. External links: **0 → 1**.
+2026-10-05 and **re-verified byte-identical on 2026-10-12, 2026-10-19, 2026-10-26 and 2026-11-02** — five
+consecutive weeks holding. External links: **0 → 1**.
 
 Three measures still disagree, and all three stay recorded rather than collapsing into the flattering one:
 
 | Measure | Reading | Worth |
 |---|---|---|
-| Tier 1 direct fetch | **1** | Authoritative. Re-confirmed 2026-10-26. |
+| Tier 1 direct fetch | **1** | Authoritative. Re-confirmed 2026-11-02. |
 | Weekly automated mention search | 0 | A floor. Has never been able to see this domain. |
 | Search Console → Links (2026-10-05) | 0 | Real but lagging — Google had not re-crawled the bio page. |
 
-**A Search Console 0 at that stage was not a problem and needed no action.** The next reading is due
-**2026-11-02** and is the first one that will mean anything.
+**A Search Console 0 at that stage was not a problem and needed no action.** The next reading is **due
+now (2026-11-02)** and is the first one that will mean anything — it is "Do now" item 1 below.
 
 ## Do now
 
-_(week of 2026-10-26 — all on-page work is finished; everything below is off-page. The page has now been
-byte-for-byte unchanged for four consecutive weeks apart from one benign platform-side tag addition,
-which is the correct state.)_
+_(week of 2026-11-02 — all on-page work is finished; everything below is off-page. The page has now been
+byte-for-byte unchanged for five consecutive weeks, which is the correct state.)_
 
-### 1. Paste your site into the "Virtual Tour" field on your Coldwell Banker listing (~3 minutes) — **highest value item on this list** *(carried 3 weeks)*
+### 1. Read your Search Console "Top linking sites" number (~2 minutes) — **due today**
 
-This is inbound link **#2** from the same strong real-estate domain that gave us link #1.
+This is the monthly authoritative reading of the one thing that matters most, and this month's is the
+first that can tell us anything: last month's 0 was taken on 2026-10-05, only a week after the link went
+live, before Google had re-crawled the page carrying it.
 
-1. Go to `https://www.cbdanforth.com/`, click **Broker Login**, and sign in.
-2. **My Website → Listings**, find the card for **MLS #2556157**.
-3. Open it for editing and look for a field labelled **Virtual Tour**, **Virtual Tour URL**, **Tour Link**
-   or **Property Website**.
-4. Paste exactly this into that field, and save:
+1. Go to `https://search.google.com/search-console` and sign in.
+2. Pick the property for **eastlakeview503.relahq.com**.
+3. In the left menu click **Links**.
+4. Look at the box headed **Top linking sites**.
 
-```
-https://eastlakeview503.relahq.com/
-```
+Reply in Slack with the **"External links / Total"** number and any site names listed — even if it still
+says **"No data"**, that is a real answer and worth sending. Expected: `omar-senghore.cbdanforth.com`,
+total 1.
 
-**If there is no such field on the card, that answer is just as valuable as doing it** — reply
-**"no virtual tour field"** and this closes for good instead of carrying another week.
-
-**Carried-3-weeks note (2026-10-26).** Kept rather than retired because it is the highest-value item on
-the list and you have already done one comparable self-service job in this same portal — the About Me
-edit that produced your first link. What changed this week is that the ask is cut back to the four steps
-above only. The "just sign in and we'll do it Monday" option is still available, but it is no longer the
-headline: it can only reach us as a Slack reply, and no weekly ask has been replied to yet, so it is not a
-route this item can realistically close through. **Next review 2026-11-16** — if nothing has moved by
-then it goes to Backlog.
-
-**Also settled this week, so nobody re-checks it:** your Coldwell Banker *listing* page for MLS #2556157
-is not visible anywhere on the public web (`/listing/2556157` and `/Listing/2556157` on both the bio
-subdomain and `www.cbdanforth.com` return 404; the IDX search path loads but renders its results in the
-browser, so there is nothing for an automated check to read). **This means the weekly check can never
-confirm this item for you.** It closes when you tell us, either way.
-
-### 2. Email the Eastlake Community Council — fully drafted, address looked up (~3 minutes) *(carried 2 weeks)*
+### 2. Email the Eastlake Community Council — fully drafted, address looked up (~3 minutes) *(carried 3 weeks)*
 
 Rank 4 in `state/competitors.json` → `link_targets`: a hyper-local, topically relevant neighbourhood
 domain. Local-community links are exactly the kind a single-listing microsite can realistically earn, and
@@ -100,30 +85,54 @@ Reply in Slack with **"ECC emailed"** — or **"ECC declined"** and it closes.
 rewrite it into "please link to my site" — community sites decline those, and the offer of help is the
 part that actually opens the door.
 
-### 3. Add your site to the "website" field on your Zillow and Realtor.com agent profiles (~5 minutes each) *(promoted from "Next up" 2026-10-26)*
+**Carried-3-weeks note (2026-11-02).** The three-week rule is triggered, and the honest answer is that
+this item is **neither blocked nor too hard as written**: the address is verified, the email is written
+above, it needs no login and takes three minutes. The only missing step is sending it. So it is not
+broken down further and not retired — it gets **one more week**. **If it has not moved by 2026-11-09 it
+goes to Backlog**, alongside the urbnlivn and brokerage emails, which were parked under this same rule.
 
-Rank 5 in `state/competitors.json` → `link_targets`. Promoted into the slot freed by retiring the
-urbnlivn email. Chosen deliberately: it is **owner-controlled, needs no login you are currently stuck on,
-and depends on nobody else's reply** — and the only two things that have ever actually shipped on this
-project were owner-controlled self-service edits.
+### 3. Paste your site into the "Virtual Tour" field on your Coldwell Banker listing (~3 minutes) — **highest value item on this list** *(carried 4 weeks)*
 
-On each profile, find the field labelled **Website**, **Personal website** or **My website**, and paste:
+This is inbound link **#2** from the same strong real-estate domain that gave us link #1.
+
+1. Go to `https://www.cbdanforth.com/`, click **Broker Login**, and sign in.
+2. **My Website → Listings**, find the card for **MLS #2556157**.
+3. Open it for editing and look for a field labelled **Virtual Tour**, **Virtual Tour URL**, **Tour Link**
+   or **Property Website**.
+4. Paste exactly this into that field, and save:
 
 ```
 https://eastlakeview503.relahq.com/
 ```
 
-- Zillow: `https://www.zillow.com/agent-profile/` → sign in → **Edit profile**.
-- Realtor.com: `https://www.realtor.com/realestateagents/` → claim/sign in to your profile → **Edit**.
+**If there is no such field on the card, that answer is just as valuable as doing it** — reply
+**"no virtual tour field"** and this closes for good instead of carrying another week.
 
-**Be clear what this is and is not.** Both fields are `nofollow`, so they pass **no ranking credit** and
-**must never be counted toward the link goal** — your link count stays at 1 after doing this. What they do
-give you is **referral traffic from exactly the right audience**, free, from two of the highest-traffic
-property sites in the US. That is worth five minutes on its own merits; it is not an SEO link.
+**Carried-4-weeks note.** Still the highest-value item available, and you have already done one
+comparable self-service job in this same portal — the About Me edit that produced your first link. It is
+ranked 3 rather than 1 this week only because the Search Console reading is time-bound and this one is
+not. The ask is unchanged and already cut to the four steps above. **Review date stands at 2026-11-16** —
+if nothing has moved by then it goes to Backlog.
 
-Reply in Slack with **"profiles updated"**.
+**Settled, so nobody re-checks it:** your Coldwell Banker *listing* page for MLS #2556157 is not visible
+anywhere on the public web (`/listing/2556157` and `/Listing/2556157` on both the bio subdomain and
+`www.cbdanforth.com` return 404; the IDX search path loads but renders its results in the browser, so
+there is nothing for an automated check to read). **This means the weekly check can never confirm this
+item for you.** It closes when you tell us, either way.
+
 
 ## Next up (not this week)
+
+- **Add your site to the "website" field on your Zillow and Realtor.com agent profiles (~5 min each)**
+  *(carried 1 week — moved here from "Do now" on 2026-11-02)*. Rank 5 in `state/competitors.json` →
+  `link_targets`. Still worth doing whenever you have five spare minutes, and still entirely
+  owner-controlled with no login you are stuck on. It lost its "Do now" slot because **both fields are
+  `nofollow`**: they pass **no ranking credit** and **must never be counted toward the link goal** — your
+  link count stays at 1 after doing this. What they give you is free referral traffic from exactly the
+  right audience, which is a traffic win, not an SEO one. On each profile find the field labelled
+  **Website**, **Personal website** or **My website** and paste `https://eastlakeview503.relahq.com/`
+  — Zillow: `https://www.zillow.com/agent-profile/` → sign in → **Edit profile**; Realtor.com:
+  `https://www.realtor.com/realestateagents/` → claim/sign in → **Edit**. Reply **"profiles updated"**.
 
 - **Research new link targets — maintainer task, not the owner's.** `state/competitors.json` →
   `link_targets` is nearly exhausted: rank 1 done, ranks 2 and 3 in Backlog, rank 4 is this week's ask,
