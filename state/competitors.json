@@ -73,6 +73,8 @@
   "link_targets": {
     "purpose": "The #1 lever is inbound links. Generic advice ('email signature + LinkedIn') produced zero links in three weeks AND would not have helped if done. These are named, verified-live targets ranked by realistic value. Tier 2 must pick from this list rather than reinventing the ask.",
     "verified": "2026-09-18 (all URLs returned HTTP 200 to a browser UA on this date)",
+    "status_updated": "2026-11-09 (statuses maintained by Tier 2; ranks and merits unchanged)",
+    "exhausted": "TRUE as of 2026-11-09. Rank 1 done, ranks 2-4 in Backlog, rank 5 asked and nofollow/traffic-only. No drawable target remains, so no genuinely new link ask can be made from this list next week. The standing rule is to draw the weekly ask from this verified list rather than invent generic advice, so the list must be restocked with named, verified-live targets first -- escalated as a maintainer task in ACTION-QUEUE.md -> '## Next up'.",
     "targets": [
       {
         "rank": 1,
@@ -81,7 +83,7 @@
         "owner_controlled": true,
         "effort": "5 min",
         "value": "high",
-        "status": "not done as of 2026-09-18",
+        "status": "DONE 2026-09-28 -- produced the project's one confirmed inbound link; re-verified byte-identical by Tier 1 every week through 2026-11-09.",
         "evidence": "Page is live (HTTP 200, title 'Omar Senghore - Coldwell Banker Danforth (Everett)') and contains a 'Featured Listing' section. It mentions '1550 Eastlake' zero times and 'eastlakeview503' zero times.",
         "why": "A real-estate brand domain, topically perfect, owner-controlled, free, and almost certainly a followed link. This is the single best inbound link available and it has never been asked for."
       },
@@ -92,7 +94,7 @@
         "owner_controlled": false,
         "effort": "one email to the brokerage's marketing contact",
         "value": "high",
-        "status": "not asked",
+        "status": "IN BACKLOG since 2026-10-12 (carried 5 weeks in 'Do now', never sent). Blocked on an unknown marketing recipient at the brokerage. Reopens on 'brokerage contact: <name or email>'.",
         "why": "Brokerage sites routinely link an agent's single-property site from the agent or listing page. Costs one email; the domain is stronger than the agent subdomain."
       },
       {
@@ -102,7 +104,7 @@
         "owner_controlled": false,
         "effort": "one outreach email",
         "value": "medium-high",
-        "status": "not asked",
+        "status": "IN BACKLOG since 2026-10-26 (carried 7 weeks in 'Do now', never sent). Not blocked -- recipient matt@urban-living.com verified, draft ready. Reopens on 'urbnlivn emailed'/'urbnlivn declined'.",
         "why": "Already ranks in the tracked set for 'Riva Condos #503 Seattle' and 'Riva Condominium Seattle for sale'. An editorial mention from a site that already ranks for the exact building name is the highest-quality non-owned link realistically obtainable."
       },
       {
@@ -112,7 +114,7 @@
         "owner_controlled": false,
         "effort": "one email / possible small sponsorship",
         "value": "medium",
-        "status": "not asked",
+        "status": "IN BACKLOG since 2026-11-09 (carried 4 weeks in 'Do now', hard deadline of 2026-11-09 reached, never sent). Not blocked -- info@eastlakeseattle.org verified, draft ready. Reopens on 'ECC emailed'/'ECC declined'.",
         "why": "Hyper-local, topically relevant neighbourhood domain. Local-community links are exactly the kind a listing microsite can actually earn."
       },
       {
@@ -122,7 +124,7 @@
         "owner_controlled": true,
         "effort": "5 min per profile",
         "value": "low-medium (nofollow, but real referral traffic)",
-        "status": "not asked",
+        "status": "ASKED 2026-11-09 as 'Do now' item 3 (traffic-only). nofollow -- must never be counted toward the link goal. Closes on 'profiles updated'.",
         "why": "Nofollow, so little or no ranking equity -- but it is discovery traffic from exactly the right audience, and it is free. Frame it as traffic, never as an SEO link."
       }
     ],

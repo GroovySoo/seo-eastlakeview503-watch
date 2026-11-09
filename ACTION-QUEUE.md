@@ -2,96 +2,47 @@
 
 Executable to-do. Tier 2 rewrites this file each week. Top section = do now.
 
-> **Rewritten by Tier 2, 2026-11-02.** Live-page status changes come from Tier 1's ACTION VERIFICATION
-> section in `reports/EVIDENCE-2026-11-02.md`, not from assumption. **No new Tier 3 implementation report
+> **Rewritten by Tier 2, 2026-11-09.** Live-page status changes come from Tier 1's ACTION VERIFICATION
+> section in `reports/EVIDENCE-2026-11-09.md`, not from assumption. **No new Tier 3 implementation report
 > since the last rewrite** (newest is still `reports/IMPLEMENTATION-2026-10-05.md`, folded in on
-> 2026-10-12), so there is no new out-of-band knowledge to import. **The page is unchanged for a fifth
-> consecutive week** — a mechanical field-by-field diff found zero substantive changes, so no on-page
-> work is added. Two changes on Tier 2's own judgement, argued in `reports/STRATEGY-2026-11-02.md`: the
-> **November Search Console links reading is due today** and takes "Do now" slot 1 as the month's
-> authoritative measurement of the #1 lever; and the **Zillow / Realtor.com profile item moves to
-> "Next up"** *(carried 1 week)* — both those fields are nofollow and traffic-only, so it yields the slot
-> to a measurement task that is actually due. Standing blocker unchanged: the Coldwell Banker broker
-> admin is signed out. Settled fact carried forward: the CB listing-detail page for MLS #2556157 is not
-> publicly discoverable, so Tier 1 can never certify "Do now" item 3 from the page — it closes on the
-> owner's word or not at all.
+> 2026-10-12), so there is no new out-of-band knowledge to import. **The page is unchanged for a sixth
+> consecutive week** — a mechanical field-by-field diff found zero substantive changes, so no on-page work
+> is added. Two changes on Tier 2's own judgement, argued in `reports/STRATEGY-2026-11-09.md`: the
+> **Eastlake Community Council email reached the hard 2026-11-09 deadline set for it last week and is
+> retired to "## Backlog / blocked"** with its draft intact; and the **Zillow / Realtor.com profile item is
+> promoted back to "Do now"** *(carried 2 weeks)* to fill the freed slot, still labelled traffic-only.
+> **Consequence worth reading: retiring the ECC ask exhausts the ranked `link_targets` list** — see the
+> escalated maintainer task in "## Next up". Standing blocker unchanged: the Coldwell Banker broker admin
+> is signed out. Settled fact carried forward: the CB listing-detail page for MLS #2556157 is not publicly
+> discoverable, so Tier 1 can never certify "Do now" item 1 from the page — it closes on the owner's word
+> or not at all.
 
-## ⭐ Milestone: the first inbound link is live and holding — five weeks
+## ⭐ Milestone: the first inbound link is live and holding — six weeks
 
 `https://omar-senghore.cbdanforth.com/` carries
 `<a href="https://eastlakeview503.relahq.com/">1550 Eastlake Ave E #503 — Riva Condominium, Seattle.</a>`
 in its About Me section — **followed**, no `rel="nofollow"`, server-rendered. Verified by Tier 1 on
-2026-10-05 and **re-verified byte-identical on 2026-10-12, 2026-10-19, 2026-10-26 and 2026-11-02** — five
-consecutive weeks holding. External links: **0 → 1**.
+2026-10-05 and **re-verified byte-identical on 2026-10-12, 2026-10-19, 2026-10-26, 2026-11-02 and
+2026-11-09** — six consecutive weeks holding. External links: **0 → 1**.
 
 Three measures still disagree, and all three stay recorded rather than collapsing into the flattering one:
 
 | Measure | Reading | Worth |
 |---|---|---|
-| Tier 1 direct fetch | **1** | Authoritative. Re-confirmed 2026-11-02. |
+| Tier 1 direct fetch | **1** | Authoritative. Re-confirmed 2026-11-09. |
 | Weekly automated mention search | 0 | A floor. Has never been able to see this domain. |
 | Search Console → Links (2026-10-05) | 0 | Real but lagging — Google had not re-crawled the bio page. |
 
-**A Search Console 0 at that stage was not a problem and needed no action.** The next reading is **due
-now (2026-11-02)** and is the first one that will mean anything — it is "Do now" item 1 below.
+**One link is still one link, and inbound links remain the single biggest lever on this listing.** The
+Search Console reading that would settle the real count was asked for on 2026-11-02 and is still
+unanswered — it is "Do now" item 2 below.
 
 ## Do now
 
-_(week of 2026-11-02 — all on-page work is finished; everything below is off-page. The page has now been
-byte-for-byte unchanged for five consecutive weeks, which is the correct state.)_
+_(week of 2026-11-09 — all on-page work is finished; everything below is off-page. The page has now been
+byte-for-byte unchanged for six consecutive weeks, which is the correct state.)_
 
-### 1. Read your Search Console "Top linking sites" number (~2 minutes) — **due today**
-
-This is the monthly authoritative reading of the one thing that matters most, and this month's is the
-first that can tell us anything: last month's 0 was taken on 2026-10-05, only a week after the link went
-live, before Google had re-crawled the page carrying it.
-
-1. Go to `https://search.google.com/search-console` and sign in.
-2. Pick the property for **eastlakeview503.relahq.com**.
-3. In the left menu click **Links**.
-4. Look at the box headed **Top linking sites**.
-
-Reply in Slack with the **"External links / Total"** number and any site names listed — even if it still
-says **"No data"**, that is a real answer and worth sending. Expected: `omar-senghore.cbdanforth.com`,
-total 1.
-
-### 2. Email the Eastlake Community Council — fully drafted, address looked up (~3 minutes) *(carried 3 weeks)*
-
-Rank 4 in `state/competitors.json` → `link_targets`: a hyper-local, topically relevant neighbourhood
-domain. Local-community links are exactly the kind a single-listing microsite can realistically earn, and
-this is an entirely different *kind* of domain from the two real-estate sites — which is good for a link
-profile that currently has exactly one link in it.
-
-**Send to: `info@eastlakeseattle.org`** — published on `https://www.eastlakeseattle.org/` (HTTP 200,
-verified 2026-10-19). Paste this:
-
-> Subject: Riva Condominium (1550 Eastlake Ave E) — resident-interest listing in the neighbourhood
->
-> Hi — I'm a Coldwell Banker Danforth broker working in Eastlake, and I'm handling the sale of a
-> top-floor unit at Riva Condominium, 1550 Eastlake Ave E. Built 1997, five floors, secured garage and
-> lobby — one of the quieter buildings on that stretch, a block from Lake Union.
->
-> If the Council keeps a neighbourhood news page, a local-listings roundup, or a newsletter section
-> where this would fit, I've put full details, photos and floor information here:
-> https://eastlakeview503.relahq.com/
->
-> I'd also be glad to help out as a local business — happy to hear what the Council needs this year.
->
-> Omar Senghore, Coldwell Banker Danforth (Everett) — 206-683-5030
-
-Reply in Slack with **"ECC emailed"** — or **"ECC declined"** and it closes.
-
-**Framing note:** this is a neighbourhood-interest and local-business ask, not a link request. Do not
-rewrite it into "please link to my site" — community sites decline those, and the offer of help is the
-part that actually opens the door.
-
-**Carried-3-weeks note (2026-11-02).** The three-week rule is triggered, and the honest answer is that
-this item is **neither blocked nor too hard as written**: the address is verified, the email is written
-above, it needs no login and takes three minutes. The only missing step is sending it. So it is not
-broken down further and not retired — it gets **one more week**. **If it has not moved by 2026-11-09 it
-goes to Backlog**, alongside the urbnlivn and brokerage emails, which were parked under this same rule.
-
-### 3. Paste your site into the "Virtual Tour" field on your Coldwell Banker listing (~3 minutes) — **highest value item on this list** *(carried 4 weeks)*
+### 1. Paste your site into the "Virtual Tour" field on your Coldwell Banker listing (~3 minutes) — **the only real link lever left on this list** *(carried 5 weeks)*
 
 This is inbound link **#2** from the same strong real-estate domain that gave us link #1.
 
@@ -108,11 +59,11 @@ https://eastlakeview503.relahq.com/
 **If there is no such field on the card, that answer is just as valuable as doing it** — reply
 **"no virtual tour field"** and this closes for good instead of carrying another week.
 
-**Carried-4-weeks note.** Still the highest-value item available, and you have already done one
-comparable self-service job in this same portal — the About Me edit that produced your first link. It is
-ranked 3 rather than 1 this week only because the Search Console reading is time-bound and this one is
-not. The ask is unchanged and already cut to the four steps above. **Review date stands at 2026-11-16** —
-if nothing has moved by then it goes to Backlog.
+**Carried-5-weeks note (2026-11-09).** Promoted from 3 to 1: with the Eastlake Community Council ask
+retired, this is the only item on the whole queue that can still produce a real inbound link. It is kept
+rather than retired because it is already cut to the four steps above and because its review date is next
+week. **Review date stands at 2026-11-16 — if nothing has moved by then it goes to Backlog**, and at that
+point the queue has no link lever left at all until the target list is restocked.
 
 **Settled, so nobody re-checks it:** your Coldwell Banker *listing* page for MLS #2556157 is not visible
 anywhere on the public web (`/listing/2556157` and `/Listing/2556157` on both the bio subdomain and
@@ -120,26 +71,54 @@ anywhere on the public web (`/listing/2556157` and `/Listing/2556157` on both th
 there is nothing for an automated check to read). **This means the weekly check can never confirm this
 item for you.** It closes when you tell us, either way.
 
+### 2. Read your Search Console "Top linking sites" number (~2 minutes) *(carried 1 week)*
+
+This is the authoritative reading of the one thing that matters most. It was asked for on 2026-11-02 and
+no answer has come back, so it carries — it is not being re-asked as a new monthly task, and the next
+scheduled monthly ask is the first week of December.
+
+1. Go to `https://search.google.com/search-console` and sign in.
+2. Pick the property for **eastlakeview503.relahq.com**.
+3. In the left menu click **Links**.
+4. Look at the box headed **Top linking sites**.
+
+Reply in Slack with the **"External links / Total"** number and any site names listed — even if it still
+says **"No data"**, that is a real answer and worth sending. Expected: `omar-senghore.cbdanforth.com`,
+total 1.
+
+### 3. Add your site to the "Website" field on your Zillow and Realtor.com agent profiles (~5 minutes each) *(carried 2 weeks)*
+
+Promoted back from "Next up" to fill the slot the Eastlake Community Council ask vacated. Rank 5 in
+`state/competitors.json` → `link_targets`. Owner-controlled, no login you are stuck on.
+
+- Zillow: `https://www.zillow.com/agent-profile/` → sign in → **Edit profile**.
+- Realtor.com: `https://www.realtor.com/realestateagents/` → claim/sign in → **Edit**.
+
+On each profile find the field labelled **Website**, **Personal website** or **My website** and paste:
+
+```
+https://eastlakeview503.relahq.com/
+```
+
+Reply **"profiles updated"**.
+
+**Read this before you count it as a win:** both of those fields are `nofollow`. They pass **no ranking
+credit** and **must never be counted toward the link goal** — your confirmed link count stays at **1**
+after doing this. What they give you is free referral traffic from exactly the right audience. That is a
+traffic win, not an SEO one, and it is still worth ten minutes.
+
 
 ## Next up (not this week)
 
-- **Add your site to the "website" field on your Zillow and Realtor.com agent profiles (~5 min each)**
-  *(carried 1 week — moved here from "Do now" on 2026-11-02)*. Rank 5 in `state/competitors.json` →
-  `link_targets`. Still worth doing whenever you have five spare minutes, and still entirely
-  owner-controlled with no login you are stuck on. It lost its "Do now" slot because **both fields are
-  `nofollow`**: they pass **no ranking credit** and **must never be counted toward the link goal** — your
-  link count stays at 1 after doing this. What they give you is free referral traffic from exactly the
-  right audience, which is a traffic win, not an SEO one. On each profile find the field labelled
-  **Website**, **Personal website** or **My website** and paste `https://eastlakeview503.relahq.com/`
-  — Zillow: `https://www.zillow.com/agent-profile/` → sign in → **Edit profile**; Realtor.com:
-  `https://www.realtor.com/realestateagents/` → claim/sign in → **Edit**. Reply **"profiles updated"**.
-
-- **Research new link targets — maintainer task, not the owner's.** `state/competitors.json` →
-  `link_targets` is nearly exhausted: rank 1 done, ranks 2 and 3 in Backlog, rank 4 is this week's ask,
-  rank 5 is nofollow/traffic-only. Within two weeks there is no ranked target left to draw a weekly ask
-  from, and the standing rule is to draw from the verified list rather than invent generic advice. Needs
-  new **named, verified-live** targets (Seattle neighbourhood press, condo-building directories, local
-  business and community sites), each checked for a real editorial path before it is listed.
+- **🔺 ESCALATED 2026-11-09 — Restock `link_targets`. Maintainer task, not the owner's.** With the Eastlake
+  Community Council ask retired today, `state/competitors.json` → `link_targets` has **no drawable target
+  left**: rank 1 **done** (it produced the one confirmed link), ranks 2 and 3 in Backlog, rank 4 in Backlog
+  as of today, rank 5 `nofollow`/traffic-only and now spent as "Do now" item 3. The standing rule is to draw
+  each week's link ask from this verified list rather than invent generic advice — so **from next week there
+  is no link ask to make**, which makes this the binding constraint on the #1 lever. Needs new **named,
+  verified-live** targets (Seattle neighbourhood press, condo-building directories, local business and
+  community sites, Eastlake-adjacent blogs), each checked for a real editorial path and a reachable
+  recipient before it is listed, and each ranked on merit rather than on tracked-query movement.
 - **Fill in the social-profile fields in the Coldwell Banker broker admin.** All blank, which is why the
   bio site's own `sameAs` array publishes five empty strings. Small effect, low effort.
 - **Make the phone number format consistent.** Rela's native block emits `206-683-5030`; the injected
@@ -153,8 +132,51 @@ item for you.** It closes when you tell us, either way.
   contains a URL with a query string, so return `{origin, pathname, hasQuery}` instead of a raw href;
   Search Console accepts a direct deep link to the Links report with the property pre-selected, which
   skips the property picker.
+- **Competitor fetch reliability (maintainer note, 2026-11-09).** `compass.com` returned a bot-mitigated
+  HTTP **202 with an empty body** on both its `/listing/` redirect and the final `/homedetails/` URL, after
+  one retry. The URL and redirect target are unchanged, so this is bot mitigation, not a page change; its
+  title/meta/JSON-LD are carried forward in `state/last-snapshot.json` with provenance rather than nulled.
+  If it fails a second consecutive week, consider moving it to `deep_fetch_dormant` rather than burning a
+  retry on it every run.
 
 ## Backlog / blocked
+
+- **Email the Eastlake Community Council — RETIRED TO BACKLOG 2026-11-09** *(was carried 4 weeks in "Do
+  now")*. **Do not re-list it in "Do now".** On 2026-11-02 this item was given one more week with an
+  explicit hard deadline of **2026-11-09**; that deadline is today, Tier 1 reports no evidence either way,
+  and under the rule as written that means not moved. Same treatment as the urbnlivn and brokerage emails.
+  **Being honest about why:** this item is **not blocked and not too hard** — the address is verified, the
+  email is written out below, it needs no login and takes about three minutes. It is parked purely because
+  it has not been sent, and keeping an un-sent three-minute task at the top of the list for a fifth week
+  costs the list more credibility than the item is worth. **It is still worth doing**, it was rank 4 on the
+  merits, and it reopens instantly — reply **"ECC emailed"** or **"ECC declined"**. Everything needed is
+  preserved here:
+
+  - **Send to: `info@eastlakeseattle.org`** — published on `https://www.eastlakeseattle.org/` (HTTP 200,
+    verified 2026-10-19).
+  - **Why this target:** hyper-local, topically relevant neighbourhood domain, and an entirely different
+    *kind* of domain from the real-estate sites — which is what a link profile holding exactly one link
+    needs.
+  - **Framing note:** this is a neighbourhood-interest and local-business ask, **not** a link request. Do
+    not rewrite it into "please link to my site" — community sites decline those, and the offer of help is
+    the part that actually opens the door.
+
+  > Subject: Riva Condominium (1550 Eastlake Ave E) — resident-interest listing in the neighbourhood
+  >
+  > Hi — I'm a Coldwell Banker Danforth broker working in Eastlake, and I'm handling the sale of a
+  > top-floor unit at Riva Condominium, 1550 Eastlake Ave E. Built 1997, five floors, secured garage and
+  > lobby — one of the quieter buildings on that stretch, a block from Lake Union.
+  >
+  > If the Council keeps a neighbourhood news page, a local-listings roundup, or a newsletter section
+  > where this would fit, I've put full details, photos and floor information here:
+  > https://eastlakeview503.relahq.com/
+  >
+  > I'd also be glad to help out as a local business — happy to hear what the Council needs this year.
+  >
+  > Omar Senghore, Coldwell Banker Danforth (Everett) — 206-683-5030
+
+  **Note for the maintainer:** retiring this empties the ranked `link_targets` list — see the escalated
+  restock task in "## Next up".
 
 - **Email urbnlivn.com — RETIRED TO BACKLOG 2026-10-26** *(was carried 7 weeks in "Do now" — the oldest
   item on the project)*. **Do not re-list it in "Do now".** Same rule and same reasoning that parked the
