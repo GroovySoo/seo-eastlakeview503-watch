@@ -1,445 +1,447 @@
 {
-  "schema_version": 3,
-  "updated": "2026-11-09",
-  "note": "Baseline as of 2026-11-09. Tier 1 status: complete (26/27 fields; the one gap is the compass.com competitor deep fetch, which returned a bot-mitigated HTTP 202 with an empty body after one retry -- a competitor-side fetch failure outside the target domain, not a target-page gap), so the full snapshot was updated. NO substantive change this run: a mechanical field-by-field diff of state/observations-2026-11-09.json against the 2026-11-02 baseline returned zero changed on-page values -- title, meta description, canonical, robots (absent), all og:*/twitter:* tags, all three JSON-LD blocks, H1, image/alt counts (23 imgs, 19 property photos, 0 property-photo alts) and both GA tags are byte-for-byte identical for a SIXTH consecutive week. Listing still active at 649888, InStock, indexable yes, indexed 'yes (GSC 2026-09-16)'. The one confirmed inbound link (omar-senghore.cbdanforth.com, followed) held a SIXTH consecutive week by byte-identical direct fetch; automated mentions.third_party_count remains 0, a known floor that has never surfaced that link. No new Tier 3 implementation report since 2026-10-05, so no out-of-band knowledge to import. Two Tier 2 queue decisions this week, argued in reports/STRATEGY-2026-11-09.md: the Eastlake Community Council email hit its stated 2026-11-09 deadline and was retired to Backlog, which EXHAUSTS the ranked link_targets list; and the Zillow/Realtor.com profile item was promoted back to \"Do now\" as a traffic-only task to fill the freed slot. Nulls in this run's observations were NOT written over real baseline values -- compass.com title/meta/json_ld_types and windermere.com json_ld_types are carried forward with provenance.",
-  "source_evidence": "reports/EVIDENCE-2026-11-09.md",
-  "source_observations": "state/observations-2026-11-09.json",
-  "first_run": "2026-09-11",
-  "listing_status": "active",
-  "indexable": "yes",
-  "indexed": "yes (GSC 2026-09-16)",
-  "listing": {
-    "url": "https://eastlakeview503.relahq.com/",
-    "http_status": 200,
-    "final_url": "https://eastlakeview503.relahq.com/",
-    "price": 649888,
-    "price_currency": "USD",
-    "availability": "https://schema.org/InStock",
-    "mls_number": "2556157",
-    "year_built": 1997,
-    "note": "Unchanged from the 2026-11-02 baseline. No listing status change this run."
+ "schema_version": 3,
+ "updated": "2026-11-16",
+ "note": "Baseline as of 2026-11-16, written by Tier 2 from Tier 1 evidence with status=complete (26/27; the one gap is the compass.com competitor fetch, outside the target domain). A mechanical field-by-field diff of the observations against the 2026-11-09 baseline found ZERO changed substantive values -- the page is byte-identical for a SEVENTH consecutive week. Fields carried forward with provenance rather than nulled are marked in their own *_provenance keys. Keys present here but not reported by Tier 1 this run (dormant competitor readings, json_ld.agent_identity_settled, and action_queue_verification entries for items parked in Backlog) are PRESERVED baseline knowledge, deliberately not overwritten.",
+ "source_evidence": "reports/EVIDENCE-2026-11-16.md",
+ "source_observations": "state/observations-2026-11-16.json",
+ "first_run": "2026-09-11",
+ "listing_status": "active",
+ "indexable": "yes",
+ "indexed": "yes (GSC 2026-09-16)",
+ "listing": {
+  "url": "https://eastlakeview503.relahq.com/",
+  "http_status": 200,
+  "final_url": "https://eastlakeview503.relahq.com/",
+  "price": 649888,
+  "price_currency": "USD",
+  "availability": "https://schema.org/InStock",
+  "mls_number": "2556157",
+  "year_built": 1997,
+  "note": "Unchanged from the 2026-11-09 baseline. No listing status change this run."
+ },
+ "indexation": {
+  "x_robots_tag_header": null,
+  "robots_meta": null,
+  "canonical_self_referencing": true,
+  "http_status_clean": true,
+  "indexability_note": "Nothing on the page blocks indexing: HTTP 200, no X-Robots-Tag response header, no <meta name=robots>, canonical (both <link> tag and HTTP link header) self-references https://eastlakeview503.relahq.com.",
+  "gsc_reading": "yes (GSC 2026-09-16: Indexed = 1, Not indexed = 0). No newer GSC reading available to Tier 1 this run.",
+  "verbatim_phrase_query": null,
+  "verbatim_phrase_result": "Not run this run, per 2026-09-18 scope change: Tier 1 no longer runs the verbatim-phrase check.",
+  "indexation_signal_note": "indexed retained at 'yes (GSC 2026-09-16)' per policy; not downgraded on the basis of any WebSearch result.",
+  "out_of_band_note": "Indexation is CLOSED, do not reopen on a WebSearch miss (GSC 2026-09-16: Indexed = 1, Not indexed = 0)."
+ },
+ "meta": {
+  "title": "Riva Condos #503, 1550 Eastlake Ave E – Seattle Condo for Sale",
+  "description": "Top-floor 2 bed, 2 bath condo for sale at Riva Condominium, 1550 Eastlake Ave E #503, Seattle. 1,114 sq ft, Lake Union & skyline views, private balcony, 2 secured parking spaces + storage. $649,888 · MLS# 2556157.",
+  "canonical": "https://eastlakeview503.relahq.com",
+  "robots": null,
+  "google_site_verification": "T6_j8jTeByDHz6TZ-fo1x88Et-9sj4_CwAIZFHl_2yM",
+  "note": "All unchanged from baseline."
+ },
+ "og_twitter_tags": {
+  "og:type": "place",
+  "og:title": "Riva Condos #503 – Top-Floor Eastlake Condo with Lake Union Views",
+  "og:description": "Move-in-ready 2 bed / 2 bath top-floor condo for sale at Riva Condominium in Seattle's Eastlake neighborhood, one block from Lake Union and South Lake Union. Private balcony with lake and skyline views, 2 secured parking spaces, dedicated storage. Offered at $649,888 (MLS# 2556157).",
+  "og:updated_time": "2026-09-26T03:44:05-07:00",
+  "og:image": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
+  "og:image:type": "image/jpeg",
+  "og:image:width": 1600,
+  "og:image:height": 1069,
+  "og:url": "https://eastlakeview503.relahq.com",
+  "og:locale": null,
+  "twitter:card": null,
+  "twitter:title": "Riva Condos #503 – Top-Floor Eastlake Condo, Lake Union Views",
+  "twitter:description": "2 bed / 2 bath top-floor condo for sale at Riva Condominium, 1550 Eastlake Ave E #503, Seattle. 1,114 sq ft, Lake Union & skyline views, balcony, 2 parking + storage. $649,888 · MLS# 2556157.",
+  "twitter:image": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
+  "twitter:image:alt": "1550 Eastlake Ave E Apt 503, Seattle, WA | 2 Bed, 2 Bath",
+  "og:image:url": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
+  "og:image:secure_url": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
+  "diff_note": "No change vs. 2026-11-09. og:url present and self-referencing, confirmed still live. og:locale and twitter:card remain absent."
+ },
+ "json_ld": {
+  "block_count": 3,
+  "block_1_static": {
+   "@type": "Apartment",
+   "name": "1550 Eastlake Ave E #503, Seattle, WA 98102",
+   "yearBuilt": 1997,
+   "numberOfRooms": 2,
+   "numberOfBedrooms": null,
+   "numberOfBathroomsTotal": 2,
+   "floorSize_sqft": 1114,
+   "offers_price": 649888,
+   "offers_availability": "https://schema.org/InStock",
+   "provider_name": "Omar Senghore",
+   "provider_email": "i_give@hotmail.com",
+   "provider_phone": "206-683-5030",
+   "amenityFeature": null,
+   "petsAllowed": null,
+   "containedInPlace": null,
+   "image_count": 18,
+   "@id": "https://eastlakeview503.relahq.com#listing",
+   "diff_note": "No change vs. 2026-11-09 baseline."
   },
-  "indexation": {
-    "x_robots_tag_header": null,
-    "robots_meta": null,
-    "canonical_self_referencing": true,
-    "http_status_clean": true,
-    "indexability_note": "Nothing on the page blocks indexing: HTTP 200, no X-Robots-Tag response header, no <meta name=robots>, canonical (both <link> tag and HTTP link header) self-references https://eastlakeview503.relahq.com.",
-    "gsc_reading": "yes (GSC 2026-09-16: Indexed = 1, Not indexed = 0). No newer GSC reading available to Tier 1 this run.",
-    "verbatim_phrase_query": null,
-    "verbatim_phrase_result": "Not run this run, per 2026-09-18 scope change: Tier 1 no longer runs the verbatim-phrase check.",
-    "indexation_signal_note": "indexed retained at 'yes (GSC 2026-09-16)' per policy; not downgraded on the basis of this run's mention_query WebSearch miss.",
-    "out_of_band_note": "Indexation is CLOSED, do not reopen on a WebSearch miss (GSC 2026-09-16: Indexed = 1, Not indexed = 0)."
+  "block_2_client_injected": {
+   "@type": "ApartmentComplex",
+   "name": "Riva Condominium",
+   "alternateName": [
+    "Riva Condos",
+    "Riva at Lake Union"
+   ],
+   "yearBuilt": "1997",
+   "numberOfFloors": 5,
+   "amenityFeature_names": [
+    "Secured garage parking",
+    "Secured lobby entrance",
+    "Private storage units",
+    "In-unit washer and dryer"
+   ],
+   "containedInPlace_link_to_block_1": false,
+   "has_id": false,
+   "diff_note": "Unchanged. Still no @id on this block. Injection confirmed this run via l.text='{...}'."
   },
-  "meta": {
-    "title": "Riva Condos #503, 1550 Eastlake Ave E – Seattle Condo for Sale",
-    "description": "Top-floor 2 bed, 2 bath condo for sale at Riva Condominium, 1550 Eastlake Ave E #503, Seattle. 1,114 sq ft, Lake Union & skyline views, private balcony, 2 secured parking spaces + storage. $649,888 · MLS# 2556157.",
-    "canonical": "https://eastlakeview503.relahq.com",
-    "robots": null,
-    "google_site_verification": "T6_j8jTeByDHz6TZ-fo1x88Et-9sj4_CwAIZFHl_2yM",
-    "note": "All unchanged from baseline."
+  "block_3_client_injected": {
+   "@type": "RealEstateAgent",
+   "first_seen_live": "2026-09-18",
+   "name": "Omar Senghore",
+   "email": "i_give@hotmail.com",
+   "telephone": "+1-206-683-5030",
+   "url": "https://omar-senghore.cbdanforth.com/",
+   "worksFor": {
+    "@type": "Organization",
+    "name": "Coldwell Banker Danforth",
+    "addressLocality": "Everett",
+    "addressRegion": "WA",
+    "addressCountry": "US"
+   },
+   "@id": "https://omar-senghore.cbdanforth.com",
+   "jobTitle": "Broker - Value-Add Real Estate Investment Specialist",
+   "image": "https://upload.terabitz.com/u/cbdanforth/agents/agt_212_Omar_Senghore.jpg",
+   "identifier": {
+    "propertyID": "NWMLS",
+    "value": "NWM62208"
+   },
+   "areaServed": [
+    "Seattle",
+    "Eastlake",
+    "South Lake Union",
+    "Everett",
+    "Edmonds",
+    "Bothell"
+   ],
+   "sameAs": [
+    "https://omar-senghore.cbdanforth.com/"
+   ],
+   "diff_note": "Unchanged. Injection confirmed this run via a.text='{...}' (variable name 'a', not 'l')."
   },
-  "og_twitter_tags": {
-    "og:type": "place",
-    "og:title": "Riva Condos #503 – Top-Floor Eastlake Condo with Lake Union Views",
-    "og:description": "Move-in-ready 2 bed / 2 bath top-floor condo for sale at Riva Condominium in Seattle's Eastlake neighborhood, one block from Lake Union and South Lake Union. Private balcony with lake and skyline views, 2 secured parking spaces, dedicated storage. Offered at $649,888 (MLS# 2556157).",
-    "og:updated_time": "2026-09-26T03:44:05-07:00",
-    "og:image": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
-    "og:image:type": "image/jpeg",
-    "og:image:width": 1600,
-    "og:image:height": 1069,
-    "og:url": "https://eastlakeview503.relahq.com",
-    "og:locale": null,
-    "twitter:card": null,
-    "twitter:title": "Riva Condos #503 – Top-Floor Eastlake Condo, Lake Union Views",
-    "twitter:description": "2 bed / 2 bath top-floor condo for sale at Riva Condominium, 1550 Eastlake Ave E #503, Seattle. 1,114 sq ft, Lake Union & skyline views, balcony, 2 parking + storage. $649,888 · MLS# 2556157.",
-    "twitter:image": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
-    "twitter:image:alt": "1550 Eastlake Ave E Apt 503, Seattle, WA | 2 Bed, 2 Bath",
-    "og:image:url": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
-    "og:image:secure_url": "https://media.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-257763116/hailun-deck-wine_glass-1_697.jpg?v=1790419445",
-    "diff_note": "No change vs. 2026-11-02. og:url present and self-referencing, confirmed still live. og:locale and twitter:card remain absent."
+  "contained_in_place_sitewide_occurrences": 0,
+  "agent_name_spelling_check": {
+   "Omar Senghore_count": 3,
+   "Omar Senghore_locations": [
+    "visible 'Presented By' agent-card widget (.agent-name div)",
+    "block_1_static.provider.name",
+    "block_3_client_injected.name"
+   ],
+   "Omar Senghor_count": 0,
+   "Omar Senghor_locations": [],
+   "substring_Senghore_count": 4,
+   "diff_note": "Unchanged. 3 exact phrase occurrences + 1 substring hit (image filename / bio domain). 0 typo occurrences."
   },
-  "json_ld": {
-    "block_count": 3,
-    "block_1_static": {
-      "@type": "Apartment",
-      "name": "1550 Eastlake Ave E #503, Seattle, WA 98102",
-      "yearBuilt": 1997,
-      "numberOfRooms": 2,
-      "numberOfBedrooms": null,
-      "numberOfBathroomsTotal": 2,
-      "floorSize_sqft": 1114,
-      "offers_price": 649888,
-      "offers_availability": "https://schema.org/InStock",
-      "provider_name": "Omar Senghore",
-      "provider_email": "i_give@hotmail.com",
-      "provider_phone": "206-683-5030",
-      "amenityFeature": null,
-      "petsAllowed": null,
-      "containedInPlace": null,
-      "image_count": 18,
-      "@id": "https://eastlakeview503.relahq.com#listing",
-      "diff_note": "No change vs. 2026-11-02 baseline."
-    },
-    "block_2_client_injected": {
-      "@type": "ApartmentComplex",
-      "name": "Riva Condominium",
-      "alternateName": [
-        "Riva Condos",
-        "Riva at Lake Union"
-      ],
-      "yearBuilt": "1997",
-      "numberOfFloors": 5,
-      "amenityFeature_names": [
-        "Secured garage parking",
-        "Secured lobby entrance",
-        "Private storage units",
-        "In-unit washer and dryer"
-      ],
-      "containedInPlace_link_to_block_1": false,
-      "has_id": false,
-      "diff_note": "Unchanged. Still no @id on this block. Note: this block is injected via l.text='{...}' (confirmed this run)."
-    },
-    "block_3_client_injected": {
-      "@type": "RealEstateAgent",
-      "first_seen_live": "2026-09-18",
-      "name": "Omar Senghore",
-      "email": "i_give@hotmail.com",
-      "telephone": "+1-206-683-5030",
-      "url": "https://omar-senghore.cbdanforth.com/",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Coldwell Banker Danforth",
-        "addressLocality": "Everett",
-        "addressRegion": "WA",
-        "addressCountry": "US"
-      },
-      "@id": "https://omar-senghore.cbdanforth.com",
-      "jobTitle": "Broker - Value-Add Real Estate Investment Specialist",
-      "image": "https://upload.terabitz.com/u/cbdanforth/agents/agt_212_Omar_Senghore.jpg",
-      "identifier": {
-        "propertyID": "NWMLS",
-        "value": "NWM62208"
-      },
-      "areaServed": [
-        "Seattle",
-        "Eastlake",
-        "South Lake Union",
-        "Everett",
-        "Edmonds",
-        "Bothell"
-      ],
-      "sameAs": [
-        "https://omar-senghore.cbdanforth.com/"
-      ],
-      "diff_note": "Unchanged. Note: this block is injected via a.text='{...}' (variable name 'a', not 'l' -- confirmed this run by locating it through its RealEstateAgent content rather than the l.text pattern)."
-    },
-    "contained_in_place_sitewide_occurrences": 0,
-    "agent_name_spelling_check": {
-      "Omar Senghore_count": 3,
-      "Omar Senghore_locations": [
-        "visible 'Presented By' agent-card widget (.agent-name div)",
-        "block_1_static.provider.name",
-        "block_3_client_injected.name"
-      ],
-      "Omar Senghor_count": 0,
-      "Omar Senghor_locations": [],
-      "substring_Senghore_count": 4,
-      "diff_note": "Unchanged. 3 exact phrase occurrences + 1 substring hit (image filename / bio domain). 0 typo occurrences."
-    },
-    "agent_identity_settled": {
-      "surname_spelling": "Senghore",
-      "settled_on": "2026-09-26",
-      "entity_binding": "json_ld.block_3_client_injected.@id is https://omar-senghore.cbdanforth.com, matching NWMLS identifier NWM62208.",
-      "known_gaps": [
-        "WA real-estate licence number still empty in both CB Danforth broker admin and Rela.",
-        "Social-profile URL fields in CB Danforth broker admin still blank.",
-        "Phone format inconsistent between blocks: block_1_static '206-683-5030' vs block_3_client_injected '+1-206-683-5030'."
-      ]
-    }
-  },
-  "h1": {
-    "text": "1550 Eastlake Ave E Apt 503, Seattle",
-    "matches_target_text": false,
-    "target_text": "1550 Eastlake Ave E #503, Seattle, WA 98102",
-    "note": "Unchanged from baseline."
-  },
-  "images": {
-    "total_img_tags": 23,
-    "property_photo_img_tags": 19,
-    "logo_chrome_img_tags": 4,
-    "non_empty_alt_count": 3,
-    "non_empty_alt_all_on_logos": true,
-    "property_photo_with_alt_count": 0,
-    "loading_lazy_count": 0,
-    "alt_text_platform_status": "platform-blocked, unchanged from baseline: no alt field exists in the Rela Photo Gallery editor.",
-    "note": "All counts unchanged from baseline."
-  },
-  "analytics": {
-    "ga_ids_found": [
-      "G-1RVXDXERNN",
-      "G-95JF0FLSZH"
-    ],
-    "rela_native_ga_id_present": true,
-    "custom_ga_id_present": true,
-    "note": "Unchanged from baseline."
-  },
-  "llms_txt": {
-    "http_status": 200,
-    "is_real_llms_content": false,
-    "note": "SPA fallback, same page as /. Unchanged, known-pending Rela platform issue."
-  },
-  "sitemap_xml": {
-    "http_status": 404,
-    "note": "Unchanged, known-pending Rela platform issue."
-  },
-  "robots_txt": {
-    "http_status": 200,
-    "has_crawl_delay_10": true,
-    "has_sitemap_line": false,
-    "note": "Unchanged, known-pending Rela platform issue."
-  },
-  "mentions": {
-    "query": "\"eastlakeview503.relahq.com\"",
-    "domains_found": [],
-    "third_party_count": 0,
-    "raw_domains_returned": [
-      "greystar.com",
-      "rejournals.com",
-      "relatedrentals.com",
-      "hotpads.com",
-      "zillow.com",
-      "redfin.com",
-      "news.theregistryps.com",
-      "apartments.com",
-      "a.peek.us"
-    ],
-    "note": "third_party_count = 0, measured fresh this run. No returned domain contains the literal target domain string -- same fuzzy 'Eastlake'/'Lakeview'/'Eastview' keyword-match pattern as every prior run. No self-mention (github.com/GroovySoo) appeared. Raw domain set differs from 2026-11-02's (greystar.com, rejournals.com, relatedrentals.com, hotpads.com, zillow.com, redfin.com new or recurring; furnishedfinder.com, rentcafe.com, rentler.com, luxuryportfolio.com, travelocity.com, ph.hotels.com, bestinwest.roveridx.com absent this run) -- consistent with a volatile fuzzy-match tool, not a signal. Automated search again did NOT surface omar-senghore.cbdanforth.com; direct re-fetch (see inbound_links) confirms it still links here."
-  },
-  "inbound_links": {
-    "external_links_observed": 1,
-    "external_links_observed_detail": "RE-VERIFIED BY TIER 1 DIRECT FETCH, 2026-11-09 -- SIXTH consecutive week. https://omar-senghore.cbdanforth.com/ returns HTTP 200 and its server-rendered HTML still contains <a href=\"https://eastlakeview503.relahq.com/\">1550 Eastlake Ave E #503&mdash;Riva Condominium, Seattle.</a> in the About Me content block, with NO rel attribute (followed). Byte-identical to the 2026-11-02 re-verification.",
-    "external_links_known": 0,
-    "external_links_measurement_basis": "automated mention_query WebSearch only (third_party_count = 0 this run, measured fresh). KNOWN TO BE WRONG BY ONE every run since the link went live: it has never surfaced the verified cbdanforth.com link. Read it as a FLOOR. external_links_observed is the real number.",
-    "external_links_verified": 0,
-    "external_links_verification": "OUT-OF-BAND, Tier 3/owner, last reading taken 2026-10-05: External links Total 0, Internal links 0, all 'Top ...' panels 'No data'. NOT re-asked by Tier 1 -- GSC access belongs to the owner/Tier 2. A newer reading was asked for on 2026-11-02 ('Do now' item 1); no result has been imported into this run's evidence (that import, if any, is a Tier 2 action).",
-    "gsc_top_linking_sites": [],
-    "gsc_top_linking_sites_status": "No newer reading available to Tier 1 this run. The November reading was asked for on 2026-11-02; Tier 1 has not seen a reply to import.",
-    "note": "Inbound links remain the single biggest lever on this listing. The one confirmed link held a SIXTH consecutive week (byte-identical direct fetch); no second link detected. Automated mention_query remains a floor of 0 and has never once surfaced this link."
-  },
-  "tracked_queries": [
-    {
-      "query": "1550 Eastlake Ave E #503",
-      "top_5_domains": [
-        "exprealty.com",
-        "apartmentlist.com",
-        "toni.withwre.com",
-        "redfin.com",
-        "windermere.com"
-      ],
-      "all_domains_returned": [
-        "exprealty.com",
-        "apartmentlist.com",
-        "toni.withwre.com",
-        "redfin.com",
-        "windermere.com",
-        "carmenhalstrom.withwre.com",
-        "officespace.com",
-        "jonathanpearlstein.evrealestate.com",
-        "bestinwest.roveridx.com",
-        "canorealestate.com",
-        "shawnbrennan.withwre.com",
-        "commercialmls.com",
-        "aptsearch.northeastern.edu",
-        "cbaimage.commercialmls.com",
-        "kwteamsynergy.realgeeks.com"
-      ],
-      "target_present": false,
-      "note": "Top-5 domain set identical to 2026-11-02 -- the first exact week-over-week repeat observed for this query. Recorded as a stability signal, not actioned."
-    },
-    {
-      "query": "Riva Condos #503 Seattle",
-      "top_5_domains": [
-        "apartments.com",
-        "apartments.com",
-        "apartments.com",
-        "wicklundre.com",
-        "wicklundre.com"
-      ],
-      "all_domains_returned": [
-        "apartments.com",
-        "wicklundre.com",
-        "toni.withwre.com",
-        "windermere.com",
-        "bestinwest.roveridx.com",
-        "carmenhalstrom.withwre.com",
-        "djackson.withwre.com"
-      ],
-      "target_present": false,
-      "note": "Same two dominant domains as 2026-11-02 (apartments.com, wicklundre.com) with a slightly different interleave order; echofineproperties.com/condoblackbook.com/bhsusa.com absent again. Consistent with tool volatility within a recurring domain set."
-    },
-    {
-      "query": "Riva Condominium Seattle for sale",
-      "top_5_domains": [
-        "prevu.com",
-        "bestinwest.roveridx.com",
-        "wicklundre.com",
-        "wicklundre.com",
-        "wicklundre.com"
-      ],
-      "all_domains_returned": [
-        "prevu.com",
-        "bestinwest.roveridx.com",
-        "wicklundre.com",
-        "sothebysrealty.ae",
-        "sothebysrealty.co.uk",
-        "pnwresidences.com"
-      ],
-      "target_present": false,
-      "note": "Top-5 domain set identical to 2026-11-02 -- the second exact week-over-week repeat this run. dupontregistry.com and showcaseidx.com absent this run; sothebysrealty.ae/.co.uk new to all_domains_returned."
-    },
-    {
-      "query": "eastlakeview503",
-      "top_5_domains": [
-        "leadingre.com",
-        "homefront.com",
-        "redfin.com",
-        "streeteasy.com",
-        "bestinwest.roveridx.com"
-      ],
-      "all_domains_returned": [
-        "leadingre.com",
-        "homefront.com",
-        "redfin.com",
-        "streeteasy.com",
-        "bestinwest.roveridx.com",
-        "exprealty.com",
-        "teamdivarealestate.com",
-        "veryapt.com"
-      ],
-      "target_present": false,
-      "note": "leadingre.com again ranks 1 (same unrelated Ohio listing at '503 Overlook, Eastlake, OH'). Ranks 2-5 changed vs. 2026-11-02 (cityofgenevany.gov, en.wikipedia.org no longer present; homefront.com, streeteasy.com new). github.com (monitoring repo) absent again this run."
-    }
-  ],
-  "tracked_queries_note": "Two of four tracked queries ('1550 Eastlake Ave E #503' and 'Riva Condominium Seattle for sale') returned top-5 domain sets IDENTICAL to 2026-11-02 -- the first exact week-over-week repeats observed in this project's history, a possible sign the tool is stabilizing on this low-authority page. The other two still showed movement within the same recurring domain pool. No new domain in any top 5 is Riva/Eastlake-specific or competitively relevant. target_present still false on all 4. Recorded as observed; not actioned.",
-  "competitors": {
-    "windermere.com": {
-      "fetchable": true,
-      "http_status": 200,
-      "title": "MLS#2287238: 1550 Eastlake Avenue E 506, Seattle, WA 98102",
-      "meta_description_present": true,
-      "json_ld_types": [
-        "House",
-        "ImageObject",
-        "Offer",
-        "PostalAddress",
-        "Product",
-        "QuantitativeValue",
-        "RealEstateAgent",
-        "RealEstateListing"
-      ],
-      "visible_price": 385000,
-      "unit": "#506",
-      "note": "1 bed / 1 bath - not a price comp. Title and HTTP status unchanged 2026-11-09. Visible price string '$385,000' confirmed still present on the page (plus an unrelated '$399,950' string elsewhere). json_ld_types NOT re-extracted this run (title/status only, narrower fetch, not a page change) -- see state/last-snapshot.json for the last full JSON-LD reading.",
-      "last_verified": "2026-11-09",
-      "json_ld_types_provenance": "Last FULL reading, carried forward from the 2026-10-19 extraction. The 2026-11-02 and 2026-11-09 fetches were title/status(/price-string)-only; a narrower fetch is not a page change, so the value is preserved rather than overwritten with null.",
-      "visible_price_provenance": "Last FULL JSON-LD reading carried forward from 2026-10-19 (385000). The visible price string '$385,000' was re-confirmed present on the page by direct fetch 2026-11-09."
-    },
-    "compass.com": {
-      "fetchable": false,
-      "http_status": 202,
-      "final_url": "https://www.compass.com/homedetails/1550-Eastlake-Ave-E-Unit-203-Seattle-WA-98102/1561675205357517033_lid/",
-      "title": "1550 Eastlake Ave, Unit 203, Seattle, WA 98102 | MLS #2227901",
-      "meta_description": "1550 Eastlake Ave, Unit 203, Seattle, WA 98102 is a property not currently listed. This is a 2-bed, 2-bath property.",
-      "json_ld_types": [
-        "Brand",
-        "BreadcrumbList",
-        "ContactPoint",
-        "FloorPlan",
-        "ImageObject",
-        "ListItem",
-        "Offer",
-        "Organization",
-        "Place",
-        "PostalAddress",
-        "Product",
-        "RealEstateListing",
-        "SingleFamilyResidence",
-        "Thing"
-      ],
-      "unit": "#203",
-      "note": "Off-market page that still outranks us. FETCH FAILURE 2026-11-09: bot-mitigated HTTP 202 with an empty response body, after one retry -- title/meta/json_ld not re-extracted. URL and redirect target identical to every prior run, so this is read as bot mitigation, not a page change. Title/meta carried from the 2026-11-02 reading; json_ld_types from the 2026-10-19 full extraction.",
-      "last_verified": "2026-11-09",
-      "json_ld_types_provenance": "Last FULL reading, carried forward from the 2026-10-19 extraction. Not re-read 2026-11-02 (title/status-only fetch) and not re-readable 2026-11-09 (HTTP 202 empty body).",
-      "last_verified_successfully": "2026-11-02",
-      "title_provenance": "Last successful reading, 2026-11-02. NOT re-confirmed 2026-11-09: HTTP 202 with an empty body on both the /listing/ redirect and the final /homedetails/ URL after one retry (bot-mitigation soft-block). Value preserved rather than overwritten with null -- a fetch failure is not a page change.",
-      "retried": true,
-      "meta_description_provenance": "Last successful reading, 2026-11-02. NOT re-confirmed 2026-11-09: HTTP 202 with an empty body on both the /listing/ redirect and the final /homedetails/ URL after one retry (bot-mitigation soft-block). Value preserved rather than overwritten with null -- a fetch failure is not a page change."
-    },
-    "seattlecondosandlofts.com": {
-      "fetchable": true,
-      "http_status": 200,
-      "title": "Condo Directory",
-      "meta_description_present": true,
-      "json_ld_types": [
-        "BreadcrumbList",
-        "ListItem",
-        "Organization",
-        "ContactPoint",
-        "WebPage",
-        "WebSite"
-      ],
-      "riva_specific_content": false,
-      "deep_fetch_dormant": true,
-      "last_verified": "2026-09-16",
-      "dormant_note": "deep_fetch_dormant per the 2026-09-18 scope change -- NOT fetched this run and not a gap."
-    },
-    "houseboatsofseattle.com": {
-      "fetchable": true,
-      "http_status": 200,
-      "title": "Eastlake - Houseboats of Seattle (And Floating Homes!)",
-      "meta_description_present": false,
-      "json_ld_types": [
-        "WebPage",
-        "ReadAction",
-        "ImageObject",
-        "BreadcrumbList",
-        "ListItem",
-        "WebSite",
-        "SearchAction",
-        "EntryPoint",
-        "PropertyValueSpecification"
-      ],
-      "riva_specific_content": false,
-      "deep_fetch_dormant": true,
-      "last_verified": "2026-09-16",
-      "dormant_note": "deep_fetch_dormant per the 2026-09-18 scope change -- NOT fetched this run and not a gap."
-    },
-    "rsir.com": {
-      "fetchable": false,
-      "http_status": null,
-      "blocked_reason": "Cloudflare JS challenge (cf-mitigated: challenge)",
-      "retried": false,
-      "deep_fetch_dormant": true,
-      "last_verified": "2026-09-16",
-      "dormant_note": "deep_fetch_dormant per the 2026-09-18 scope change -- NOT fetched this run and not a gap."
-    }
-  },
-  "pagespeed": {
-    "status": "disabled_by_policy",
-    "note": "pagespeed_skip:true in state/competitors.json. Not called, not reported as a gap."
-  },
-  "action_queue_verification": {
-    "cb_listing_virtual_tour_link": "NOT DONE, carried 5 weeks. Stays in \"Do now\" as item 1 this week (promoted from 3) -- it is the only remaining real inbound-link lever on the whole queue. CARRIED 3+ WEEKS, called out in reports/STRATEGY-2026-11-09.md: kept rather than retired because its stated review date is 2026-11-16, one week away, and it is already cut to four steps. If nothing has moved by 2026-11-16 it goes to Backlog. CANNOT VERIFY FROM PAGE -- settled 2026-10-26: no publicly discoverable CB listing-detail page for MLS #2556157 exists, so Tier 1 can never certify this. Closes only on the owner's word (\"virtual tour added\" / \"no virtual tour field\").",
-    "urbnlivn_email_sent": "NOT DONE, carried 7 weeks -> RETIRED TO \"## Backlog / blocked\" 2026-10-26. Do NOT re-list in \"Do now\". Same treatment and same reasoning as brokerage_email_sent: it was cut down twice (full paste-ready draft 2026-09-18, then the recipient looked up and verified 2026-10-19 -- matt@urban-living.com plus the contact form) and moved neither time. Seven listings is past the point where re-listing costs the weekly list more credibility than the item is worth. It remains rank 3 in link_targets ON THE MERITS and is still worth doing: their homepage mentions \"Riva\" three times. Draft and recipient preserved verbatim in ACTION-QUEUE.md. Reopens instantly on the owner reply \"urbnlivn emailed\" or \"urbnlivn declined\".",
-    "eastlake_community_council_email": "NOT DONE, carried 4 weeks -> HARD DEADLINE OF 2026-11-09 REACHED, so MOVED TO \"## Backlog / blocked\" 2026-11-09 under the same rule that parked the urbnlivn and brokerage emails. Do NOT re-list in \"Do now\". The deadline was set explicitly in ACTION-QUEUE.md on 2026-11-02 and Tier 1 reports no evidence either way, which under the rule as written means not moved. The item is not broken and not too hard (address info@eastlakeseattle.org verified, full paste-ready draft retained in Backlog, no login, ~3 min) -- it is blocked on owner action alone. Revives to \"Do now\" the moment the owner says the word. Was rank 4 in link_targets; retiring it EXHAUSTS the ranked list.",
-    "zillow_realtor_profile_website_field": "NOT DONE, carried 2 weeks. In \"## Next up\" since 2026-11-02; PROMOTED BACK TO \"Do now\" as item 3 on 2026-11-09 to fill the slot freed by the ECC retirement. Still explicitly traffic-only: both fields are nofollow, pass no ranking credit, and MUST NOT be counted toward the link goal -- the confirmed link count stays 1 after doing this. Rank 5 in link_targets. CANNOT VERIFY FROM PAGE; closes on the owner's \"profiles updated\".",
-    "gsc_links_monthly_report": "ASKED 2026-11-02, NO REPLY as of 2026-11-09 -- stays as \"Do now\" item 1, carried 1 week. Not re-asked as a fresh monthly ask: the November ask is already outstanding and the next scheduled monthly ask is the first Tier 2 run of December 2026. Previous reading 2026-10-05 (External links Total 0, \"No data\"). Expected answer: omar-senghore.cbdanforth.com, total 1. CANNOT VERIFY FROM PAGE -- GSC access is the owner's. Closes on any owner reply, including \"still No data\".",
-    "wa_licence_number": "NOT DONE -- RETIRED TO \"## Backlog / blocked\" 2026-10-19, still there. Do NOT re-list in \"Do now\". Owner said \"skip for now\" 2026-09-26; re-raised once 2026-10-12 under a once-only rule with no reply. Reopens on \"licence added\", which Tier 1 can then confirm on the live page (the Rela side is page-visible).",
-    "brokerage_email_sent": "NOT DONE, carried 5 weeks -> MOVED TO \"## Backlog / blocked\" 2026-10-12, still there. Do NOT re-list in \"Do now\". Draft preserved in ACTION-QUEUE.md; reopens on \"brokerage contact: <name or email>\".",
-    "first_inbound_link_milestone": "DONE 2026-09-28, confirmed by Tier 1 2026-10-05 and re-confirmed byte-identical 2026-10-12, 2026-10-19, 2026-10-26 and 2026-11-02 -- FIVE consecutive weeks holding. The system's #1 KPI. Stays in ACTION-QUEUE \"## Done\"; re-checked by Tier 1 direct fetch every run.",
-    "cb_danforth_bio_page_updated": "DONE and CLOSED 2026-10-05, re-confirmed live 2026-10-12, 2026-10-19, 2026-10-26 and 2026-11-02. Same event as first_inbound_link_milestone. Lives in ACTION-QUEUE \"## Done\".",
-    "rela_support_chase_item_5": "NARROWED 2026-10-26, not closed, and unchanged 2026-11-02: og:url confirmed still live, og:locale and twitter:card still absent, so item 5 remains TWO missing social tags. Stays in Backlog with the edited draft message in ACTION-QUEUE.md.",
-    "link_targets_list_exhausted": "NEW 2026-11-09. With ECC (rank 4) retired to Backlog, state/competitors.json -> link_targets has no drawable target left: rank 1 DONE (produced the one confirmed link), ranks 2 and 3 in Backlog, rank 4 in Backlog as of today, rank 5 nofollow/traffic-only. The standing rule is to draw the weekly link ask from this verified list rather than invent generic advice, so the list must be restocked with named, verified-live targets before a genuinely new link ask can be made. MAINTAINER TASK, not the owner's."
+  "agent_identity_settled": {
+   "surname_spelling": "Senghore",
+   "settled_on": "2026-09-26",
+   "entity_binding": "json_ld.block_3_client_injected.@id is https://omar-senghore.cbdanforth.com, matching NWMLS identifier NWM62208.",
+   "known_gaps": [
+    "WA real-estate licence number still empty in both CB Danforth broker admin and Rela.",
+    "Social-profile URL fields in CB Danforth broker admin still blank.",
+    "Phone format inconsistent between blocks: block_1_static '206-683-5030' vs block_3_client_injected '+1-206-683-5030'."
+   ]
   }
+ },
+ "h1": {
+  "text": "1550 Eastlake Ave E Apt 503, Seattle",
+  "matches_target_text": false,
+  "target_text": "1550 Eastlake Ave E #503, Seattle, WA 98102",
+  "note": "Unchanged from baseline."
+ },
+ "images": {
+  "total_img_tags": 23,
+  "property_photo_img_tags": 19,
+  "logo_chrome_img_tags": 4,
+  "non_empty_alt_count": 3,
+  "non_empty_alt_all_on_logos": true,
+  "property_photo_with_alt_count": 0,
+  "loading_lazy_count": 0,
+  "alt_text_platform_status": "platform-blocked, unchanged from baseline: no alt field exists in the Rela Photo Gallery editor.",
+  "note": "All counts unchanged from baseline."
+ },
+ "analytics": {
+  "ga_ids_found": [
+   "G-1RVXDXERNN",
+   "G-95JF0FLSZH"
+  ],
+  "rela_native_ga_id_present": true,
+  "custom_ga_id_present": true,
+  "note": "Unchanged from baseline."
+ },
+ "llms_txt": {
+  "http_status": 200,
+  "is_real_llms_content": false,
+  "note": "SPA fallback, same page as /. Unchanged, known-pending Rela platform issue."
+ },
+ "sitemap_xml": {
+  "http_status": 404,
+  "note": "Unchanged, known-pending Rela platform issue."
+ },
+ "robots_txt": {
+  "http_status": 200,
+  "has_crawl_delay_10": true,
+  "has_sitemap_line": false,
+  "note": "Unchanged, known-pending Rela platform issue."
+ },
+ "mentions": {
+  "query": "\"eastlakeview503.relahq.com\"",
+  "domains_found": [],
+  "third_party_count": 0,
+  "raw_domains_returned": [
+   "greystar.com",
+   "rejournals.com",
+   "relatedrentals.com",
+   "hotpads.com",
+   "zillow.com",
+   "redfin.com",
+   "news.theregistryps.com",
+   "apartments.com"
+  ],
+  "note": "third_party_count = 0, measured fresh this run. No returned domain contains the literal target domain string -- same fuzzy 'Eastlake'/'Lakeview'/'Eastview' keyword-match pattern as every prior run. No self-mention (github.com/GroovySoo) appeared. Automated search again did NOT surface omar-senghore.cbdanforth.com; direct re-fetch (see inbound_links) confirms it still links here."
+ },
+ "inbound_links": {
+  "external_links_observed": 1,
+  "external_links_observed_detail": "RE-VERIFIED BY TIER 1 DIRECT FETCH, 2026-11-16 -- SEVENTH consecutive week. https://omar-senghore.cbdanforth.com/ returns HTTP 200 and its server-rendered HTML still contains <a href=\"https://eastlakeview503.relahq.com/\">1550 Eastlake Ave E #503&mdash;Riva Condominium, Seattle.</a> in the About Me content block, with NO rel attribute (followed). Byte-identical to the 2026-11-09 re-verification.",
+  "external_links_known": 0,
+  "external_links_measurement_basis": "automated mention_query WebSearch only (third_party_count = 0 this run, measured fresh). KNOWN TO BE WRONG BY ONE every run since the link went live: it has never surfaced the verified cbdanforth.com link. Read it as a FLOOR. external_links_observed is the real number.",
+  "external_links_verified": 0,
+  "external_links_verification": "OUT-OF-BAND, Tier 3/owner, last reading taken 2026-10-05: External links Total 0, Internal links 0, all 'Top ...' panels 'No data'. NOT re-asked by Tier 1 -- GSC access belongs to the owner/Tier 2. The November ask (asked 2026-11-02) remains unanswered as of this run.",
+  "gsc_top_linking_sites": [],
+  "gsc_top_linking_sites_status": "No newer reading available to Tier 1 this run. The November reading was asked for on 2026-11-02; no reply has been imported into this run's evidence.",
+  "note": "Inbound links remain the single biggest lever on this listing. The one confirmed link held a SEVENTH consecutive week (byte-identical direct fetch); no second link detected."
+ },
+ "tracked_queries": [
+  {
+   "query": "1550 Eastlake Ave E #503",
+   "top_5_domains": [
+    "exprealty.com",
+    "apartmentlist.com",
+    "toni.withwre.com",
+    "redfin.com",
+    "windermere.com"
+   ],
+   "all_domains_returned": [
+    "exprealty.com",
+    "apartmentlist.com",
+    "toni.withwre.com",
+    "redfin.com",
+    "windermere.com",
+    "carmenhalstrom.withwre.com",
+    "officespace.com",
+    "jonathanpearlstein.evrealestate.com",
+    "bestinwest.roveridx.com",
+    "canorealestate.com",
+    "shawnbrennan.withwre.com",
+    "commercialmls.com",
+    "aptsearch.northeastern.edu",
+    "cbaimage.commercialmls.com",
+    "kwteamsynergy.realgeeks.com"
+   ],
+   "target_present": false,
+   "note": "Top-5 domain set identical to 2026-11-09."
+  },
+  {
+   "query": "Riva Condos #503 Seattle",
+   "top_5_domains": [
+    "apartments.com",
+    "apartments.com",
+    "apartments.com",
+    "wicklundre.com",
+    "wicklundre.com"
+   ],
+   "all_domains_returned": [
+    "apartments.com",
+    "wicklundre.com",
+    "toni.withwre.com",
+    "windermere.com",
+    "bestinwest.roveridx.com",
+    "carmenhalstrom.withwre.com",
+    "djackson.withwre.com"
+   ],
+   "target_present": false,
+   "note": "Top-5 domain set identical to 2026-11-09."
+  },
+  {
+   "query": "Riva Condominium Seattle for sale",
+   "top_5_domains": [
+    "prevu.com",
+    "bestinwest.roveridx.com",
+    "wicklundre.com",
+    "wicklundre.com",
+    "wicklundre.com"
+   ],
+   "all_domains_returned": [
+    "prevu.com",
+    "bestinwest.roveridx.com",
+    "wicklundre.com",
+    "sothebysrealty.ae",
+    "sothebysrealty.co.uk",
+    "pnwresidences.com"
+   ],
+   "target_present": false,
+   "note": "Top-5 domain set identical to 2026-11-09."
+  },
+  {
+   "query": "eastlakeview503",
+   "top_5_domains": [
+    "leadingre.com",
+    "homefront.com",
+    "redfin.com",
+    "streeteasy.com",
+    "bestinwest.roveridx.com"
+   ],
+   "all_domains_returned": [
+    "leadingre.com",
+    "homefront.com",
+    "redfin.com",
+    "streeteasy.com",
+    "bestinwest.roveridx.com",
+    "exprealty.com",
+    "teamdivarealestate.com",
+    "veryapt.com"
+   ],
+   "target_present": false,
+   "note": "Top-5 domain set identical to 2026-11-09. github.com (monitoring repo) absent again this run."
+  }
+ ],
+ "tracked_queries_note": "ALL FOUR tracked queries returned top-5 domain sets IDENTICAL to 2026-11-09 -- the first time every query in the set has repeated exactly in the same week (prior best was two of four, on 2026-11-09). No new domain in any top 5 is Riva/Eastlake-specific or competitively relevant. target_present still false on all 4. Recorded as observed; not actioned.",
+ "competitors": {
+  "windermere.com": {
+   "fetchable": true,
+   "http_status": 200,
+   "title": "MLS#2287238: 1550 Eastlake Avenue E 506, Seattle, WA 98102",
+   "meta_description_present": true,
+   "json_ld_types": [
+    "House",
+    "ImageObject",
+    "Offer",
+    "PostalAddress",
+    "Product",
+    "QuantitativeValue",
+    "RealEstateAgent",
+    "RealEstateListing"
+   ],
+   "visible_price": 385000,
+   "unit": "#506",
+   "note": "1 bed / 1 bath - not a price comp. Title and HTTP status unchanged 2026-11-16. Visible price string '$385,000' confirmed still present (2 occurrences), plus unrelated '$399,950' string (1 occurrence). json_ld_types NOT re-extracted this run (title/price-string only, narrower fetch) -- carried forward from the 2026-10-19 full extraction.",
+   "last_verified": "2026-11-16",
+   "json_ld_types_provenance": "Last FULL reading, carried forward from the 2026-10-19 extraction.",
+   "visible_price_provenance": "Last FULL JSON-LD reading carried forward from 2026-10-19 (385000). Visible price string re-confirmed present on the page by direct fetch 2026-11-16."
+  },
+  "compass.com": {
+   "fetchable": false,
+   "http_status": 202,
+   "final_url": "https://www.compass.com/homedetails/1550-Eastlake-Ave-E-Unit-203-Seattle-WA-98102/1561675205357517033_lid/",
+   "title": "1550 Eastlake Ave, Unit 203, Seattle, WA 98102 | MLS #2227901",
+   "meta_description": "1550 Eastlake Ave, Unit 203, Seattle, WA 98102 is a property not currently listed. This is a 2-bed, 2-bath property.",
+   "json_ld_types": [
+    "Brand",
+    "BreadcrumbList",
+    "ContactPoint",
+    "FloorPlan",
+    "ImageObject",
+    "ListItem",
+    "Offer",
+    "Organization",
+    "Place",
+    "PostalAddress",
+    "Product",
+    "RealEstateListing",
+    "SingleFamilyResidence",
+    "Thing"
+   ],
+   "unit": "#203",
+   "note": "FETCH FAILURE 2026-11-16 -- SECOND CONSECUTIVE WEEK: bot-mitigated HTTP 202 with an empty response body on both the /listing/ redirect and the final /homedetails/ URL, after one retry. URL and redirect target identical to every prior run, consistent with bot mitigation rather than a page change. Title/meta/json_ld not re-extracted; carried forward (title/meta from 2026-11-02, json_ld_types from 2026-10-19). Flagged for Tier 2/maintainer per the standing note in ACTION-QUEUE.md -- Tier 1 is reporting the fact, not deciding to move it to deep_fetch_dormant.",
+   "last_verified": "2026-11-16",
+   "json_ld_types_provenance": "Last FULL reading, carried forward from the 2026-10-19 extraction.",
+   "last_verified_successfully": "2026-11-02",
+   "title_provenance": "Last successful reading, 2026-11-02. NOT re-confirmed 2026-11-09 or 2026-11-16 (two consecutive HTTP 202 empty-body fetches after retry).",
+   "retried": true,
+   "meta_description_provenance": "Last successful reading, 2026-11-02. NOT re-confirmed 2026-11-09 or 2026-11-16 (two consecutive HTTP 202 empty-body fetches after retry).",
+   "deep_fetch_status": "dormant since 2026-11-16 (Tier 2 decision; two consecutive HTTP 202 empty-body fetches after retry)"
+  },
+  "seattlecondosandlofts.com": {
+   "fetchable": true,
+   "http_status": 200,
+   "title": "Condo Directory",
+   "meta_description_present": true,
+   "json_ld_types": [
+    "BreadcrumbList",
+    "ListItem",
+    "Organization",
+    "ContactPoint",
+    "WebPage",
+    "WebSite"
+   ],
+   "riva_specific_content": false,
+   "deep_fetch_dormant": true,
+   "last_verified": "2026-09-16",
+   "dormant_note": "deep_fetch_dormant per the 2026-09-18 scope change -- NOT fetched this run and not a gap."
+  },
+  "houseboatsofseattle.com": {
+   "fetchable": true,
+   "http_status": 200,
+   "title": "Eastlake - Houseboats of Seattle (And Floating Homes!)",
+   "meta_description_present": false,
+   "json_ld_types": [
+    "WebPage",
+    "ReadAction",
+    "ImageObject",
+    "BreadcrumbList",
+    "ListItem",
+    "WebSite",
+    "SearchAction",
+    "EntryPoint",
+    "PropertyValueSpecification"
+   ],
+   "riva_specific_content": false,
+   "deep_fetch_dormant": true,
+   "last_verified": "2026-09-16",
+   "dormant_note": "deep_fetch_dormant per the 2026-09-18 scope change -- NOT fetched this run and not a gap."
+  },
+  "rsir.com": {
+   "fetchable": false,
+   "http_status": null,
+   "blocked_reason": "Cloudflare JS challenge (cf-mitigated: challenge)",
+   "retried": false,
+   "deep_fetch_dormant": true,
+   "last_verified": "2026-09-16",
+   "dormant_note": "deep_fetch_dormant per the 2026-09-18 scope change -- NOT fetched this run and not a gap."
+  }
+ },
+ "pagespeed": {
+  "status": "disabled_by_policy",
+  "note": "pagespeed_skip:true in state/competitors.json. Not called, not reported as a gap."
+ },
+ "action_queue_verification": {
+  "cb_listing_virtual_tour_link": "RETIRED TO \"## Backlog / blocked\" BY TIER 2 ON 2026-11-16 (was carried 5 weeks in \"Do now\"). The explicit review date set for it on 2026-11-09 was 2026-11-16; that date arrived with no movement reported by Tier 1, so the stated rule was applied, as it was to the urbnlivn, brokerage and ECC asks. NOT blocked and NOT too hard -- four steps, ~3 min -- parked purely because it has not been done, and because settled fact (2026-10-26) means Tier 1 can NEVER verify it from the page: no publicly discoverable CB listing-detail page exists for MLS #2556157. It can only ever close on the owner's word. Draft preserved in ACTION-QUEUE.md. Do NOT re-list in \"Do now\". Reopens on \"virtual tour added\"; closes for good on \"no virtual tour field\".",
+  "urbnlivn_email_sent": "NOT DONE, carried 7 weeks -> RETIRED TO \"## Backlog / blocked\" 2026-10-26. Do NOT re-list in \"Do now\". Same treatment and same reasoning as brokerage_email_sent: it was cut down twice (full paste-ready draft 2026-09-18, then the recipient looked up and verified 2026-10-19 -- matt@urban-living.com plus the contact form) and moved neither time. Seven listings is past the point where re-listing costs the weekly list more credibility than the item is worth. It remains rank 3 in link_targets ON THE MERITS and is still worth doing: their homepage mentions \"Riva\" three times. Draft and recipient preserved verbatim in ACTION-QUEUE.md. Reopens instantly on the owner reply \"urbnlivn emailed\" or \"urbnlivn declined\".",
+  "eastlake_community_council_email": "NOT DONE, carried 4 weeks -> HARD DEADLINE OF 2026-11-09 REACHED, so MOVED TO \"## Backlog / blocked\" 2026-11-09 under the same rule that parked the urbnlivn and brokerage emails. Do NOT re-list in \"Do now\". The deadline was set explicitly in ACTION-QUEUE.md on 2026-11-02 and Tier 1 reports no evidence either way, which under the rule as written means not moved. The item is not broken and not too hard (address info@eastlakeseattle.org verified, full paste-ready draft retained in Backlog, no login, ~3 min) -- it is blocked on owner action alone. Revives to \"Do now\" the moment the owner says the word. Was rank 4 in link_targets; retiring it EXHAUSTS the ranked list.",
+  "zillow_realtor_profile_website_field": "NOT DONE, carried 3 weeks. CARRIED 3+ WEEKS, called out in reports/STRATEGY-2026-11-16.md. Stays as \"Do now\" item 3 for one more week. Still explicitly TRAFFIC-ONLY: both fields are nofollow, pass no ranking credit, and MUST NOT be counted toward the link goal -- the confirmed link count stays 1 after doing this. Rank 5 in link_targets. CANNOT VERIFY FROM PAGE (third-party profile pages are not fetched by Tier 1); closes on \"profiles updated\". DECISION: if it has not moved by 2026-11-23 it drops to \"## Next up\", not Backlog -- it stays genuinely easy, it just will not hold a \"Do now\" slot ahead of real link work.",
+  "gsc_links_monthly_report": "CANNOT VERIFY FROM PAGE -- GSC access is the owner's. Asked 2026-11-02, still unanswered as of 2026-11-16 (2 weeks). Stays as \"Do now\" item 2, carried 2 weeks. NOT re-asked as a fresh monthly ask: 2026-11-16 is not the first run of the month, the November ask is already outstanding, and the next scheduled monthly ask is the first Tier 2 run of December 2026. Previous reading 2026-10-05 (External links Total 0, \"No data\"). Expected answer: omar-senghore.cbdanforth.com, total 1.",
+  "wa_licence_number": "NOT DONE -- RETIRED TO \"## Backlog / blocked\" 2026-10-19, still there. Do NOT re-list in \"Do now\". Owner said \"skip for now\" 2026-09-26; re-raised once 2026-10-12 under a once-only rule with no reply. Reopens on \"licence added\", which Tier 1 can then confirm on the live page (the Rela side is page-visible).",
+  "brokerage_email_sent": "NOT DONE, carried 5 weeks -> MOVED TO \"## Backlog / blocked\" 2026-10-12, still there. Do NOT re-list in \"Do now\". Draft preserved in ACTION-QUEUE.md; reopens on \"brokerage contact: <name or email>\".",
+  "first_inbound_link_milestone": "DONE, re-confirmed by Tier 1 direct fetch 2026-11-16 -- SEVENTH consecutive week holding, byte-identical, HTTP 200, no rel=\"nofollow\". The system's #1 KPI. Stays in ACTION-QUEUE \"## Done\"; re-checked by Tier 1 direct fetch every run.",
+  "cb_danforth_bio_page_updated": "DONE and CLOSED 2026-10-05, re-confirmed live 2026-10-12, 2026-10-19, 2026-10-26 and 2026-11-02. Same event as first_inbound_link_milestone. Lives in ACTION-QUEUE \"## Done\".",
+  "rela_support_chase_item_5": "NARROWED 2026-10-26, not closed, and unchanged 2026-11-02: og:url confirmed still live, og:locale and twitter:card still absent, so item 5 remains TWO missing social tags. Stays in Backlog with the edited draft message in ACTION-QUEUE.md.",
+  "link_targets_list_exhausted": "RESOLVED 2026-11-16 -- the list is RESTOCKED and this entry is closed. The maintainer task escalated 2026-11-09 is done: eight candidate domains checked live with a browser UA, producing one genuinely new FREE target with a verified editorial address (The Registry, news.theregistryps.com, letters@theregistryps.com -- now rank 6 and FIRST in the new link_targets.draw_order, and \"Do now\" item 1), plus two PAID directory options at ranks 7-8 ranked last on purpose and explicitly not recommended, plus a rejected_candidates list recording four exclusions with reasons. Most important exclusion: lakeunionbeat.com is dead and re-registered as gambling spam despite still being cited as an Eastlake news source by a City of Seattle document -- a link from it would be actively harmful. THE REAL FINDING: the binding constraint on the #1 lever is no longer a shortage of targets. Ranks 3 and 4 (urbnlivn matt@urban-living.com, ECC info@eastlakeseattle.org) are free, one email each, and both recipients were RE-VERIFIED LIVE on 2026-11-16; they sit in Backlog only because the email was never sent.",
+  "registry_outreach_email": "NEW 2026-11-16 -- \"Do now\" item 1, never asked before. Target: letters@theregistryps.com, the editorial address published on https://news.theregistryps.com/contact/ (HTTP 200, verified 2026-11-16). Rank 6 in link_targets, first in draw_order. Free, one email, ~3 min, paste-ready draft in ACTION-QUEUE.md, framed as a building/local-market source offer and explicitly NOT a link request. CANNOT VERIFY FROM PAGE: closes on the owner's word (\"registry emailed\" / \"registry declined\"), or on Tier 1 later observing an actual inbound link from theregistryps.com, which would be the certifying event.",
+  "compass_deep_fetch_dormant": "NEW 2026-11-16, Tier 2 decision. compass.com moved from competitors.json deep_fetch to deep_fetch_dormant after a SECOND consecutive bot-mitigated HTTP 202 empty-body fetch failure, which was the trigger condition written into ACTION-QUEUE.md on 2026-11-09. Tier 1 reported the fact and left the call to Tier 2. URL and redirect target unchanged across every run, so this is bot mitigation, NOT a page change: title/meta (2026-11-02) and json_ld_types (2026-10-19) remain carried forward here with provenance rather than nulled. Reinstate to deep_fetch if it ever returns a body again. windermere.com is now the only weekly competitor deep fetch."
+ }
 }
