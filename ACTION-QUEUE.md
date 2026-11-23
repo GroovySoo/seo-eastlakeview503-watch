@@ -2,48 +2,48 @@
 
 Executable to-do. Tier 2 rewrites this file each week. Top section = do now.
 
-> **Rewritten by Tier 2, 2026-11-16.** Live-page status changes come from Tier 1's ACTION VERIFICATION
-> section in `reports/EVIDENCE-2026-11-16.md`, not from assumption. **No new Tier 3 implementation report
+> **Rewritten by Tier 2, 2026-11-23.** Live-page status changes come from Tier 1's ACTION VERIFICATION
+> section in `reports/EVIDENCE-2026-11-23.md`, not from assumption. **No new Tier 3 implementation report
 > since the last rewrite** (newest is still `reports/IMPLEMENTATION-2026-10-05.md`, folded in on
-> 2026-10-12), so there is no new out-of-band knowledge to import. **The page is unchanged for a seventh
+> 2026-10-12), so there is no new out-of-band knowledge to import. **The page is unchanged for an eighth
 > consecutive week** — a mechanical field-by-field diff found zero substantive changes, so no on-page work
-> is added. Three changes on Tier 2's own judgement, argued in `reports/STRATEGY-2026-11-16.md`:
-> **(1) the ranked `link_targets` list is RESTOCKED** — the maintainer task escalated last week is done,
-> and it produced one genuinely new free target with a verified editorial address, *The Registry*
-> (`news.theregistryps.com`), which becomes "Do now" item 1; **(2) the Coldwell Banker "Virtual Tour" item
-> reached the hard 2026-11-16 review date set for it last week and is retired to "## Backlog / blocked"**
-> with its draft intact; **(3) `compass.com` is moved to `deep_fetch_dormant`** after a second consecutive
-> bot-mitigated fetch failure, which was the trigger condition written into this file last week.
+> is added. Two changes on Tier 2's own judgement, argued in `reports/STRATEGY-2026-11-23.md`:
+> **(1) the Zillow / Realtor.com profile item reached the explicit 2026-11-23 review date set for it last
+> week with no movement, so it drops to "## Next up"** — not Backlog, because it stays genuinely easy and
+> is traffic-only; **(2) a new one-minute ask is added at "Do now" item 2 — the name or email of the
+> marketing contact at Coldwell Banker Danforth**, which is the single missing fact blocking the rank-2
+> link target, the strongest domain realistically available. The Search Console reading is now **carried 3
+> weeks** and is called out as required: it holds a "Do now" slot one final week, then merges into the
+> scheduled December monthly ask rather than carrying indefinitely as a separate weekly item.
 > Standing blocker unchanged: the Coldwell Banker broker admin is signed out. Settled fact carried forward:
-> the CB listing-detail page for MLS #2556157 is not publicly discoverable, which is part of why item 1 of
-> last week's list could never be certified from the page and has now been parked.
+> the CB listing-detail page for MLS #2556157 is not publicly discoverable.
 
-## ⭐ Milestone: the first inbound link is live and holding — seven weeks
+## ⭐ Milestone: the first inbound link is live and holding — eight weeks
 
 `https://omar-senghore.cbdanforth.com/` carries
 `<a href="https://eastlakeview503.relahq.com/">1550 Eastlake Ave E #503 — Riva Condominium, Seattle.</a>`
 in its About Me section — **followed**, no `rel="nofollow"`, server-rendered. Verified by Tier 1 on
-2026-10-05 and **re-verified byte-identical on 2026-10-12, 2026-10-19, 2026-10-26, 2026-11-02, 2026-11-09
-and 2026-11-16** — seven consecutive weeks holding. External links: **0 → 1**.
+2026-10-05 and **re-verified byte-identical on 2026-10-12, 2026-10-19, 2026-10-26, 2026-11-02, 2026-11-09,
+2026-11-16 and 2026-11-23** — eight consecutive weeks holding. External links: **0 → 1**.
 
 Three measures still disagree, and all three stay recorded rather than collapsing into the flattering one:
 
 | Measure | Reading | Worth |
 |---|---|---|
-| Tier 1 direct fetch | **1** | Authoritative. Re-confirmed 2026-11-16. |
+| Tier 1 direct fetch | **1** | Authoritative. Re-confirmed 2026-11-23. |
 | Weekly automated mention search | 0 | A floor. Has never been able to see this domain. |
 | Search Console → Links (2026-10-05) | 0 | Real but lagging — Google had not re-crawled the bio page. |
 
 **One link is still one link, and inbound links remain the single biggest lever on this listing.** The
 Search Console reading that would settle the real count was asked for on 2026-11-02 and is **still
-unanswered after two weeks** — it is "Do now" item 2 below.
+unanswered after three weeks** — it is "Do now" item 3 below.
 
 ## Do now
 
-_(week of 2026-11-16 — all on-page work is finished; everything below is off-page. The page has now been
-byte-for-byte unchanged for seven consecutive weeks, which is the correct state.)_
+_(week of 2026-11-23 — all on-page work is finished; everything below is off-page. The page has now been
+byte-for-byte unchanged for eight consecutive weeks, which is the correct state.)_
 
-### 1. Email *The Registry* about the building (~3 minutes) — **NEW this week, and the best free link ask on the list**
+### 1. Email *The Registry* about the building (~3 minutes) *(carried 1 week)* — still the best free link ask on the list
 
 *The Registry* is a Pacific Northwest real-estate news publication. It is the one target on our whole
 list that is free, reachable, topically perfect **and has never been tried**. It is also a completely
@@ -76,11 +76,27 @@ useful local data point is what actually gets used — and a mention that gets u
 Reply **"registry emailed"** when it has gone, or **"registry declined"** if they come back with a no.
 Either answer is worth having.
 
-### 2. Read your Search Console "Top linking sites" number (~2 minutes) *(carried 2 weeks)*
+### 2. Tell us who handles marketing at Coldwell Banker Danforth (~1 minute) — **NEW this week, best effort-to-value ratio on the board**
+
+This is one line in Slack, not a task. Rank 2 in `state/competitors.json` → `link_targets` is a link from
+**`www.cbdanforth.com`** — the brokerage's own site, a **stronger domain than your bio subdomain**, and
+brokerage sites routinely link an agent's single-property site from the agent or listing page. It is the
+only target on the whole list that is **genuinely blocked** rather than just not-yet-done, and it is
+blocked on exactly one missing fact: **who to send the email to.**
+
+You know this and we cannot look it up — it is an internal contact. A first name and an email address is
+enough; a first name alone is enough to start.
+
+Reply **"brokerage contact: <name or email>"** and a ready-to-send email comes back next week with nothing
+for you to write.
+
+If there is genuinely nobody — no marketing person, no office admin who handles agent web pages — reply
+**"no brokerage contact"** and the item closes for good instead of sitting in Backlog.
+
+### 3. Read your Search Console "Top linking sites" number (~2 minutes) *(carried 3 weeks)*
 
 This is the authoritative reading of the one thing that matters most. It was asked for on 2026-11-02 and
-no answer has come back, so it carries — it is **not** being re-asked as a new monthly task, and the next
-scheduled monthly ask is the first week of December.
+no answer has come back.
 
 1. Go to `https://search.google.com/search-console` and sign in.
 2. Pick the property for **eastlakeview503.relahq.com**.
@@ -91,33 +107,38 @@ Reply in Slack with the **"External links / Total"** number and any site names l
 says **"No data"**, that is a real answer and worth sending. Expected: `omar-senghore.cbdanforth.com`,
 total 1.
 
-### 3. Add your site to the "Website" field on your Zillow and Realtor.com agent profiles (~5 minutes each) *(carried 3 weeks)*
-
-Rank 5 in `state/competitors.json` → `link_targets`. Owner-controlled, no login you are stuck on.
-
-- Zillow: `https://www.zillow.com/agent-profile/` → sign in → **Edit profile**.
-- Realtor.com: `https://www.realtor.com/realestateagents/` → claim/sign in → **Edit**.
-
-On each profile find the field labelled **Website**, **Personal website** or **My website** and paste:
-
-```
-https://eastlakeview503.relahq.com/
-```
-
-Reply **"profiles updated"**.
-
-**Read this before you count it as a win:** both of those fields are `nofollow`. They pass **no ranking
-credit** and **must never be counted toward the link goal** — your confirmed link count stays at **1**
-after doing this. What they give you is free referral traffic from exactly the right audience. That is a
-traffic win, not an SEO one, and it is still worth ten minutes.
-
-**Carried-3-weeks note (2026-11-16).** Called out as required. This item is not blocked and not too hard —
-it is simply unglamorous. But it is traffic-only, so it will **not** keep holding a "Do now" slot ahead of
-real link work: **if it has not moved by 2026-11-23 it drops to "## Next up"**, not to Backlog, because it
-stays genuinely easy to do whenever you feel like it.
+**Carried-3-weeks note (2026-11-23).** Called out as required. This item is **not blocked and not too
+hard** — four clicks, about two minutes, on an account you own. It is also the single measurement this
+whole system is built to produce, so it is not being retired to Backlog like the outreach emails. Instead
+it stops being a *weekly* item: this is its **final week in "Do now"**, and from the first Tier 2 run of
+December it is folded into the scheduled **monthly** Search Console ask. Re-listing a two-minute read for
+a fourth and fifth week costs the list more credibility than the reminder is worth.
 
 
 ## Next up (not this week)
+
+- **Add your site to the "Website" field on your Zillow and Realtor.com agent profiles — DEMOTED FROM
+  "Do now" 2026-11-23** *(was carried 3 weeks)*. On 2026-11-16 this item was given one more week with the
+  rule written down in advance: **if it had not moved by 2026-11-23 it drops here.** That date is today,
+  Tier 1 reports no movement either way (third-party profile pages are not fetched), so the rule is applied
+  as written. It goes to **"Next up", not Backlog** — it is not blocked and not too hard, it is just
+  unglamorous, and it should not hold a "Do now" slot ahead of real link work. Rank 5 in
+  `state/competitors.json` → `link_targets`. Do it whenever you feel like it, in about five minutes per
+  profile:
+
+  - Zillow: `https://www.zillow.com/agent-profile/` → sign in → **Edit profile**.
+  - Realtor.com: `https://www.realtor.com/realestateagents/` → claim/sign in → **Edit**.
+
+  On each profile find the field labelled **Website**, **Personal website** or **My website** and paste:
+
+  ```
+  https://eastlakeview503.relahq.com/
+  ```
+
+  Reply **"profiles updated"**. **Read this before counting it as a win:** both fields are `nofollow`. They
+  pass **no ranking credit** and **must never be counted toward the link goal** — your confirmed link count
+  stays at **1** after doing this. What they give you is free referral traffic from exactly the right
+  audience. A traffic win, not an SEO one, and still worth ten minutes.
 
 - **✅ RESOLVED 2026-11-16 — `link_targets` restocked.** The maintainer task escalated on 2026-11-09 is
   done. Eight candidate domains were checked live with a browser UA; `state/competitors.json` →
@@ -338,7 +359,7 @@ stays genuinely easy to do whenever you feel like it.
   and it is the first one that will be genuinely informative.
 
 - **✅ First inbound link to the listing — DONE 2026-09-28, CONFIRMED LIVE BY TIER 1 2026-10-05, and
-  RE-CONFIRMED BYTE-IDENTICAL EVERY WEEK SINCE, THROUGH 2026-11-16 — seven consecutive weeks.** Rank-1 target in `link_targets`, carried 3 weeks,
+  RE-CONFIRMED BYTE-IDENTICAL EVERY WEEK SINCE, THROUGH 2026-11-23 — eight consecutive weeks.** Rank-1 target in `link_targets`, carried 3 weeks,
   closed. Path taken (per `reports/IMPLEMENTATION-2026-09-28-run2.md`): the broker admin's **Featured
   Listing** control only links CB's own listing page, so the owner used **My Website → About Me → Edit**
   and pasted this queue's drafted copy block with the first line linked. Verified by direct fetch: one

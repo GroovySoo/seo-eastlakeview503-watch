@@ -65,7 +65,7 @@
  "link_targets": {
   "purpose": "The #1 lever is inbound links. Generic advice ('email signature + LinkedIn') produced zero links in three weeks AND would not have helped if done. These are named, verified-live targets ranked by realistic value. Tier 2 must pick from this list rather than reinventing the ask.",
   "verified": "2026-09-18 (all URLs returned HTTP 200 to a browser UA on this date)",
-  "status_updated": "2026-11-16 (restocked by Tier 2; statuses maintained by Tier 2)",
+  "status_updated": "2026-11-23 (statuses maintained by Tier 2; ranks never renumbered)",
   "exhausted": "FALSE as of 2026-11-16 -- RESTOCKED. This resolves the maintainer task escalated on 2026-11-09. Eight candidate domains were checked live with a browser UA on 2026-11-16; one genuinely new free target with a verified editorial address was added at rank 2 (news.theregistryps.com), and two paid-directory options were added at ranks 6-7 and ranked last on purpose. Four candidates were excluded for cause and are recorded in rejected_candidates so nobody re-proposes them. NOTE THE REAL CONSTRAINT: the binding problem is no longer a shortage of targets. Ranks 3 and 4 (urbnlivn, Eastlake Community Council) are free, take one email each, have recipients re-verified live on 2026-11-16, and sit in Backlog only because the email was never sent.",
   "targets": [
    {
@@ -75,7 +75,7 @@
     "owner_controlled": true,
     "effort": "5 min",
     "value": "high",
-    "status": "DONE 2026-09-28 -- produced the project's one confirmed inbound link; re-verified byte-identical by Tier 1 every week through 2026-11-16 (seventh consecutive week).",
+    "status": "DONE 2026-09-28 -- produced the project's one confirmed inbound link; re-verified byte-identical by Tier 1 every week through 2026-11-23 (eighth consecutive week).",
     "evidence": "Page is live (HTTP 200, title 'Omar Senghore - Coldwell Banker Danforth (Everett)') and contains a 'Featured Listing' section. It mentions '1550 Eastlake' zero times and 'eastlakeview503' zero times.",
     "why": "A real-estate brand domain, topically perfect, owner-controlled, free, and almost certainly a followed link. This is the single best inbound link available and it has never been asked for."
    },
@@ -86,7 +86,7 @@
     "owner_controlled": false,
     "effort": "one email to the brokerage's marketing contact",
     "value": "high",
-    "status": "IN BACKLOG since 2026-10-12 (carried 5 weeks in 'Do now', never sent). Blocked on an unknown marketing recipient at the brokerage. Reopens on 'brokerage contact: <name or email>'.",
+    "status": "IN BACKLOG since 2026-10-12 (carried 5 weeks in 'Do now', never sent). Genuinely blocked on an unknown marketing recipient at the brokerage -- the ONLY target on this list blocked on a missing fact rather than on owner inaction. Tier 2 added a one-minute ask for that fact as 'Do now' item 2 on 2026-11-23. Reopens on 'brokerage contact: <name or email>'; closes for good on 'no brokerage contact'.",
     "why": "Brokerage sites routinely link an agent's single-property site from the agent or listing page. Costs one email; the domain is stronger than the agent subdomain."
    },
    {
@@ -116,7 +116,7 @@
     "owner_controlled": true,
     "effort": "5 min per profile",
     "value": "low-medium (nofollow, but real referral traffic)",
-    "status": "ASKED 2026-11-09, re-asked 2026-11-16 as \"Do now\" item 3, carried 3 weeks. TRAFFIC-ONLY: nofollow -- must never be counted toward the link goal. Drops to \"Next up\" on 2026-11-23 if still not done. Closes on \"profiles updated\".",
+    "status": "DEMOTED TO '## Next up' 2026-11-23 after the explicit 2026-11-23 review date set on 2026-11-16 arrived with no movement (carried 3 weeks in 'Do now'). NOT retired to Backlog -- not blocked, not too hard, just unglamorous and traffic-only. TRAFFIC-ONLY: nofollow -- must never be counted toward the link goal. Closes on 'profiles updated'.",
     "why": "Nofollow, so little or no ranking equity -- but it is discovery traffic from exactly the right audience, and it is free. Frame it as traffic, never as an SEO link."
    },
    {
@@ -127,7 +127,7 @@
     "owner_controlled": false,
     "effort": "one outreach email (~3 min, draft ready in ACTION-QUEUE.md)",
     "value": "high",
-    "status": "NEW 2026-11-16 -- never asked. \"Do now\" item 1 for the week of 2026-11-16. Closes on \"registry emailed\"/\"registry declined\".",
+    "status": "ASKED 2026-11-16, re-listed as 'Do now' item 1 on 2026-11-23 (carried 1 week). Still the best free untried target on the list. Closes on 'registry emailed'/'registry declined'.",
     "evidence": "https://news.theregistryps.com/contact/ returned HTTP 200 to a browser UA on 2026-11-16, title \"Contact Us - The Registry Pacific Northwest Real Estate\", publishing the editorial address letters@theregistryps.com. The site also surfaced independently in this run's mention-query domain set, confirming it is indexed and active. (The bare homepage returned 429 rate-limited on the same date -- a throttle, not a dead site; the contact page fetched cleanly.)",
     "why": "A Pacific Northwest real-estate news publication: topically perfect for a condo-building item, an entirely different KIND of domain from the brokerage sites that make up the rest of our profile, free, and reachable at a published editorial address. This is the best new non-owned target available and the only free one on the list that has never been tried.",
     "framing": "Pitch the BUILDING and the neighbourhood, not the listing, and never ask for a link. Editorial outlets decline link requests; a genuine local-market data point is what gets used."
@@ -199,7 +199,7 @@
    "rank 3 -- urbnlivn (matt@urban-living.com): free, one email, recipient re-verified 2026-11-16, draft ready, in Backlog on owner inaction only.",
    "rank 4 -- Eastlake Community Council (info@eastlakeseattle.org): free, one email, recipient re-verified 2026-11-16, draft ready, in Backlog on owner inaction only.",
    "rank 2 -- CB Danforth brokerage site: free but genuinely blocked on an unknown marketing recipient. Reopens on \"brokerage contact: <name or email>\".",
-   "rank 5 -- Zillow/Realtor.com profile fields: TRAFFIC ONLY, nofollow, never counted toward the link goal.",
+   "rank 5 -- Zillow/Realtor.com profile fields: TRAFFIC ONLY, nofollow, never counted toward the link goal. Demoted to '## Next up' 2026-11-23.",
    "ranks 7-8 -- Seattle Metro Chamber, GSBA: PAID. Do not recommend. Listed only so they are not re-proposed as discoveries."
   ]
  },
